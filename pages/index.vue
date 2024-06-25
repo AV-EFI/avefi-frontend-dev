@@ -1,6 +1,5 @@
 <script setup lang="ts">
 
-const { locale } = useI18n();
 definePageMeta(
     { 
         auth: false 
@@ -15,7 +14,8 @@ setTimeout(() => {
 2000);
 
 
-const { data: sessionData } = useAuthState();
+//const { data: sessionData } = useAuthState();
+const sessionData = null;
 
 </script>
 

@@ -17,8 +17,10 @@
     "@elastic/search-ui-elasticsearch-connector": "^1.21.1",
     "@faker-js/faker": "^8.4.1",
     "@formkit/addons": "^1.6.0",
+    "@formkit/core": "^1.6.5",
     "@formkit/i18n": "^1.6.0",
     "@formkit/icons": "^1.6.0",
+    "@formkit/inputs": "^1.6.5",
     "@formkit/nuxt": "^1.6.0",
     "@formkit/pro": "^0.122.11",
     "@formkit/themes": "^1.6.0",
@@ -33,6 +35,7 @@
     "@types/lodash": "^4.17.0",
     "@types/mime": "^4.0.0",
     "@types/pg": "^8.10.9",
+    "@typescript-eslint/typescript-estree": "^7.14.1",
     "@vueuse/core": "^10.7.2",
     "@vueuse/nuxt": "^10.7.2",
     "caniuse-lite": "^1.0.30001632",
@@ -42,12 +45,13 @@
     "highlight.js": "^11.9.0",
     "lodash": "^4.17.21",
     "matomo-ts": "^1.0.1",
-    "next-auth": "4.21.1",
     "nuxt": "^3.12.2",
+    "pinia": "^2.1.7",
     "pinia-plugin-persistedstate": "^3.2.1",
     "postcss": "^8.4.21",
     "theme-change": "^2.5.0",
     "tsx": "^4.7.2",
+    "vite": "^5.3.1",
     "vue": "^3.4.30",
     "vue-diff": "^1.2.4",
     "vue-matomo": "^4.2.0",
@@ -73,7 +77,6 @@
     "nitro-cloudflare-dev": "^0.1.4",
     "nuxt-icon": "^0.6.8",
     "sass": "^1.69.5",
-    "sass-loader": "^13.3.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
     "vue": "^3.4.27",
@@ -82,5 +85,6 @@
   },
   "resolutions": {
     "vue3-easy-data-table/vue": "^3.3.8"
-  }
+  },
+  "packageManager": "yarn@4.3.1"
 }

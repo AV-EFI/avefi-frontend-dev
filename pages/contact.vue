@@ -23,8 +23,9 @@ interface FAQ {
 definePageMeta({
     auth: false
 });
-const response:ApiPage = await $fetch<ApiPage>(`http://localhost:1337/api/pages/1?populate=*`);
+//const response:ApiPage = await $fetch<ApiPage>(`http://localhost:1337/api/pages/1?populate=*`);
 //http://localhost:1337/api/articles/1?populate=*
+const response = null;
 
 </script>
 <template>
@@ -45,10 +46,11 @@ const response:ApiPage = await $fetch<ApiPage>(`http://localhost:1337/api/pages/
       <template #title>
         FAQs
       </template>
+      <!--
       <template #containerLeft>
         <div v-if="response">
           <AccordionComp 
-            v-for="(faqItem, index) in response.data.attributes.FAQs"
+            v-for="(faqItem, index) in response?.data.attributes.FAQs"
             :id="faqItem.id"
             :key="faqItem.id"
             :index="index"
@@ -58,11 +60,14 @@ const response:ApiPage = await $fetch<ApiPage>(`http://localhost:1337/api/pages/
           />
         </div>
       </template>
+      -->
+      <!--
       <template #containerRight>
-        <div v-if="response.data.attributes.DescriptionCK">
+        <div v-if="response?.data?.attributes.DescriptionCK">
           <span v-html="response.data.attributes.DescriptionCK" />
         </div>
       </template>
+      -->
     </NuxtLayout>
   </div>
 </template>

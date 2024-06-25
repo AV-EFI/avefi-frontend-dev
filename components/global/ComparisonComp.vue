@@ -48,7 +48,7 @@ let newObjectName = '';
 
 const addObject = () => {
     if (newObjectName.trim() !== '') {
-        objectListStore.addObject({ filmId: 1, filmTitle: newObjectName });
+        objectListStore.addObject({ filmId: "1", filmTitle: newObjectName });
         newObjectName = ''; // Clear input field after adding object
     }
 };

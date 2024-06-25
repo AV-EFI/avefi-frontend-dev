@@ -1,9 +1,12 @@
 <script setup lag="ts">
-
+/*
 const {
     data,
     signOut
 } = useAuth();
+*/
+const data = null;
+
 
 const triggerSignout = () => {
     signOut({callbackUrl: '/', external:true});
