@@ -1,0 +1,710 @@
+{
+  "data": [
+    {
+      "id": 871768568889344,
+      "attributes": {
+        "Title": "neque tempora harum",
+        "createdAt": "2024-04-22T22:06:58.760Z",
+        "updatedAt": "2024-04-22T22:57:01.222Z",
+        "publishedAt": "2024-04-22T21:35:33.388Z",
+        "locale": "en",
+        "CountryOfReference": "UK",
+        "RelatedIdentifier": "minus soluta fugiat",
+        "LastModified": "2024-04-23T03:22:20.303Z",
+        "YearOfReference": [
+          {
+            "id": 7108101731778560,
+            "yearOfReferenceDate": "2024-04-22T21:55:09.991Z",
+            "yearOfReferenceStart": 2006,
+            "yearOfReferenceEnd": 1921,
+            "yearOfReferenceType": "Created"
+          },
+          {
+            "id": 4969619989200896,
+            "yearOfReferenceDate": "2024-04-22T12:10:24.942Z",
+            "yearOfReferenceStart": 1927,
+            "yearOfReferenceEnd": 1988,
+            "yearOfReferenceType": "Issued"
+          },
+          {
+            "id": 4572163612868608,
+            "yearOfReferenceDate": "2024-04-23T06:32:19.582Z",
+            "yearOfReferenceStart": 1926,
+            "yearOfReferenceEnd": 1940,
+            "yearOfReferenceType": "Issued"
+          }
+        ],
+        "Series": {
+          "data": [
+            {
+              "id": 7008994572894208,
+              "attributes": {
+                "SeriesTitle": "ut aliquam architecto",
+                "createdAt": "2024-04-22T22:06:58.760Z",
+                "updatedAt": "2024-04-22T22:57:01.222Z",
+                "publishedAt": null,
+                "SeriesIdentifier": "facere",
+                "SeriesTitleType": "Original Title"
+              }
+            }
+          ]
+        },
+        "Cast": {
+          "data": [
+            {
+              "id": 5920356567089152,
+              "attributes": {
+                "CastFirstName": "Marwin",
+                "CastLastName": "John",
+                "CastName": "Marwin John",
+                "CastIdentifier": "in",
+                "createdAt": "2024-04-22T22:12:19.093Z",
+                "updatedAt": "2024-04-22T17:56:01.669Z"
+              }
+            },
+            {
+              "id": 7230249190293504,
+              "attributes": {
+                "CastFirstName": "Jill",
+                "CastLastName": "Waibel",
+                "CastName": "Jill Waibel",
+                "CastIdentifier": "ex",
+                "createdAt": "2024-04-22T18:13:26.324Z",
+                "updatedAt": "2024-04-23T08:35:57.056Z"
+              }
+            },
+            {
+              "id": 4436580645208064,
+              "attributes": {
+                "CastFirstName": "Mariam",
+                "CastLastName": "Tepper",
+                "CastName": "Mariam Tepper",
+                "CastIdentifier": "maiores",
+                "createdAt": "2024-04-23T11:45:31.981Z",
+                "updatedAt": "2024-04-22T19:07:43.675Z"
+              }
+            },
+            {
+              "id": 2020438838345728,
+              "attributes": {
+                "CastFirstName": "Collien",
+                "CastLastName": "Splinter",
+                "CastName": "Collien Splinter",
+                "CastIdentifier": "veritatis",
+                "createdAt": "2024-04-22T20:57:02.252Z",
+                "updatedAt": "2024-04-22T13:31:14.595Z"
+              }
+            },
+            {
+              "id": 8246104688689152,
+              "attributes": {
+                "CastFirstName": "Marius",
+                "CastLastName": "Bauer",
+                "CastName": "Marius Bauer",
+                "CastIdentifier": "molestiae",
+                "createdAt": "2024-04-23T04:49:53.467Z",
+                "updatedAt": "2024-04-23T02:01:38.329Z"
+              }
+            },
+            {
+              "id": 716106291478528,
+              "attributes": {
+                "CastFirstName": "René",
+                "CastLastName": "Rosbach",
+                "CastName": "René Rosbach",
+                "CastIdentifier": "inventore",
+                "createdAt": "2024-04-23T11:03:06.751Z",
+                "updatedAt": "2024-04-23T03:51:09.177Z"
+              }
+            },
+            {
+              "id": 4396384924991488,
+              "attributes": {
+                "CastFirstName": "Eliah",
+                "CastLastName": "Porsche",
+                "CastName": "Eliah Porsche",
+                "CastIdentifier": "laborum",
+                "createdAt": "2024-04-23T01:44:00.750Z",
+                "updatedAt": "2024-04-22T21:26:50.984Z"
+              }
+            }
+          ]
+        },
+        "Credits": {
+          "data": [
+            {
+              "id": 5086506892918784,
+              "attributes": {
+                "CreditsFirstName": "Elisa",
+                "CreditsLastName": "Schuri",
+                "CreditsName": "Elisa Schuri",
+                "CreditsRole": "Pre Production Design",
+                "CreditsIdentifier": "aliquam",
+                "createdAt": "2024-04-23T07:36:58.061Z",
+                "updatedAt": "2024-04-22T13:42:35.480Z"
+              }
+            },
+            {
+              "id": 4426077348823040,
+              "attributes": {
+                "CreditsFirstName": "Frieda",
+                "CreditsLastName": "Morgenstern",
+                "CreditsName": "Frieda Morgenstern",
+                "CreditsRole": "Continuity",
+                "CreditsIdentifier": "ab",
+                "createdAt": "2024-04-23T00:49:57.348Z",
+                "updatedAt": "2024-04-22T13:13:06.049Z"
+              }
+            }
+          ]
+        },
+        "ProductionCompany": {
+          "data": {
+            "id": 2579177794437120,
+            "attributes": {
+              "ProductionCompanyName": "Beele, Deerberg und Lohse",
+              "ProductionCompanyIdentifier": "quidem",
+              "createdAt": "2024-04-22T22:06:58.760Z",
+              "updatedAt": "2024-04-22T22:57:01.222Z",
+              "publishedAt": null
+            }
+          }
+        },
+        "OriginalFormat": {
+          "id": 8104135003996160
+        },
+        "FirstKnownManifestation": {
+          "id": 439298402811904,
+          "OriginalLength": 5312023306960896,
+          "OriginalLengthUnit": "nemo",
+          "OriginalDuration": "54:45"
+        },
+        "Genre": [
+          {
+            "id": 3876666006831104,
+            "GenreName": "Anthology Film"
+          },
+          {
+            "id": 5940236557221888,
+            "GenreName": "Non Fiction"
+          },
+          {
+            "id": 8252216701878272,
+            "GenreName": "Animation with Live Action"
+          },
+          {
+            "id": 8386433052049408,
+            "GenreName": "Non Fiction"
+          }
+        ],
+        "Source": {
+          "data": {
+            "id": 871768568889344,
+            "attributes": {
+              "SourceName": "Stengel-Göhler",
+              "SourceIdentifier": "natus",
+              "SourceAttribution": "Veniam ipsam quisquam facere.",
+              "SourceAttributionDate": "2024-04-23T08:49:34.223Z",
+              "SourceAttributionType": "Attributed",
+              "createdAt": "2024-04-22T22:06:58.760Z",
+              "updatedAt": "2024-04-22T22:57:01.222Z"
+            }
+          }
+        },
+        "Subject": {
+          "data": [
+            {
+              "id": 871768568889344,
+              "attributes": {
+                "LangDe": "doloremque saepe sequi",
+                "LangEn": "atque fugiat architecto",
+                "ref_AAT": "possimus",
+                "ref_GND": "quo",
+                "createdAt": "2024-04-22T22:06:58.760Z",
+                "updatedAt": "2024-04-22T22:57:01.222Z",
+                "locale": "en"
+              }
+            }
+          ]
+        },
+        "SchemaVersion": [
+          {
+            "id": 5154941672882176,
+            "VersionName": "avefi",
+            "VersionNumber": 3255163112390656
+          }
+        ],
+        "TitleType": {
+          "id": 1749685664481280,
+          "TitleTypeName": "mollitia"
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "Title": "consequuntur ullam necessitatibus",
+                "createdAt": "2024-04-22T21:50:54.405Z",
+                "updatedAt": "2024-04-23T07:12:27.014Z",
+                "publishedAt": "2024-04-23T03:44:41.087Z",
+                "locale": "de",
+                "CountryOfReference": "DE",
+                "RelatedIdentifier": "veniam unde quidem",
+                "LastModified": "2024-04-23T01:13:35.435Z"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "Title": "tenetur excepturi magni",
+                "createdAt": "2024-04-22T14:22:26.108Z",
+                "updatedAt": "2024-04-22T15:22:46.409Z",
+                "publishedAt": "2024-04-23T11:11:03.826Z",
+                "locale": "en",
+                "CountryOfReference": "DE",
+                "RelatedIdentifier": "at id fugit",
+                "LastModified": "2024-04-23T10:09:22.976Z"
+              }
+            },
+            {
+              "id": 2,
+              "attributes": {
+                "Title": "voluptatum consequatur aperiam",
+                "createdAt": "2024-04-23T05:03:29.365Z",
+                "updatedAt": "2024-04-22T23:25:53.118Z",
+                "publishedAt": "2024-04-22T16:28:27.828Z",
+                "locale": "en",
+                "CountryOfReference": "US",
+                "RelatedIdentifier": "dolores facere eum",
+                "LastModified": "2024-04-23T01:57:48.342Z"
+              }
+            },
+            {
+              "id": 3,
+              "attributes": {
+                "Title": "culpa ea aut",
+                "createdAt": "2024-04-23T03:19:40.649Z",
+                "updatedAt": "2024-04-22T17:18:26.655Z",
+                "publishedAt": "2024-04-22T16:09:31.477Z",
+                "locale": "de",
+                "CountryOfReference": "US",
+                "RelatedIdentifier": "ex non nemo",
+                "LastModified": "2024-04-22T18:01:21.167Z"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": 7034301816242176,
+      "attributes": {
+        "Title": "iure corporis minima",
+        "createdAt": "2024-04-22T18:14:50.401Z",
+        "updatedAt": "2024-04-23T00:01:53.209Z",
+        "publishedAt": "2024-04-23T11:32:28.998Z",
+        "locale": "en",
+        "CountryOfReference": "DE",
+        "RelatedIdentifier": "expedita placeat omnis",
+        "LastModified": "2024-04-23T04:56:51.741Z",
+        "YearOfReference": [
+          {
+            "id": 1280405743337472,
+            "yearOfReferenceDate": "2024-04-22T18:14:02.187Z",
+            "yearOfReferenceStart": 2008,
+            "yearOfReferenceEnd": 1961,
+            "yearOfReferenceType": "Issued"
+          },
+          {
+            "id": 4673541748293632,
+            "yearOfReferenceDate": "2024-04-23T02:08:45.763Z",
+            "yearOfReferenceStart": 1988,
+            "yearOfReferenceEnd": 1993,
+            "yearOfReferenceType": "Issued"
+          },
+          {
+            "id": 4611745328922624,
+            "yearOfReferenceDate": "2024-04-23T07:27:26.302Z",
+            "yearOfReferenceStart": 1933,
+            "yearOfReferenceEnd": 2015,
+            "yearOfReferenceType": "Copyrighted"
+          }
+        ],
+        "Series": {
+          "data": [
+            {
+              "id": 1154034410979328,
+              "attributes": {
+                "SeriesTitle": "ea eaque maxime",
+                "createdAt": "2024-04-22T18:14:50.401Z",
+                "updatedAt": "2024-04-23T00:01:53.209Z",
+                "publishedAt": null,
+                "SeriesIdentifier": "repudiandae",
+                "SeriesTitleType": "Original Title"
+              }
+            }
+          ]
+        },
+        "Cast": {
+          "data": [
+            {
+              "id": 3336247693017088,
+              "attributes": {
+                "CastFirstName": "Henrike",
+                "CastLastName": "Meisch",
+                "CastName": "Henrike Meisch",
+                "CastIdentifier": "ratione",
+                "createdAt": "2024-04-22T22:55:08.980Z",
+                "updatedAt": "2024-04-23T04:57:08.395Z"
+              }
+            },
+            {
+              "id": 6523787061231616,
+              "attributes": {
+                "CastFirstName": "Andreas",
+                "CastLastName": "Förster",
+                "CastName": "Andreas Förster",
+                "CastIdentifier": "sed",
+                "createdAt": "2024-04-23T04:55:54.929Z",
+                "updatedAt": "2024-04-22T12:04:03.898Z"
+              }
+            },
+            {
+              "id": 6488613992792064,
+              "attributes": {
+                "CastFirstName": "Leopold",
+                "CastLastName": "Roba",
+                "CastName": "Leopold Roba",
+                "CastIdentifier": "exercitationem",
+                "createdAt": "2024-04-22T16:07:56.645Z",
+                "updatedAt": "2024-04-23T01:09:51.950Z"
+              }
+            },
+            {
+              "id": 6798528101744640,
+              "attributes": {
+                "CastFirstName": "Freya",
+                "CastLastName": "Seigel",
+                "CastName": "Freya Seigel",
+                "CastIdentifier": "ut",
+                "createdAt": "2024-04-22T18:04:15.102Z",
+                "updatedAt": "2024-04-23T00:09:49.864Z"
+              }
+            },
+            {
+              "id": 4544869364137984,
+              "attributes": {
+                "CastFirstName": "Arne",
+                "CastLastName": "Dauth",
+                "CastName": "Arne Dauth",
+                "CastIdentifier": "et",
+                "createdAt": "2024-04-23T06:42:40.296Z",
+                "updatedAt": "2024-04-23T09:06:43.767Z"
+              }
+            },
+            {
+              "id": 1117586997641216,
+              "attributes": {
+                "CastFirstName": "Lotte",
+                "CastLastName": "Griese",
+                "CastName": "Lotte Griese",
+                "CastIdentifier": "consequatur",
+                "createdAt": "2024-04-23T02:40:30.763Z",
+                "updatedAt": "2024-04-22T20:25:33.832Z"
+              }
+            },
+            {
+              "id": 3953012858945536,
+              "attributes": {
+                "CastFirstName": "Stina",
+                "CastLastName": "Bak",
+                "CastName": "Stina Bak",
+                "CastIdentifier": "voluptates",
+                "createdAt": "2024-04-22T18:24:54.354Z",
+                "updatedAt": "2024-04-23T08:59:19.298Z"
+              }
+            },
+            {
+              "id": 6269112401526784,
+              "attributes": {
+                "CastFirstName": "Marisa",
+                "CastLastName": "Duma",
+                "CastName": "Marisa Duma",
+                "CastIdentifier": "minima",
+                "createdAt": "2024-04-23T04:38:47.309Z",
+                "updatedAt": "2024-04-22T14:26:16.682Z"
+              }
+            },
+            {
+              "id": 1766076994027520,
+              "attributes": {
+                "CastFirstName": "Ibrahim",
+                "CastLastName": "Hanniske",
+                "CastName": "Ibrahim Hanniske",
+                "CastIdentifier": "eaque",
+                "createdAt": "2024-04-22T19:08:31.908Z",
+                "updatedAt": "2024-04-22T23:04:01.892Z"
+              }
+            },
+            {
+              "id": 4318848910098432,
+              "attributes": {
+                "CastFirstName": "Flora",
+                "CastLastName": "Steffny",
+                "CastName": "Flora Steffny",
+                "CastIdentifier": "consequatur",
+                "createdAt": "2024-04-22T15:59:32.600Z",
+                "updatedAt": "2024-04-22T17:22:30.882Z"
+              }
+            },
+            {
+              "id": 8002902486417408,
+              "attributes": {
+                "CastFirstName": "Janosch",
+                "CastLastName": "Schouren",
+                "CastName": "Janosch Schouren",
+                "CastIdentifier": "aperiam",
+                "createdAt": "2024-04-22T22:36:14.663Z",
+                "updatedAt": "2024-04-22T12:14:45.420Z"
+              }
+            },
+            {
+              "id": 7672136051195904,
+              "attributes": {
+                "CastFirstName": "Benedikt",
+                "CastLastName": "Horna",
+                "CastName": "Benedikt Horna",
+                "CastIdentifier": "odio",
+                "createdAt": "2024-04-23T05:37:10.634Z",
+                "updatedAt": "2024-04-22T19:19:11.400Z"
+              }
+            },
+            {
+              "id": 2360313588482048,
+              "attributes": {
+                "CastFirstName": "Noemi",
+                "CastLastName": "Bachmann",
+                "CastName": "Noemi Bachmann",
+                "CastIdentifier": "magni",
+                "createdAt": "2024-04-22T17:20:44.117Z",
+                "updatedAt": "2024-04-22T21:36:25.203Z"
+              }
+            },
+            {
+              "id": 2043871561252864,
+              "attributes": {
+                "CastFirstName": "Maximilian",
+                "CastLastName": "Giesche",
+                "CastName": "Maximilian Giesche",
+                "CastIdentifier": "excepturi",
+                "createdAt": "2024-04-22T13:57:43.783Z",
+                "updatedAt": "2024-04-23T07:34:34.570Z"
+              }
+            },
+            {
+              "id": 5322753242562560,
+              "attributes": {
+                "CastFirstName": "Melis",
+                "CastLastName": "Rabenstein",
+                "CastName": "Melis Rabenstein",
+                "CastIdentifier": "commodi",
+                "createdAt": "2024-04-22T16:19:12.064Z",
+                "updatedAt": "2024-04-22T19:39:39.122Z"
+              }
+            },
+            {
+              "id": 4465015438442496,
+              "attributes": {
+                "CastFirstName": "Lara",
+                "CastLastName": "Keutel",
+                "CastName": "Lara Keutel",
+                "CastIdentifier": "excepturi",
+                "createdAt": "2024-04-22T23:15:02.889Z",
+                "updatedAt": "2024-04-22T16:49:37.023Z"
+              }
+            }
+          ]
+        },
+        "Credits": {
+          "data": [
+            {
+              "id": 5891703875567616,
+              "attributes": {
+                "CreditsFirstName": "Irem",
+                "CreditsLastName": "Kelm",
+                "CreditsName": "Irem Kelm",
+                "CreditsRole": "Producer",
+                "CreditsIdentifier": "voluptatibus",
+                "createdAt": "2024-04-22T20:41:03.963Z",
+                "updatedAt": "2024-04-23T03:23:18.842Z"
+              }
+            },
+            {
+              "id": 8458698892509184,
+              "attributes": {
+                "CreditsFirstName": "Til",
+                "CreditsLastName": "Siebel",
+                "CreditsName": "Til Siebel",
+                "CreditsRole": "Caterer",
+                "CreditsIdentifier": "eos",
+                "createdAt": "2024-04-22T21:37:58.351Z",
+                "updatedAt": "2024-04-23T10:33:04.268Z"
+              }
+            },
+            {
+              "id": 3053192954773504,
+              "attributes": {
+                "CreditsFirstName": "Ines",
+                "CreditsLastName": "Timmermann",
+                "CreditsName": "Ines Timmermann",
+                "CreditsRole": "Narration",
+                "CreditsIdentifier": "hic",
+                "createdAt": "2024-04-23T06:01:38.993Z",
+                "updatedAt": "2024-04-22T21:53:58.061Z"
+              }
+            },
+            {
+              "id": 1058397510172672,
+              "attributes": {
+                "CreditsFirstName": "Efe",
+                "CreditsLastName": "Nastvogel",
+                "CreditsName": "Efe Nastvogel",
+                "CreditsRole": "Sound Editor",
+                "CreditsIdentifier": "expedita",
+                "createdAt": "2024-04-22T12:37:16.817Z",
+                "updatedAt": "2024-04-23T05:37:23.922Z"
+              }
+            }
+          ]
+        },
+        "ProductionCompany": {
+          "data": {
+            "id": 8361845293318144,
+            "attributes": {
+              "ProductionCompanyName": "Sinnhuber-Amann",
+              "ProductionCompanyIdentifier": "sunt",
+              "createdAt": "2024-04-22T18:14:50.401Z",
+              "updatedAt": "2024-04-23T00:01:53.209Z",
+              "publishedAt": null
+            }
+          }
+        },
+        "OriginalFormat": {
+          "id": 6632492318588928
+        },
+        "FirstKnownManifestation": {
+          "id": 8343935780913152,
+          "OriginalLength": 514506658676736,
+          "OriginalLengthUnit": "quae",
+          "OriginalDuration": "92:7"
+        },
+        "Genre": [
+          {
+            "id": 5756081120739328,
+            "GenreName": "Industrial Film"
+          },
+          {
+            "id": 5007357473980416,
+            "GenreName": "Non Fiction"
+          },
+          {
+            "id": 1972702371905536,
+            "GenreName": "Amateur Film"
+          },
+          {
+            "id": 2409255139278848,
+            "GenreName": "Fiction"
+          },
+          {
+            "id": 6547807248842752,
+            "GenreName": "Documentary Drama"
+          },
+          {
+            "id": 4581418812309504,
+            "GenreName": "Advertising Film"
+          },
+          {
+            "id": 6342738500911104,
+            "GenreName": "Music Video"
+          },
+          {
+            "id": 3969462508191744,
+            "GenreName": "Experimental Film"
+          }
+        ],
+        "Source": {
+          "data": {
+            "id": 7034301816242176,
+            "attributes": {
+              "SourceName": "Mehlorn UG",
+              "SourceIdentifier": "eius",
+              "SourceAttribution": "Sunt neque repudiandae modi distinctio quae dolorem.",
+              "SourceAttributionDate": "2024-04-22T18:07:08.732Z",
+              "SourceAttributionType": "Modified",
+              "createdAt": "2024-04-22T18:14:50.401Z",
+              "updatedAt": "2024-04-23T00:01:53.209Z"
+            }
+          }
+        },
+        "Subject": {
+          "data": [
+            {
+              "id": 7034301816242176,
+              "attributes": {
+                "LangDe": "sunt voluptate harum",
+                "LangEn": "autem esse quia",
+                "ref_AAT": "saepe",
+                "ref_GND": "quo",
+                "createdAt": "2024-04-22T18:14:50.401Z",
+                "updatedAt": "2024-04-23T00:01:53.209Z",
+                "locale": "en"
+              }
+            }
+          ]
+        },
+        "SchemaVersion": [
+          {
+            "id": 1220778034987008,
+            "VersionName": "avefi",
+            "VersionNumber": 8606795635359744
+          }
+        ],
+        "TitleType": {
+          "id": 6157483143856128,
+          "TitleTypeName": "voluptas"
+        },
+        "localizations": {
+          "data": [
+            {
+              "id": 0,
+              "attributes": {
+                "Title": "aspernatur rem dolore",
+                "createdAt": "2024-04-22T22:34:59.477Z",
+                "updatedAt": "2024-04-22T14:45:40.896Z",
+                "publishedAt": "2024-04-22T19:36:02.532Z",
+                "locale": "de",
+                "CountryOfReference": "DE",
+                "RelatedIdentifier": "saepe corporis et",
+                "LastModified": "2024-04-22T18:43:48.875Z"
+              }
+            },
+            {
+              "id": 1,
+              "attributes": {
+                "Title": "omnis et deserunt",
+                "createdAt": "2024-04-22T15:18:31.132Z",
+                "updatedAt": "2024-04-22T12:52:54.789Z",
+                "publishedAt": "2024-04-23T09:05:54.733Z",
+                "locale": "en",
+                "CountryOfReference": "US",
+                "RelatedIdentifier": "vero possimus minima",
+                "LastModified": "2024-04-22T14:52:00.386Z"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "meta": {}
+}

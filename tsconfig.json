@@ -4,6 +4,18 @@
 "compilerOptions": {
     "types": [
         "@cloudflare/workers-types/2023-07-01"
-    ]
-}
+    ],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "target": "ESNext", // Or whatever you want
+    "module": "ESNext", // Or whatever you want
+    "allowJs": true,
+    "checkJs": false,
+    "allowImportingTsExtensions": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }
