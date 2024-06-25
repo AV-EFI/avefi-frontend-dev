@@ -10691,7 +10691,7 @@ __metadata:
     tsx: "npm:^4.7.2"
     typescript: "npm:^5.3.3"
     vite: "npm:^5.3.1"
-    vue: "npm:^3.4.27"
+    vue: "npm:^3.4.30"
     vue-diff: "npm:^1.2.4"
     vue-matomo: "npm:^4.2.0"
     vue-router: "npm:^4.2.5"
@@ -14656,7 +14656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.3.8, vue@npm:^3.4.27, vue@npm:^3.4.29":
+"vue@npm:^3.3.8, vue@npm:^3.4.29, vue@npm:^3.4.30":
   version: 3.4.30
   resolution: "vue@npm:3.4.30"
   dependencies:

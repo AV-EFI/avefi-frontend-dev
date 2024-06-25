@@ -117,7 +117,7 @@ const props = defineProps({
 });
 import type { Mode, Theme } from 'types/VueDiffTypes.ts';
 import { ref } from 'vue';
-import type IAVefiListResponse from '../../models/interfaces/IAVefiWork';
+import type {IAVefiListResponse} from '../../models/interfaces/IAVefiWork';
 
 interface ListItem {
   key: string;
