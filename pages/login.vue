@@ -51,11 +51,13 @@
 const Credentials = null;
 
 definePageMeta({
+    /*
     middleware: 'auth',
     auth: {
         unauthenticatedOnly: true,
         navigateAuthenticatedTo: '/protected/me'
     }
+        */
 });
 
 /*
