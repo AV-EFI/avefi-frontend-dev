@@ -1,11 +1,12 @@
-import { getToken, getServerSession } from "#auth";
+//import { getToken, getServerSession } from "#auth";
 
 export default defineEventHandler(async (event) => {
 
+    /*
     const token = await getToken({ event });
     console.log("###token###");
     console.log(token);
-
+*/
     /*
     const session = await getServerSession(event);
     if (!session) {

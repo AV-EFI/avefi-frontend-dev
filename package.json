@@ -12,7 +12,7 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
-    "@elastic/search-ui": "^1.21.1",
+    "@elastic/search-ui": "^1.21.5",
     "@elastic/search-ui-app-search-connector": "^1.21.1",
     "@elastic/search-ui-elasticsearch-connector": "^1.21.1",
     "@faker-js/faker": "^8.4.1",
@@ -29,9 +29,9 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/color-mode": "^3.3.2",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@sidebase/nuxt-auth": "^0.6.7",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/lodash": "^4.17.0",
+    "@types/mime": "^4.0.0",
     "@types/pg": "^8.10.9",
     "@vueuse/core": "^10.7.2",
     "@vueuse/nuxt": "^10.7.2",

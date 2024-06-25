@@ -17,7 +17,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@formkit/nuxt',
     'nuxt-icon',
-    '@sidebase/nuxt-auth',
     '@vueuse/nuxt',
   ],
   extends: './pages',
@@ -128,4 +127,4 @@ export default defineNuxtConfig({
     exposeConfig: true,
     viewer: true,
   }
-})
+});
