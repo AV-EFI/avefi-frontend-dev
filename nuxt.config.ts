@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-
     nitro: {
         preset: "cloudflare-pages"
     },
@@ -65,6 +64,7 @@ export default defineNuxtConfig({
     css: ["~/assets/scss/main.scss"],
     vite: {
         build: {
+            /*
             rollupOptions: {
                 // make sure to externalize deps that shouldn't be bundled
                 // into your library
@@ -77,12 +77,15 @@ export default defineNuxtConfig({
                     },
                 },
             }
+                */
         },
+        /*
         resolve: {
             dedupe: [
                 'vue'
             ]
         },
+        */
         css: {
             preprocessorOptions: {
                 scss: {
