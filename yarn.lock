@@ -1495,7 +1495,7 @@
     rc9 "^2.1.2"
     semver "^7.6.2"
 
-"@nuxt/devtools@^1.3.3", "@nuxt/devtools@latest":
+"@nuxt/devtools@^1.3.3", "@nuxt/devtools@^1.3.6":
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/@nuxt/devtools/-/devtools-1.3.6.tgz#cac00f590d0eedce5985c1afd187dc233a53d487"
   integrity sha512-M3sRQDKG/iK+iQmvIl9vfEgc/Nv1D6S7GFvhmq1s7ZCSkrmZPGWLxRkIAJOwZk+WnvjYUHkN6XCcoi9a1EWmrA==
@@ -10755,7 +10755,7 @@ vue-matomo@^4.2.0:
   resolved "https://registry.yarnpkg.com/vue-matomo/-/vue-matomo-4.2.0.tgz#d65e369e4ead1d95ef790bef3627512cac3d25e9"
   integrity sha512-m5hCw7LH3wPDcERaF4sp/ojR9sEx7Rl8TpOyH/4jjQxMF2DuY/q5pO+i9o5Dx+BXLSa9+IQ0qhAbWYRyESQXmA==
 
-vue-router@^4.2.5, vue-router@^4.3.3:
+vue-router@^4.2.5, vue-router@^4.3.3, vue-router@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.4.0.tgz#128e3fc0c84421035a9bd26027245e6bd68f69ab"
   integrity sha512-HB+t2p611aIZraV2aPSRNXf0Z/oLZFrlygJm+sZbdJaW6lcFqEDQwnzUBXn+DApw+/QzDU/I9TeWx9izEjTmsA==
@@ -10774,7 +10774,7 @@ vue3-toastify@^0.2.1:
   resolved "https://registry.yarnpkg.com/vue3-toastify/-/vue3-toastify-0.2.1.tgz#d3999c9f29add53416b0bc23f3ede81cf724b654"
   integrity sha512-u4i5LCu1q5qs4L4Kbjb4u8NipCS8ox1fCHQ6XFS62676xnA6Q/AJRpZEkAurTMp723LeH6eQX6k9+24bKf1T4Q==
 
-vue@^3.2.45, vue@^3.3.8, vue@^3.4.29:
+vue@^3.2.45, vue@^3.3.8, vue@^3.4.29, vue@^3.4.30:
   version "3.4.30"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.4.30.tgz#02c75c63a21e305c38a937866d8ee2269b62bbb4"
   integrity sha512-NcxtKCwkdf1zPsr7Y8+QlDBCGqxvjLXF2EX+yi76rV5rrz90Y6gK1cq0olIhdWGgrlhs9ElHuhi9t3+W5sG5Xw==
