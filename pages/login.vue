@@ -48,8 +48,7 @@
 </template>
 
 <script setup lang="ts">
-import Credentials from 'next-auth/providers/credentials';
-import { string } from 'zod';
+const Credentials = null;
 
 definePageMeta({
     middleware: 'auth',
@@ -77,8 +76,10 @@ if(coo.value) {
 //const headers = useRequestHeaders(['cookie']) as HeadersInit;
 //console.log(headers);
 
-const { signIn, getSession } = await useAuth();
-console.log(await getSession());
+//const { signIn, getSession } = await useAuth();
+const signIn = null; 
+const getSession = null;
+//console.log(await getSession());
 
 
 //const { login } = useStrapiAuth();
@@ -92,6 +93,7 @@ const handleIconClick = (node:FormKitNode, e:Event) => {
 
 
 async function submit(data:any){
+    /*
     try {
         const {error, url} = await signIn(Credentials, { callbackUrl: '/protected/me', redirect: true, external:true, identifier: data.identifier, password: data.password } );
         if(error) {
@@ -105,5 +107,6 @@ async function submit(data:any){
     catch (e) {
         console.error(e);
     }
+        */
 }
 </script>
