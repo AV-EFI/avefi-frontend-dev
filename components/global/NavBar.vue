@@ -76,7 +76,7 @@ const objectListStore = useObjectListStore();
               </div>
             </li>
             <li>
-              <a href="/search">
+              <a href="/search_altern">
                 {{ $t("filmresearch") }}
               </a>
             </li>
@@ -130,7 +130,7 @@ const objectListStore = useObjectListStore();
             </button>
           </li>
           <li>
-            <a href="/search">{{ $t("filmresearch") }}</a>
+            <a href="/search_altern">{{ $t("filmresearch") }}</a>
           </li>
           <li v-if="data?.username">
             <a href="/protected/filmident">{{ $t("filmidentification") }}
@@ -212,7 +212,7 @@ const objectListStore = useObjectListStore();
             class="btn btn-outline w-1/2"
             @click="toggleDrawer"
           >
-            <CompareIcon :alt="Comparison" />
+            <CompareIcon alt="Comparison" />
           </button>
         </div>
         <ul

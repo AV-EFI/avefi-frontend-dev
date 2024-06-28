@@ -127,7 +127,7 @@ export default defineNuxtConfig({
         storesDirs: ['stores']
     },
     tailwindcss: {
-        exposeConfig: true,
-        viewer: true,
+        exposeConfig: false,
+        viewer: false,
     }
 });

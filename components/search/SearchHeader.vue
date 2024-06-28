@@ -14,7 +14,7 @@
           </div>
           <input
             type="submit"
-            class="button sui-search-box__submit"
+            class="button sui-search-box__submit btn tbn-primary"
             value="Search"
           >
         </div>
@@ -26,6 +26,6 @@
 <script>
 export default {
     props: ["modelValue"],
-    emits: ["update:modelValue"]
+    emits: ["update:modelValue", "submit"]
 };
 </script>

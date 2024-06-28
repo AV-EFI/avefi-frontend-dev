@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="facet.data.length"
+    v-show="facet?.data?.length"
     class="sui-multi-checkbox-facet sui-facet"
   >
     <div class="sui-multi-checkbox-facet__label">
@@ -8,7 +8,7 @@
     </div>
     <div class="sui-multi-checkbox-facet__options-list">
       <label
-        v-for="facetItem in facet.data"
+        v-for="facetItem in facet?.data"
         :key="getValue(facetItem, facet.type)"
         class="sui-multi-checkbox-facet__option-label"
       >

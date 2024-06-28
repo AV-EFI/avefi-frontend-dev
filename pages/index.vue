@@ -27,7 +27,7 @@ const sessionData = null;
           <div class="hero-content flex-col lg:flex-row-reverse">          
             <div class="card shrink-0 w-full max-w-full bg-primary-100 dark:bg-primary-900 shadow-2xl">
               <div class="card-body">
-                <GlobalSearchComp />
+                <GlobalSearchCompReduced />
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@ const sessionData = null;
       <div class="divider lg:divider-horizontal divider-neutral" />      
       <div class="text-center lg:text-left lg:w-1/4 ml-4">
         <article class="prose">
-          <h2 class="">
+          <h2 class="text-xl">
             Welcome to the AVefi homepage
           </h2>
           <p class="py-6">
