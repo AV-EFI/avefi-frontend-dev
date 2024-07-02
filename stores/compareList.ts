@@ -10,7 +10,8 @@ interface ObjectItem {
 // Define the state shape of the store
 interface ObjectListState {
     objects: ObjectItem[];
-    drawerOpen: boolean;
+    comparisonDrawerOpen: boolean;
+    facetDrawerOpen: boolean;
 }
 
 // Define and export the store
@@ -18,7 +19,8 @@ export const useObjectListStore = defineStore({
     id: 'objectList',
     state: (): ObjectListState => ({
         objects: [],
-        drawerOpen: false as boolean
+        comparisonDrawerOpen: false as boolean,
+        facetDrawerOpen: false as boolean
     }),
     getters: {
         getObjectIds(): string[] {
@@ -55,7 +57,8 @@ export const useObjectListStore = defineStore({
             }
         },
         toggleDrawerState() {
-            this.drawerOpen = !this.drawerOpen;
+            //this.comparisonDrawerOpen = !this.comparisonDrawerOpen;
+            this.facetDrawerOpen = !this.facetDrawerOpen;
         }
     },
     persist: {

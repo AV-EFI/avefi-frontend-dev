@@ -20,12 +20,6 @@ export default defineNuxtPlugin(() => {
                         toast('Something happened');
                     }
                 });
-            /*
-        const t = setTimeout(() => {
-            useObjectStore.toggleDrawerState();
-            clearTimeout(t);
-        }, 300);
-        */
         }
     });
 

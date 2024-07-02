@@ -1,0 +1,203 @@
+<template>
+  <div class="drawer w-0 md:w-full md:w-[20em] drawer-start md:drawer-open">
+    <input
+      id="facet_drawer"
+      type="checkbox"
+      class="drawer-toggle"
+      :checked="objectListStore.facetDrawerOpen"
+    >
+    <div class="drawer-side z-20 h-full">
+      <label
+        aria-label="close sidebar"
+        class="drawer-overlay z-99"
+        @click="toggleDrawer"
+      />
+      <div class="menu p-4 w-[100vw] md:w-64 lg:w-80 min-h-full bg-base-100 text-base-content">
+        <div class="flex flex-row justify-end">
+          <button 
+            class="btn btn-outline btn-ghost w-16 md:hidden"
+            title="Close drawer"
+            @click="$toggleDrawerState"
+          >
+            <Icon name="formkit:caretleft" />
+          </button>
+        </div>
+        <div class="w-100 flex flex-row p-2">
+          <div class="search-panel__filters md:mr-1">
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Type
+                </p>
+              </template>
+              <ais-refinement-list
+                attribute="type"
+                :class-names="{
+                  'ais-RefinementList-label': 'p-0'
+                }"
+              />
+            </ais-panel>
+
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Actors
+                </p>
+              </template>
+              <ais-refinement-list
+                searchable
+                attribute="actors"
+                :class-names="{
+                  'ais-RefinementList-label': 'p-0'
+                }"
+              />
+            </ais-panel>
+            <div>
+              <p class="text-base text-primary-400">
+                Produktionsland
+              </p>
+              <p class="text-base text-primary-400">
+                Produktionsjahr
+              </p>
+              <p class="text-base text-primary-400">
+                Materialart (z.B. Dupnegativ)
+              </p>
+              <p class="text-base text-primary-400">
+                Manifestationstyp
+              </p>
+              <p class="text-base text-primary-400">
+                Materialformat (z.B. 35mm)
+              </p>
+              <p class="text-base text-primary-400">
+                Länge in Metern/Dauer in Minuten
+              </p>
+              <p class="text-base text-primary-400">
+                Sprachangaben
+              </p>
+              <p class="text-base text-primary-400">
+                Farbigkeit
+              </p>
+              <p class="text-base text-primary-400">
+                Ton
+              </p>
+            </div>
+            <!-- TBD -->
+            <!--
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Produktionsland
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Produktionsjahr
+                </p>
+              </template>
+              <p>TBD</p>
+              <ais-range-input
+                attribute="string"
+                :min="1900"
+                :max="2024"
+                :precision="0"
+              />
+            </ais-panel>
+
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Regie
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Manifestationstyp
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Materialart (z.B. Dupnegativ)
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Materialformat (z.B. 35mm)
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Länge in Metern/Dauer in Minuten
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Sprachangaben
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Farbigkeit
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Ton
+                </p>
+              </template>
+              <p>TBD</p>
+            </ais-panel>
+          -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts">
+const objectListStore = useObjectListStore();
+const toggleDrawer = (() => {
+    objectListStore.facetDrawerOpen = !objectListStore.facetDrawerOpen;
+});
+
+const removeObject = (index) => {
+    objectListStore.removeObject(index);
+};
+
+const removeAllObjects = () => {
+    console.log("removeAll");
+    objectListStore.removeAllObjects();
+    console.log('Objects after removal:', objectListStore.objects);
+};
+
+const navigateToComparison = () => {
+    const objectIds: number[] = objectListStore.getObjectIds;
+    if(objectIds.length == 2) {
+        navigateTo(`/protected/compare?compare=[${objectIds[0]},${objectIds[1]}]`);
+    }
+};
+</script>

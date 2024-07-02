@@ -1,5 +1,5 @@
 <template>
-  <div class="min-w-96 min-h-24">
+  <div class="w-full xl:w-1/2 min-w-48 lg:min-w-64 min-h-24">
     <FormKit
       id="searchComp"
       v-model="searchDataStore.formData"
@@ -7,28 +7,25 @@
       :actions="false"
       name="searchComp"
     >
-      <FormKit 
-        id="regularSearch"
-        type="group"
-        name="regularSearch"
-        preserve="true"
-      />
       <FormKit
         v-model="searchTerm"
-        label="Wert"
         name="searchTerm"
         placeholder="Suchbegriff"
         type="text"
+        prefix-icon="search"
+        outer-class="w-full !max-w-none xl:w-128"
+        inner-class="rounded-3xl"
+        input-class="!text-lg p-2"
+        autofocus
+      />
+      <FormKit
+        type="button"
+        label="Suchen"
+        title="Search"
+        class="btn-primary"
+        @click="redirectToSearchScreen"
       />
     </Formkit>
-    <FormKit
-      type="button"
-      label="Suchen"
-      title="Search"
-      suffix-icon="search"
-      class="btn-primary"
-      @click="redirectToSearchScreen"
-    />
   </div>
 </template>
 <script setup lang="ts">

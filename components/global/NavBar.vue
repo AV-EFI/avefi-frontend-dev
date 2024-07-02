@@ -115,6 +115,8 @@ const objectListStore = useObjectListStore();
         <GlobalSearchComp />
       </div>
       -->
+
+
       <!-- XL Part -->
       <div class="navbar-end flex hidden xl:flex">
         <ul class="menu menu-horizontal items-center mb-2 justify-self-end px-1 ">
@@ -188,46 +190,48 @@ const objectListStore = useObjectListStore();
             </a>
           </li>
         </ul>
-      </div>
-      <div class="dropdown dropdown-end inline-flex md:hidden">
-        <div
-          tabindex="0"
-          role="button"
-          title="This is you"
-          class="btn btn-ghost btn-circle avatar"
-        >
-          <div class="w-10 rounded-full">
-            <a
-              alt="Zur Anmeldung"
-              href="/login"
-            ><Icon
-              name="fa-regular:user"
-              size="1.2em"
-              alt="Login"
-            />
-            </a>
-          </div>
-          <button 
 
-            class="btn btn-outline w-1/2"
-            @click="toggleDrawer"
+
+        <div class="dropdown dropdown-end inline-flex md:hidden">
+          <div
+            tabindex="0"
+            role="button"
+            title="This is you"
+            class="btn btn-ghost btn-circle avatar"
           >
-            <CompareIcon alt="Comparison" />
-          </button>
+            <div class="w-10 rounded-full">
+              <a
+                alt="Zur Anmeldung"
+                href="/login"
+              ><Icon
+                name="fa-regular:user"
+                size="1.2em"
+                alt="Login"
+              />
+              </a>
+            </div>
+            <button 
+
+              class="btn btn-outline w-1/2"
+              @click="toggleDrawerState"
+            >
+              <CompareIcon alt="Comparison" />
+            </button>
+          </div>
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
         </div>
-        <ul
-          tabindex="0"
-          class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <a class="justify-between">
-              Profile
-              <span class="badge">New</span>
-            </a>
-          </li>
-          <li><a>Settings</a></li>
-          <li><a>Logout</a></li>
-        </ul>
       </div>
     </div>
   </nav>

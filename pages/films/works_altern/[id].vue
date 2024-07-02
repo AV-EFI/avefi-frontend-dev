@@ -1,14 +1,5 @@
 <template>
   <div>
-    <div class="collapse">
-      <input type="checkbox"> 
-      <div class="collapse-title font-medium">
-        Raw data
-      </div>
-      <div class="collapse-content"> 
-        <pre>{{ dataJsonModel }}</pre>
-      </div>
-    </div>
     <NuxtLayout name="partial-layout-1-center">
       <template #actions>
         <div class="hidden">
@@ -37,7 +28,15 @@
         </div>
       </template>
     </NuxtLayout>
-    <div class="h-96" />
+    <div class="collapse">
+      <input type="checkbox"> 
+      <div class="collapse-title font-medium">
+        Raw data
+      </div>
+      <div class="collapse-content"> 
+        <pre>{{ dataJsonModel }}</pre>
+      </div>
+    </div>
   </div>
 </template>
 

@@ -22,11 +22,11 @@ const sessionData = null;
 <template>
   <div class="container flex justify-items flex-col lg:flex-row w-full mx-auto">
     <div class="flex flex-col lg:flex-row container mx-auto p-4">
-      <div class="lg:w-3/4">
-        <div class="hero min-h-96 bg-base-100">
-          <div class="hero-content flex-col lg:flex-row-reverse">          
-            <div class="card shrink-0 w-full max-w-full bg-primary-100 dark:bg-primary-900 shadow-2xl">
-              <div class="card-body">
+      <div class="w-full lg:w-3/4">
+        <div class="hero bg-base-100">
+          <div class="hero-content min-h-48 w-full xl:w-3/4 flex-col lg:flex-row-reverse">          
+            <div class="card shrink-0 w-full dark:bg-primary-900">
+              <div class="card-body p-2 md:p-4 w-full xl:max-w-96">
                 <GlobalSearchCompReduced />
               </div>
             </div>
@@ -34,15 +34,20 @@ const sessionData = null;
         </div>
       </div>
       <div class="divider lg:divider-horizontal divider-neutral" />      
-      <div class="text-center lg:text-left lg:w-1/4 ml-4">
-        <article class="prose">
+      <div class="text-center lg:text-left w-full lg:w-1/4 ml-4">
+        <article class="">
           <h2 class="text-xl">
             Welcome to the AVefi homepage
           </h2>
+          <a
+            class="link link-primary"
+            href="/films/works_altern/6926658770567168"
+          >
+            Detailansicht Werk
+          </a>
           <p class="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
           </p>
-          <GlobalAccessDenied v-if="!sessionData" />
         </article>
       </div>
     </div>

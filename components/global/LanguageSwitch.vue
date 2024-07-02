@@ -11,7 +11,6 @@
         Deutsch
       </option>
     </select>
-    <p>{{ $t("welcome") }}</p>
   </form>
 </template>
 <script setup lang="ts">

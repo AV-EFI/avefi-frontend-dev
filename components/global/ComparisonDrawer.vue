@@ -4,7 +4,7 @@
       id="comparison_drawer"
       type="checkbox"
       class="drawer-toggle"
-      :checked="objectListStore.drawerOpen"
+      :checked="objectListStore.comparisonDrawerOpen"
     >
     <div class="drawer-side z-20">
       <label
@@ -65,7 +65,7 @@
 <script setup lang="ts">
 const objectListStore = useObjectListStore();
 const toggleDrawer = (() => {
-    objectListStore.drawerOpen = !objectListStore.drawerOpen;
+    objectListStore.comparisonDrawerOpen = !objectListStore.comparisonDrawerOpen;
 });
 
 const removeObject = (index) => {

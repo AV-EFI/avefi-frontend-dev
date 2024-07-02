@@ -4,13 +4,14 @@
 import VueMatomo from 'matomo-ts';
 
 export default defineNuxtPlugin(() => {
+    //todo: enable when available
     try {
-        VueMatomo.default().init(useRuntimeConfig().public.analyticsUrl, "1");
-        window._paq.push(['trackPageView']); //To track pageview
-        console.log("matomo connected");
+        //VueMatomo.default().init(useRuntimeConfig().public.analyticsUrl, "1");
+        //window._paq.push(['trackPageView']); //To track pageview
+        //console.log("matomo connected");
     }
     catch (e) {
-        console.error(e);
+        //console.error(e);
     }
     /*
     nuxtApp.vueApp.use(VueMatomo, {
