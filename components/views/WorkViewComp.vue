@@ -2,13 +2,13 @@
   <div>
     <div class="mb-2">
       <h2
-        class="text-lg mb-2 text-ellipsis text-wrap overflow-hidden max-w-full"
+        class="text-lg mb-2  dark:text-primary-100 text-ellipsis text-wrap overflow-hidden max-w-full"
         :alt="dataJson.has_record.has_primary_title.has_name"
       >
         {{ dataJson.has_record.has_primary_title.has_name }}
       </h2>
       <div class="grid-container">
-        <div class="grid md:grid-cols-12 gap-2 bg-base-200 grid-flow-dense xs:auto-cols-min">
+        <div class="grid md:grid-cols-12 gap-2 grid-flow-dense xs:auto-cols-min">
           <!--left-->
           <div class="md:col-span-8 col-span-12">
             <ul v-if="dataJson.has_record.same_as">
@@ -34,17 +34,19 @@
                 </a>
               </li>
             </ul>
-            <h2>ID:</h2>
+            <h2 class=" dark:text-primary-100">
+              ID:
+            </h2>
             <pre class="text-wrap">{{ dataJson.has_record.id }}</pre>            
           </div>
           <!--right-->
           <div class="col-span-12 md:col-span-4">
-            <div class="grid grid-cols-12 gap-2 bg-base-200">
+            <div class="grid grid-cols-12 gap-2 ">
               <div
                 v-if="dataJson.has_record.type"
                 class="col-span-12 md:col-span-6"
               >
-                <h2 class="md:float-right">
+                <h2 class="md:float-right dark:text-primary-100">
                   {{ $t('Type') }}:
                 </h2>
               </div>
@@ -55,7 +57,7 @@
               </div>
               <!-- Genre -->
               <div class="col-span-12 md:col-span-6">
-                <h2 class="md:float-right">
+                <h2 class="md:float-right dark:text-primary-100">
                   {{ $t('avefi:Genre') }}:
                 </h2>
               </div>
@@ -80,7 +82,7 @@
       v-if="dataJson.has_record.has_event"
     >
       <div class="grid-container">
-        <div class="grid grid-cols-12 gap-2 bg-base-200">
+        <div class="grid grid-cols-12 gap-2 ">
           <!-- has_event -->
           <div class="col-span-12 md:col-span-7">
             <div
@@ -89,10 +91,12 @@
               class="grid grid-cols-7 gap-3 event"
             >
               <div class="col-span-full">
-                <h2>{{ $t(has_event_item.category) }}</h2>
+                <h2 class=" dark:text-primary-100">
+                  {{ $t(has_event_item.category) }}
+                </h2>
               </div>
               <div class="col-span-full md:col-span-2">
-                <span class="text-md font-bold text-primary-900 md:float-right">
+                <span class="text-md font-bold text-primary-900 dark:text-primary-100 md:float-right">
                   Jahr:
                 </span>
               </div>
@@ -100,7 +104,7 @@
                 {{ has_event_item.has_date }}
               </div>
               <div class="col-span-full md:col-span-2">
-                <span class="text-md font-bold text-primary-900 md:float-right">
+                <span class="text-md font-bold text-primary-900  dark:text-primary-100 md:float-right">
                   Ort:
                 </span>
               </div>
@@ -121,7 +125,7 @@
                 class="grid col-span-7 grid-cols-7 gap-3 activity"
               >
                 <div class="col-span-full md:col-span-2">
-                  <span class="text-md font-bold text-primary-900 md:float-right">
+                  <span class="text-md font-bold text-primary-900  dark:text-primary-100 md:float-right">
                     {{ $t(has_activity_item.type) }}:
                   </span>
                 </div>
@@ -177,7 +181,7 @@
             v-if="dataJson.has_record.described_by"
             class="col-span-full md:col-span-2"
           >
-            <span class="text-md font-bold text-primary-900 md:float-right">Described by:</span>
+            <span class="text-md font-bold text-primary-900  dark:text-primary-100 md:float-right">Described by:</span>
           </div>
           <div class="col-span-full md:col-span-8">
             <p>{{ dataJson.has_record.described_by.has_issuer_name }}</p>

@@ -35,7 +35,7 @@ const objectListStore = useObjectListStore();
 const addToComparison = ((filmId:number, filmTitle?:string) => {
     objectListStore.addObject({ filmId: filmId, filmTitle: filmTitle? filmTitle:undefined });
     console.log(objectListStore.objects);
-    objectListStore.toggleDrawerState();
+    objectListStore.toggleComparisonDrawerState();
 });
 
 </script>

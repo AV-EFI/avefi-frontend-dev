@@ -15,15 +15,15 @@
       <div class="menu p-4 w-96 min-h-full bg-base-100 text-base-content">
         <div class="w-100 flex flex-row p-2">
           <button 
-            class="btn btn-outline btn-ghost w-1/3"
+            class="btn btn-outline btn-primary w-1/3"
             title="Close drawer"
-            @click="$toggleDrawerState"
+            @click="$toggleComparisonDrawerState"
           >
             <Icon name="fa-regular:window-close" />
           </button>
           <button
             title="Go to comp"
-            class="btn btn-outline w-2/3"
+            class="btn btn-outline btn-accent w-2/3"
             :class="objectListStore.objects.length != 2 && 'btn-disabled'"
             @click="navigateToComparison"
           >

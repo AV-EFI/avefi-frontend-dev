@@ -1,98 +1,107 @@
 <template>
   <div class="form mt-8">
-    <label
-      for="language"
-      class="mr-2"
-    >Type:</label>
-    <select
-      id="language"
-      v-model="selected"
-      class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
-    >
-      <option
-        v-for="item in list"
-        :key="item.title"
-        :value="item"
+    <div>
+      <label
+        for="language"
+        class="mr-2"
+      >Type:</label>
+      <select
+        id="language"
+        v-model="selected"
+        class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
       >
-        {{ item.title }}
-      </option>
-    </select>
-    <label
-      for="mode"
-      class="mr-2"
-    >Mode:</label>
-    <select
-      id="mode"
-      v-model="mode"
-      class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
-    >
-      <option
-        v-for="val in modes"
-        :key="val"
+        <option
+          v-for="item in list"
+          :key="item.title"
+          :value="item"
+        >
+          {{ item.title }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label
+        for="mode"
+        class="mr-2"
+      >Mode:</label>
+      <select
+        id="mode"
+        v-model="mode"
+        class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
       >
-        {{ val }}
-      </option>
-    </select>
-    <label
-      for="theme"
-      class="mr-2"
-    >Theme:</label>
-    <select
-      id="theme"
-      v-model="theme"
-      class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
-    >
-      <option
-        v-for="val in themes"
-        :key="val"
+        <option
+          v-for="val in modes"
+          :key="val"
+        >
+          {{ val }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label
+        for="theme"
+        class="mr-2"
+      >Theme:</label>
+      <select
+        id="theme"
+        v-model="theme"
+        class="w-40 py-1 px-3 mr-4 rounded border border-gray-500"
       >
-        {{ val }}
-      </option>
-    </select>
-    <label
-      for="folding"
-      class="mr-2"
-    >Folding:</label>
-    <input
-      id="folding"
-      v-model="folding"
-      type="checkbox"
-      class="form-checkbox"
-    >
+        <option
+          v-for="val in themes"
+          :key="val"
+        >
+          {{ val }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label
+        for="folding"
+        class="mr-2"
+      >Folding:</label>
+      <input
+        id="folding"
+        v-model="folding"
+        type="checkbox"
+        class="form-checkbox"
+      >
+    </div>
   </div>
-  <div class="editor mt-8">
-    <section>
-      <h2 class="text-2xl font-bold mb-4">
-        Editor
-      </h2>
-      <div>
-        <h3 class="text-xl mb-4">
-          Prev
-        </h3>
-        <textarea
-          class="p-4 rounded-lg border-2 border-gray-500"
-          v-html="prev"
-        />
+  <div class="collapse collapse-arrow border-1 border-base-200 dark:border-neutral-400">
+    <div class="collapse-content">
+      <div class="editor mt-8">
+        <section>
+          <h2 class="text-2xl font-bold mb-4">
+            Editor
+          </h2>
+          <div>
+            <h3 class="text-xl mb-4">
+              Prev
+            </h3>
+            <textarea
+              class="p-4 rounded-lg border-2 border-gray-500"
+              v-html="prev"
+            />
+          </div>
+          <div>
+            <h3 class="text-xl mb-4">
+              Current
+            </h3>
+            <textarea
+              class="p-4 rounded-lg border-2 border-gray-500"
+              v-html="current"
+            />
+          </div>
+        </section>    
       </div>
-      <div>
-        <h3 class="text-xl mb-4">
-          Current
-        </h3>
-        <textarea
-          class="p-4 rounded-lg border-2 border-gray-500"
-          v-html="current"
-        />
-      </div>
-    </section>
+    </div>
   </div>
-  <div class="viewer">
+  <div class="viewer flex flex-row flex-wrap">
     <section class="mt-8 min-h-96">
       <h2 class="text-2xl font-bold mb-4">
         Diff
       </h2>
-      <p class="text-gray-100 mb-4">
-        inputDelay and virtualScroll option are set for large text diff.
-      </p>
       <Diff
         :mode="mode"
         :theme="theme"
@@ -178,7 +187,17 @@ const list = ref<ListItem[]>([
 ]);
 
 async function getCollectionType (routeParamsId:number):Promise<string> {  
-    const { data } = await useApiFetchLocal<IAVefiListResponse>(`/api/work-levels/${routeParamsId}?populate=*`, {method: 'GET'});
+    const { data } = await useApiFetchLocal<IAVefiListResponse>(
+        `https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243/imdb_movies/_doc/${routeParamsId}`,
+        {method: 'GET',
+            headers: {
+                'Authorization': 'ApiKey a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
+            }
+        }
+    );
+    
+    console.log(data);
+    
     if(data) {
         return JSON.stringify(data.value, null, 2);
     }

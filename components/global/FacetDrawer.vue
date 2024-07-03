@@ -1,5 +1,5 @@
 <template>
-  <div class="drawer w-0 md:w-full md:w-[20em] drawer-start md:drawer-open">
+  <div class="drawer w-0 md:w-[20em] drawer-start md:drawer-open">
     <input
       id="facet_drawer"
       type="checkbox"
@@ -17,7 +17,7 @@
           <button 
             class="btn btn-outline btn-ghost w-16 md:hidden"
             title="Close drawer"
-            @click="$toggleDrawerState"
+            @click="$toggleFacetDrawerState"
           >
             <Icon name="formkit:caretleft" />
           </button>
@@ -33,7 +33,8 @@
               <ais-refinement-list
                 attribute="type"
                 :class-names="{
-                  'ais-RefinementList-label': 'p-0'
+                  'ais-RefinementList-label': 'p-0',
+                  'ais-RefinementList-labelText': 'dark:text-primary-50'
                 }"
               />
             </ais-panel>
@@ -48,7 +49,9 @@
                 searchable
                 attribute="actors"
                 :class-names="{
-                  'ais-RefinementList-label': 'p-0'
+                  'ais-RefinementList-label': 'p-0',
+                  'ais-RefinementList-labelText': 'dark:text-primary-50',
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
                 }"
               />
             </ais-panel>

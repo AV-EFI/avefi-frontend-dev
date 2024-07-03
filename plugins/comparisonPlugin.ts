@@ -27,7 +27,8 @@ export default defineNuxtPlugin(() => {
         provide: {
             addToComparison: $addToComparison,
             //ref by $toggleDrawerState
-            toggleDrawerState: useObjectStore.toggleDrawerState
+            toggleComparisonDrawerState: useObjectStore.toggleComparisonDrawerState,
+            toggleFacetDrawerState: useObjectStore.toggleFacetDrawerState
         }
     };
 });

@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn btn-secondary"
+    class="btn btn-accent"
     :class="[btnSize]"
     :alt="`Add ${filmTitle} to comp`"
     :data-id="filmId"
@@ -28,7 +28,7 @@ const props = defineProps({
     'btnSize': {
         type: String,
         required: false,
-        default: 'btn-md'
+        default: 'btn-sm'
     }
 });
 

@@ -56,9 +56,12 @@ export const useObjectListStore = defineStore({
                 this.objects.splice(index, 1);
             }
         },
-        toggleDrawerState() {
+        toggleFacetDrawerState() {
             //this.comparisonDrawerOpen = !this.comparisonDrawerOpen;
             this.facetDrawerOpen = !this.facetDrawerOpen;
+        },
+        toggleComparisonDrawerState() {
+            this.comparisonDrawerOpen = !this.comparisonDrawerOpen;
         }
     },
     persist: {

@@ -13,8 +13,8 @@
         placeholder="Suchbegriff"
         type="text"
         prefix-icon="search"
-        outer-class="w-full !max-w-none xl:w-128"
-        inner-class="rounded-3xl"
+        outer-class="w-full !ml-0 md:ml-2 !max-w-none xl:w-128"
+        inner-class="!rounded-3xl"
         input-class="!text-lg p-2"
         autofocus
       />

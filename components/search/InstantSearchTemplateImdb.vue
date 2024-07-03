@@ -21,26 +21,34 @@
                   autofocus 
                   placeholder=""
                   show-loading-indicator
+                  :class-names="{
+                    'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2',
+                    'ais-SearchBox-form': 'MySearchBoxForm',
+                  }"
                 />
               </div>
               <div
-                class="w-full flex justify-between md:justify-end"
+                class="w-full flex flex-col md:flex-row justify-between md:justify-end"
                 mb-2
               >
-                <button
-                  class="btn btn-primary md:hidden"
-                  title="Show facet items"
-                  @click="$toggleDrawerState"
-                >
-                  <Icon name="formkit:caretright" />&nbsp;Show Facet Items
-                </button>
-
-                <div class="w-1/3">
+                <div class="w-full md:w-1/3">
+                  <button
+                    class="btn btn-primary md:hidden"
+                    title="Show facet items"
+                    @click="$toggleFacetDrawerState"
+                  >
+                    <Icon name="formkit:caretright" />&nbsp;Show Facet Items
+                  </button>
+                </div>
+                <div class="w-full md:w-1/3">
                   <p class="label text-xs font-bold">
                     Sortierung (nicht aktiv)
                   </p>
                   <ais-sort-by
-                    class="input-md text-md w-full p-0"
+                    class="input-md text-md w-full p-0 dark:bg-transparent"
+                    :classes="{
+                      'ais-SortBy-select': '!dark:bg-transparent'
+                    }"
                     aria-disabled="true"
                     disabled="disabled"
                     :select="{'disabeld': 'disabled'}"
@@ -72,6 +80,7 @@
                             Produktionsfirma
                           </th>
                           <th class="border border-slate-300" />
+                          <th class="border border-slate-300" />
                         </tr>
                       </thead>
                       <tbody>
@@ -89,7 +98,10 @@
 }"
                             :title="item.title"
                           >
-                            {{ item.title }}
+                            <ais-highlight
+                              attribute="title"
+                              :hit="item"
+                            />
                           </td>
                           <td
                             class="border border-slate-200"
@@ -105,6 +117,12 @@
                           <td class="border border-slate-200" />
                           <td class="border border-slate-200" />
                           <td class="border border-slate-200" />
+                          <td class="border border-slate-200">
+                            <AddToComparisonComp
+                              :film-id="item.objectID"
+                              :film-title="item.title"
+                            />
+                          </td>
                           <td class="border border-slate-200">
                             <button
                               type="button"

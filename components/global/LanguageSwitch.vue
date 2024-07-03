@@ -2,7 +2,7 @@
   <form>
     <select
       v-model="locale"
-      class="px-4 py-1 w-32 text-sm text-primary-600 font-semibold rounded-full border focus:ring-offset-2"
+      class="px-4 py-1 w-32 text-sm text-primary-600 font-semibold rounded-full border focus:ring-offset-2 dark:text-white"
     >
       <option value="en">
         English

@@ -26,3 +26,8 @@ if(params.value.slug) {
     searchTerm.value = params.value.slug[0];
 }
 </script>
+<style>
+.ais-SearchBox-form, .ais-SearchBox-input, .ais-SortBy-select {
+  background-color:transparent!important;
+}
+</style>

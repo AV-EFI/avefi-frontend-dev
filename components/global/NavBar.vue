@@ -20,7 +20,7 @@ const objectListStore = useObjectListStore();
 <template>
   <nav class="h-24 md:h-full navbar border-b-2 bg-neutral-50 dark:dark:bg-gray-800 dark:text-white dark:border-gray-700">
     <div class="container flex justify-between mx-auto">
-      <div class="navbar-start">
+      <div class="navbar-start navbar-start w-full flex justify-between">
         <div class="dropdown">
           <div
             tabindex="0"
@@ -83,10 +83,10 @@ const objectListStore = useObjectListStore();
             <li v-if="objectListStore.objects?.length > 0">
               <button
                 title="Show comparison items"
-                @click="$toggleDrawerState"
+                @click="$toggleComparisonDrawerState"
               >
                 {{ $t("comparison") }}
-                <span class="indicator-item badge badge-accent text-white">
+                <span class="indicator-item badge badge-error text-white">
                   {{ objectListStore.objects?.length }}
                 </span>
               </button>
@@ -123,10 +123,10 @@ const objectListStore = useObjectListStore();
           <li v-if="objectListStore.objects?.length > 0">
             <button
               title="Show comparison items"
-              @click="$toggleDrawerState"
+              @click="$toggleComparisonDrawerState"
             >
               {{ $t("comparison") }}
-              <span class="indicator-item badge badge-accent text-white">
+              <span class="indicator-item badge badge-error text-white">
                 {{ objectListStore.objects?.length }}
               </span>
             </button>
@@ -213,7 +213,7 @@ const objectListStore = useObjectListStore();
             <button 
 
               class="btn btn-outline w-1/2"
-              @click="toggleDrawerState"
+              @click="toggleComparisonDrawerState"
             >
               <CompareIcon alt="Comparison" />
             </button>
