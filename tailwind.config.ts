@@ -64,6 +64,7 @@ export default {
         themes: [
             {
                 avefi_light: {
+                    ...require("daisyui/src/theming/themes")["light"],
                     "--primary": "#80a3b5",
                     '--primary-50': '#f3f7f8',
                     '--primary-100': '#dfe9ee',

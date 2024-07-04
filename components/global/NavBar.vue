@@ -20,7 +20,7 @@ const objectListStore = useObjectListStore();
 <template>
   <nav class="h-24 md:h-full navbar border-b-2 bg-neutral-50 dark:dark:bg-gray-800 dark:text-white dark:border-gray-700">
     <div class="container flex justify-between mx-auto">
-      <div class="navbar-start navbar-start w-full flex justify-between">
+      <div class="navbar-start w-full flex justify-between lg:justify-start">
         <div class="dropdown">
           <div
             tabindex="0"
