@@ -66,6 +66,6 @@ export const useObjectListStore = defineStore({
     },
     persist: {
         key: 'avefi-objectList',
-        storage: persistedState.localStorage,
+        storage: persistedState.sessionStorage,
     }
 });

@@ -23,12 +23,10 @@ const sessionData = null;
   <div class="container flex justify-items flex-col lg:flex-row w-full mx-auto">
     <div class="flex flex-col lg:flex-row container mx-auto p-4">
       <div class="w-full lg:w-3/4">
-        <div class="bg-base-100">
-          <div class="hero-content min-h-48 w-full xl:w-3/4 flex-col lg:flex-row-reverse">          
-            <div class="card shrink-0 w-full">
-              <div class="card-body p-2 md:p-4 w-full xl:max-w-96">
-                <GlobalSearchCompReduced />
-              </div>
+        <div class="hero-content min-h-48 w-full xl:w-3/4 flex-col lg:flex-row-reverse">          
+          <div class="card shrink-0 w-full">
+            <div class="card-body p-2 md:p-4 w-full xl:max-w-96">
+              <GlobalSearchCompReduced />
             </div>
           </div>
         </div>

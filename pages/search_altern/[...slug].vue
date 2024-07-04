@@ -30,4 +30,8 @@ if(params.value.slug) {
 .ais-SearchBox-form, .ais-SearchBox-input, .ais-SortBy-select {
   background-color:transparent!important;
 }
+
+.ais-SearchBox-input:focus {
+  border-color:var(--primary);
+}
 </style>

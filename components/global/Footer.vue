@@ -2,8 +2,8 @@
   <client-only>
     <footer class="footer bg-primary-800 text-white dark:bg-gray-800 dark:text-white dark:border-gray-700">
       <div class="container mx-auto flex p-4">        
-        <div class="flex flex-row flex-wrap w-full justify-between">
-          <nav class="flex-1 flex flex-row justify-center w-full min-w-80 md:min-w-48 mb-2">
+        <div class="flex flex-row flex-wrap w-full justify-start md:justify-start md:justify-between">
+          <nav class="flex-1 flex flex-row justify-start md:justify-center w-full min-w-80 md:min-w-48 mb-2">
             <div class="flex flex-col">
               <h6 class="footer-title">
                 {{ $t("language") }}
@@ -11,7 +11,7 @@
               <GlobalLanguageSwitch />
             </div>
           </nav>
-          <nav class="flex-1 flex flex-row justify-center w-full min-w-80 md:min-w-48 mb-2">
+          <nav class="flex-1 flex flex-row justify-start md:justify-center w-full min-w-80 md:min-w-48 mb-2">
             <div class="flex flex-col">
               <h6 class="footer-title">
                 Info
@@ -37,7 +37,7 @@
               </div>
             </div>
           </nav>
-          <nav class="flex-1  flex flex-row justify-center w-full min-w-80 md:min-w-48">
+          <nav class="flex-1  flex flex-row justify-start md:justify-center w-full min-w-80 md:min-w-48">
             <div class="flex flex-col">
               <h6 class="footer-title">
                 {{ $t("theme") }}

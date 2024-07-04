@@ -31,7 +31,7 @@
                 class="w-full flex flex-col md:flex-row justify-between md:justify-end"
                 mb-2
               >
-                <div class="w-full md:w-1/3">
+                <div class="w-full md:w-1/3 mb-1">
                   <button
                     class="btn btn-primary md:hidden"
                     title="Show facet items"
@@ -40,7 +40,18 @@
                     <Icon name="formkit:caretright" />&nbsp;Show Facet Items
                   </button>
                 </div>
-                <div class="w-full md:w-1/3">
+                <div class="w-full md:w-1/3 mb-1">
+                  <FormKit
+                    type="select"
+                    label="Sortierung (nicht aktiv)"
+                    name="sort"
+                    :options="[
+                      'Standard',
+                      'Titel aufst.',
+                      'Titel abst.',
+                    ]"
+                  />
+                  <!--
                   <p class="label text-xs font-bold">
                     Sortierung (nicht aktiv)
                   </p>
@@ -56,6 +67,7 @@
                       { value: 'imdb_movies', label: 'Standard' },
                     ]"
                   />
+                -->
                 </div>
               </div>
               <div class="overflow-x-auto">
@@ -91,11 +103,12 @@
                         >
                           <td
                             class="border border-slate-200"
-                            style="width: 200px;
- overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
-}"
+                            style="
+                              width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                            }"
                             :title="item.title"
                           >
                             <ais-highlight
@@ -105,11 +118,12 @@
                           </td>
                           <td
                             class="border border-slate-200"
-                            style="max-width: 0;
- overflow: hidden;
- text-overflow: ellipsis;
- white-space: nowrap;
-}"
+                            style="
+                              max-width: 0;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                            }"
                             :title="item.plot"
                           >
                             {{ item.plot }}
@@ -202,3 +216,15 @@ const props = defineProps({
     },
 });
 </script>
+<style>
+
+html.dark .ais-Pagination-link {
+  background-color: var(--primary-800)!important;
+  background-image: none!important;
+  color:#fefefe;
+}
+
+html.dark .ais-Pagination-item--disabled .ais-Pagination-link {
+  background-image: none!important;
+}
+</style>

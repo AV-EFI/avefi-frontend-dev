@@ -117,6 +117,12 @@
 </template>
 
 <script setup lang="ts">
+
+const route = useRoute();
+const items = new Array();
+items[0] = route.query.prev;
+items[1] = route.query.next;
+/*
 const props = defineProps({
     'items': {
         type: Array,
@@ -124,6 +130,7 @@ const props = defineProps({
         default: () => []
     }
 });
+*/
 import type { Mode, Theme } from 'types/VueDiffTypes.ts';
 import { ref } from 'vue';
 import type {IAVefiListResponse} from '../../models/interfaces/IAVefiWork';
@@ -205,11 +212,11 @@ async function getCollectionType (routeParamsId:number):Promise<string> {
 }
 
 const { data: prev } = await useAsyncData<string>('prev', () =>
-    getCollectionType((props.items[0] as number))
+    getCollectionType(items[0])
 );
 
 const { data: current } = await useAsyncData<string|undefined>('current', () =>
-    getCollectionType(props.items[1] as number)
+    getCollectionType(items[1])
 );
 
 selected.value = list.value[0];

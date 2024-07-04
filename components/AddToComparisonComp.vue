@@ -1,6 +1,6 @@
 <template>
   <button
-    class="btn btn-accent"
+    class="btn btn-accenttwo"
     :class="[btnSize]"
     :alt="`Add ${filmTitle} to comp`"
     :data-id="filmId"

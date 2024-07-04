@@ -12,18 +12,18 @@
         class="drawer-overlay z-99"
         @click="toggleDrawer"
       />
-      <div class="menu p-4 w-96 min-h-full bg-base-100 text-base-content">
-        <div class="w-100 flex flex-row p-2">
+      <div class="menu p-4 w-96 min-h-full bg-base-50 dark:bg-neutral dark:border-left-white dark:border-l-2 border-neutral-400 text-base-content">
+        <div class="w-100 flex flex-row justify-between p-2">
           <button 
             class="btn btn-outline btn-primary w-1/3"
             title="Close drawer"
             @click="$toggleComparisonDrawerState"
           >
-            <Icon name="fa-regular:window-close" />
+            <Icon name="formkit:caretright" />
           </button>
           <button
             title="Go to comp"
-            class="btn btn-outline btn-accent w-2/3"
+            class="btn btn-accent-2 w-1/3"
             :class="objectListStore.objects.length != 2 && 'btn-disabled'"
             @click="navigateToComparison"
           >
@@ -81,7 +81,7 @@ const removeAllObjects = () => {
 const navigateToComparison = () => {
     const objectIds: number[] = objectListStore.getObjectIds;
     if(objectIds.length == 2) {
-        navigateTo(`/protected/compare?compare=[${objectIds[0]},${objectIds[1]}]`);
+        navigateTo(`/protected/compare?prev=${objectIds[0]}&next=${objectIds[1]}`);
     }
 };
 </script>
