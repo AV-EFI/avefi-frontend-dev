@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
             useObjectStore.addObject({ filmId, filmTitle })
                 .then((added) => {
                     if (added == "listfull") {
-                        toast.warn('Comparison already contains two items');
+                        toast.warn('Comparison must not contains more than two items. Please remove at least one item from the list before adding another one.', { autoClose: 4000 });
                     }
                     else if (added == "already") {
                         toast.warn('Item already in comparison', { autoClose: 3000 });

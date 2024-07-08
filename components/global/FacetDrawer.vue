@@ -42,6 +42,52 @@
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
+                  Year
+                </p>
+              </template>
+              <ais-range-input
+                attribute="released"
+                :min="1900"
+                :max="2025"
+                :precision="0"
+                :class-names="{
+                  'ais-RefinementList-label': 'p-0',
+                  'ais-RefinementList-labelText': 'dark:text-primary-50',
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2',
+                  'ais-RangeInput-input':'max-w-20',
+                  'ais-RangeInput-form': 'flex justify-between',
+                  'ais-RangeInput-submit': 'btn btn-sm btn-primary'
+                }"
+              >
+                <template #submitLabel>
+                  Filtern
+                </template>
+              </ais-range-input>
+            </ais-panel>
+
+
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
+                  Directors
+                </p>
+              </template>
+              <ais-refinement-list
+                searchable
+                attribute="directors"
+                :class-names="{
+                  'ais-RefinementList-label': 'p-0',
+                  'ais-RefinementList-labelText': 'dark:text-primary-50',
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
+                }"
+              />
+            </ais-panel>
+
+
+
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
                   Actors
                 </p>
               </template>
@@ -204,3 +250,8 @@ const navigateToComparison = () => {
     }
 };
 </script>
+<style>
+.ais-RangeInput-submit {
+  background-color: none;
+}
+</style>

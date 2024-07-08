@@ -37,11 +37,12 @@ const sessionData = null;
           <h2 class="text-xl">
             Welcome to the AVefi homepage
           </h2>
+          <span>Temporär bist Testdaten vorhanden:</span>
           <a
             class="link link-primary"
             href="/films/works_altern/6926658770567168"
           >
-            Detailansicht Werk
+            Beispiel für Detailansicht Werk
           </a>
           <p class="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.

@@ -6,6 +6,7 @@
       type="form"
       :actions="false"
       name="searchComp"
+      @submit="redirectToSearchScreen"
     >
       <FormKit
         v-model="searchTerm"

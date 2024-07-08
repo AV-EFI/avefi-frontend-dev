@@ -30,23 +30,23 @@
                 />
               </div>
               <div
-                class="w-full flex flex-col md:flex-row justify-between md:justify-end"
+                class="w-full flex flex-col md:flex-row justify-between md:justify-between"
                 mb-2
               >
-                <div class="w-full md:w-1/3 mb-1">
-                  <button
-                    class="btn btn-primary md:hidden"
-                    title="Show facet items"
-                    @click="$toggleFacetDrawerState"
-                  >
-                    <Icon name="formkit:caretright" />&nbsp;Show Facet Items
-                  </button>
+                <div class="w-full md:w-1/3 mb-1 flex flex-col justify-center">
+                  <ais-stats>
+                    <template #default="{ nbHits }">
+                      <h3 class="text-lg">
+                        {{ nbHits }} Ergebnisse
+                      </h3>
+                    </template>
+                  </ais-stats>
                 </div>
                 <div class="w-full md:w-1/3 mb-1">
                   <FormKit
                     type="select"
                     label="Sortierung (nicht aktiv)"
-                    disabled="disabled"
+                    :disabled="true"
                     name="sort"
                     :options="[
                       'Standard',
@@ -73,25 +73,77 @@
                 -->
                 </div>
               </div>
+              <div class="mt-2 mb-2">
+                <button
+                  class="btn btn-primary md:hidden"
+                  title="Show facet items"
+                  @click="$toggleFacetDrawerState"
+                >
+                  <Icon name="formkit:caretright" />&nbsp;Show Facet Items
+                </button>
+              </div>
+              <div class="mb-4">
+                <h2 class="mb-2">
+                  Aktive Filter:
+                </h2>
+                <ais-current-refinements 
+                  :class-names="{
+                    'ais-CurrentRefinements-item': '!bg-primary !text-white !rounded-2xl !p-2',
+                    'ais-CurrentRefinements-delete': '!text-white'
+                  }"
+                />
+              </div>
+              <div class="mb-4">
+                <ais-clear-refinements 
+                  :class-names="{
+                    'ais-ClearRefinements-button': 'btn !btn-error',
+                    'ais-CurrentRefinements-delete': '!text-white'
+                  }"
+                >
+                  <template #resetLabel>
+                    Alle Filter entfernen
+                  </template>
+                </ais-clear-refinements>
+              </div>
               <div class="overflow-x-auto">
                 <ais-hits>
                   <template #default="{ items }">
                     <table class="table border-collapse border border-slate-400 table-sm">
                       <thead class="bg-primary text-white">
                         <tr>
-                          <th class="border border-slate-300">
-                            Filmtitel
+                          <th
+                            class="border border-slate-300"
+                            alt="Titel"
+                            title="Titel"
+                          >
+                            Titel
                           </th>
-                          <th class="border border-slate-300">
-                            Description
+                          <th
+                            class="border border-slate-300"
+                            alt="Beschreibung"
+                            title="Beschreibung"
+                          >
+                            Beschreibung
                           </th>
-                          <th class="border border-slate-300">
+                          <th
+                            class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
+                            alt="Produktionsjahr"
+                            title="Produktionsjahr"
+                          >
                             Produktionsjahr
                           </th>
-                          <th class="border border-slate-300">
+                          <th
+                            class="border border-slate-300"
+                            alt="Regie"
+                            title="Regie"
+                          >
                             Regie
                           </th>
-                          <th class="border border-slate-300">
+                          <th
+                            class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
+                            alt="Produktionsfirma"
+                            title="Produktionsfirma"
+                          >
                             Produktionsfirma
                           </th>
                           <th class="border border-slate-300" />
@@ -120,19 +172,29 @@
                             />
                           </td>
                           <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 0;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;
-                            }"
+                            class="border border-slate-200 text-clip"
                             :title="item.plot"
                           >
-                            {{ item.plot }}
+                            <span
+                              style="
+                              width: 200px;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 3;
+                              -webkit-box-orient: vertical;  
+                              overflow: hidden;
+                              text-overflow: clip;
+                              vertical-align: top;
+                            }"
+                            >
+                              {{ item.plot }}
+                            </span>
                           </td>
-                          <td class="border border-slate-200" />
-                          <td class="border border-slate-200" />
+                          <td class="border border-slate-200 max-w-32">
+                            {{ new Date(item.released).getFullYear() }}
+                          </td>
+                          <td class="border border-slate-200">
+                            {{ item.directors.join(', ') }}
+                          </td>
                           <td class="border border-slate-200" />
                           <td class="border border-slate-200">
                             <AddToComparisonComp
@@ -233,5 +295,12 @@ html.dark .ais-Pagination-link {
 
 html.dark .ais-Pagination-item--disabled .ais-Pagination-link {
   background-image: none!important;
+}
+
+.ais-HierarchicalMenu-showMore:hover, .ais-Menu-showMore:hover, .ais-RefinementList-showMore:hover, .ais-ClearRefinements-button:hover, .ais-InfiniteHits-loadMore:hover, .ais-RangeInput-submit:hover, .ais-InfiniteHits-loadPrevious:hover, .ais-Pagination-item:not(.ais-Pagination-item--selected):not(.ais-Pagination-item--disabled) .ais-Pagination-link:hover, .ais-GeoSearch-redo:hover, .ais-GeoSearch-reset:hover, .ais-VoiceSearch-button:hover {
+  background-image: none!important;
+  border-color: none;
+  border: 0;
+  box-shadow:none;
 }
 </style>

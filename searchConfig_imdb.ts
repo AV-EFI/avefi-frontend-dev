@@ -21,12 +21,14 @@ export const config = {
         routing: true,
     },
     search_settings: {
-        highlight_attributes: ['title'],
-        search_attributes: [{ field: 'title', weight: 3 }, 'actors', 'plot'],
-        result_attributes: ['title', 'actors', 'plot'],
+        highlight_attributes: ['title', 'actors', 'directors'],
+        search_attributes: [{ field: 'title', weight: 3 }, 'actors', 'directors', 'plot'],
+        result_attributes: ['title', 'actors', 'directors', 'plot', 'released'],
         facet_attributes: [
             'type',
-            { attribute: 'actors', field: 'actors.keyword', type: 'string' }
+            { attribute: 'released', field: 'released', type: 'date' },
+            { attribute: 'actors', field: 'actors.keyword', type: 'string' },
+            { attribute: 'directors', field: 'directors.keyword', type: 'string' }
         ],
         sorting: {
             default: {

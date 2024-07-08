@@ -28,7 +28,7 @@
               :class="objectListStore.objects.length !== 2 && 'btn-disabled'"
               @click="navigateToComparison"
             >
-              <Icon name="fa-regular:object-group" />
+              <Icon name="material-symbols:compare" />
             </button>
           </div>
           <ul class="mt-2 p-2">
@@ -82,7 +82,7 @@ const removeAllObjects = () => {
 };
 
 const navigateToComparison = () => {
-    const objectIds: number[] = objectListStore.getObjectIds;
+    const objectIds: string[] = objectListStore.getObjectIds;
     if(objectIds.length == 2) {
         navigateTo(`/protected/compare?prev=${objectIds[0]}&next=${objectIds[1]}`);
     }
