@@ -15,7 +15,7 @@ export default defineNuxtPlugin(() => {
                         toast.warn('Item already in comparison', { autoClose: 3000 });
                     }
                     else if (added == "succ") {
-                        toast.success("Item added to comparison");
+                        toast.success(`${filmTitle} added to comparison`);
                     } else {
                         toast('Something happened');
                     }

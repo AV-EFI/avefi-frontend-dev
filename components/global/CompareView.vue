@@ -134,6 +134,7 @@ const props = defineProps({
 import type { Mode, Theme } from 'types/VueDiffTypes.ts';
 import { ref } from 'vue';
 import type {IAVefiListResponse} from '../../models/interfaces/IAVefiWork';
+const objectListStore = useObjectListStore();
 
 interface ListItem {
   key: string;
@@ -218,6 +219,12 @@ const { data: prev } = await useAsyncData<string>('prev', () =>
 const { data: current } = await useAsyncData<string|undefined>('current', () =>
     getCollectionType(items[1])
 );
+
+onMounted(() => {
+    if(objectListStore.comparisonDrawerOpen) {
+        objectListStore.comparisonDrawerOpen = false;
+    }
+});
 
 selected.value = list.value[0];
 </script>

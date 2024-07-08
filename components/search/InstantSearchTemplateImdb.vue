@@ -7,11 +7,13 @@
         :stalled-search-delay="1000"
         :show-loading-indicator="true"
         :routing="routing"
+        :future="{preserveSharedStateOnUnmount: true}"
       >
         <ais-configure :hits-per-page.camel="20" />
+        <ais-menu attribute="categories" />
+
         <div class="search-panel">
           <GlobalFacetDrawer />
-
           
           <!-- Center -->
           <div class="drawer-content w-full flex flex-col items-center justify-center">
@@ -44,6 +46,7 @@
                   <FormKit
                     type="select"
                     label="Sortierung (nicht aktiv)"
+                    disabled="disabled"
                     name="sort"
                     :options="[
                       'Standard',
@@ -104,7 +107,7 @@
                           <td
                             class="border border-slate-200"
                             style="
-                              width: 200px;
+                              max-width: 200px;
                               overflow: hidden;
                               text-overflow: ellipsis;
                               white-space: nowrap;
@@ -171,6 +174,8 @@
 
 <script setup lang="ts">
 import {toast } from 'vue3-toastify';
+import { history } from 'instantsearch.js/es/lib/routers';
+
 
 const contextHandler = function (type:String, item, text:String) {
     toast.success(item.title + " clicked");
@@ -183,8 +188,7 @@ const routing = {
             return {
                 q: indexUiState.query,
                 categories: indexUiState.menu && indexUiState.menu.categories,
-                brand:
-            indexUiState.refinementList && indexUiState.refinementList.brand,
+                type: indexUiState.refinementList && indexUiState.refinementList.type,
                 page: indexUiState.page,
             };
         },
@@ -196,13 +200,16 @@ const routing = {
                         categories: routeState.categories,
                     },
                     refinementList: {
-                        brand: routeState.brand,
+                        type: routeState.type,
                     },
                     page: routeState.page,
                 },
             };
         },
     },
+    router: history({
+        cleanUrlOnDispose: false,
+    })
 };
 
 const props = defineProps({

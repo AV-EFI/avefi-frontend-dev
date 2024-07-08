@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 export const config = {
     connection: {
         //host: 'https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243',
@@ -13,12 +14,11 @@ export const config = {
     //  password: "changeme"
     //},
     },
+    future: {
+        preserveSharedStateOnUnmount: true,
+    },
     settings: {
         routing: true,
-        future: {
-            preserveSharedStateOnUnmount: true,
-            cleanUrlOnDispose: false,
-        },
     },
     search_settings: {
         highlight_attributes: ['title'],

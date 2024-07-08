@@ -1,6 +1,7 @@
 import daisyui from "daisyui";
 import type { Config } from 'tailwindcss';
 import night from 'daisyui/src/theming/themes';
+const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -15,6 +16,7 @@ export default {
             },
             /**make colors available in btn-accent etc.*/
             colors: {
+                'primary-cool': "hsl(var(--primary-cool) / <alpha-value>)",
                 'base': {
                     '50': '#efefef',
                     '400': '#666667',
@@ -51,7 +53,7 @@ export default {
                 'accent': {
                     DEFAULT: '#ff1d25'
                 },
-                'accenttwo': '#d7bf83',
+                "accenttwo": "var(--accenttwo)",
                 /*
                 'accenttwo': {
                     '50': '#fbf9f1',
@@ -80,7 +82,7 @@ export default {
         require('daisyui')
     ],
     daisyui: {
-        base: true,
+        base: false,
         styled: true,
         themes: [
             {
@@ -99,15 +101,15 @@ export default {
                     'primary-900': '#313d48',
                     'primary-950': '#1d262f',
                     "primary-content": "#f3f7f8",
-                    "secondary": "#000000",
+                    "secondary": "#D7BF83",
                     "accent": "#ff1d25",
-                    'accenttwo': '#D7BF83',
                     "neutral": "#fcfdfd",
                     "neutral-50": "#eef4f6",
                     "info": "#17a2b8",
                     "success": "#78DBAA",
                     "warning": "#F8A948",
-                    "error": "#FF9DA0"
+                    "error": "#FF9DA0",
+                    "bali-hai": "#80a3b5",
                 },
             },
             {
@@ -127,12 +129,12 @@ export default {
                     'primary-950': '#1d262f',
                     "neutral": "#0f172a",
                     "info": "#17a2b8",
-                    "secondary": "#000000",
+                    "secondary": "#D7BF83",
                     "accent": "#ff1d25",
-                    'accenttwo': '#D7BF83',
                     "success": "#78DBAA",
                     "warning": "#F8A948",
-                    "error": "#FF9DA0"
+                    "error": "#FF9DA0",
+                    '--primary-cool': '38 83% 66%',
                 }
             }
         ],

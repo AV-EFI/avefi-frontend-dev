@@ -19,7 +19,6 @@
 //can be deleted?
 //use for index search?
 const route = useRoute();
-console.log(route);
 const params = ref(route.params);
 const searchTerm = ref('');
 if(params.value.slug) {
