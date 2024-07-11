@@ -52,7 +52,7 @@ definePageMeta({
 });
 
 </script>
-<style>
+<style scoped>
   h2,h3 {
     color: var(--primary-500);
   }

@@ -23,9 +23,9 @@ const sessionData = null;
   <div class="container flex justify-items flex-col lg:flex-row w-full mx-auto">
     <div class="flex flex-col lg:flex-row container mx-auto p-4">
       <div class="w-full lg:w-3/4">
-        <div class="hero-content min-h-48 w-full xl:w-3/4 flex-col lg:flex-row-reverse">          
+        <div class="hero-content min-h-48 w-full flex-col lg:flex-row-reverse">          
           <div class="card shrink-0 w-full">
-            <div class="card-body p-2 md:p-4 w-full xl:max-w-96">
+            <div class="card-body p-2 md:p-4 w-full">
               <GlobalSearchCompReduced />
             </div>
           </div>
@@ -35,9 +35,9 @@ const sessionData = null;
       <div class="text-center lg:text-left w-full lg:w-1/4 md:ml-4">
         <article class="">
           <h2 class="text-xl">
-            Welcome to the AVefi homepage
+            {{ $t('welcomeheading') }}
           </h2>
-          <span>Temporär bis Testdaten vorhanden:</span>
+          <p>{{ $t('temporarytestdata') }}:</p>
           <a
             class="link link-primary"
             href="/films/works_altern/6926658770567168"
@@ -45,7 +45,7 @@ const sessionData = null;
             Beispiel für Detailansicht Werk
           </a>
           <p class="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+            <GlobalCountdownComp />
           </p>
         </article>
       </div>

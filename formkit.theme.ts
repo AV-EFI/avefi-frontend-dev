@@ -3249,7 +3249,7 @@ const globals: Record<string, Record<string, boolean>> = {
     "group": true,
     "max-w-[30em]": true,
     "min-w-0": true,
-    "ml-2": true,
+    "ml-2": false,
     "grow": true,
     "mb-3.5": true,
     "data-[disabled]:select-none": true,

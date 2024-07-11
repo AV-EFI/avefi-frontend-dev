@@ -4,7 +4,9 @@
       <GlobalNavBar />
     </header>
     <main class="main grow bg-neutral">
+      <GlobalIndicatorComp />
       <slot />
+
       <GlobalComparisonDrawer />
     </main>
     <LazyGlobalFooter />

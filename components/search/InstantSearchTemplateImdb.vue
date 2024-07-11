@@ -11,7 +11,6 @@
       >
         <ais-configure :hits-per-page.camel="20" />
         <ais-menu attribute="categories" />
-
         <div class="search-panel">
           <GlobalFacetDrawer />
           
@@ -21,10 +20,10 @@
               <div class="searchbox">
                 <ais-search-box
                   autofocus 
-                  placeholder=""
+                  :placeholder="$t('searchterm')"
                   show-loading-indicator
                   :class-names="{
-                    'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2',
+                    'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:!text-zinc-300 group-data-[disabled]:!cursor-not-allowed dark:placeholder:!text-zinc-200/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2 !rounded-3xl',
                     'ais-SearchBox-form': 'MySearchBoxForm',
                   }"
                 />
@@ -37,7 +36,7 @@
                   <ais-stats>
                     <template #default="{ nbHits }">
                       <h3 class="text-lg">
-                        {{ nbHits }} Ergebnisse
+                        {{ nbHits }} {{ $t('results') }}
                       </h3>
                     </template>
                   </ais-stats>
@@ -45,7 +44,7 @@
                 <div class="w-full md:w-1/3 mb-1">
                   <FormKit
                     type="select"
-                    label="Sortierung (nicht aktiv)"
+                    :label="$t('sorting')"
                     :disabled="true"
                     name="sort"
                     :options="[
@@ -84,7 +83,7 @@
               </div>
               <div class="mb-4">
                 <h2 class="mb-2">
-                  Aktive Filter:
+                  {{ $t('activefiltering') }}
                 </h2>
                 <ais-current-refinements 
                   :class-names="{
@@ -101,7 +100,7 @@
                   }"
                 >
                   <template #resetLabel>
-                    Alle Filter entfernen
+                    {{ $t('clearallfilters') }}
                   </template>
                 </ais-clear-refinements>
               </div>
@@ -113,38 +112,38 @@
                         <tr>
                           <th
                             class="border border-slate-300"
-                            alt="Titel"
-                            title="Titel"
+                            :alt="$t('title')"
+                            :title="$t('title')"
                           >
-                            Titel
+                            {{ $t('title').toUpperCase() }}
                           </th>
                           <th
                             class="border border-slate-300"
-                            alt="Beschreibung"
-                            title="Beschreibung"
+                            :alt="$t('description')"
+                            :title="$t('description')"
                           >
-                            Beschreibung
+                            {{ $t('description').toUpperCase() }}
                           </th>
                           <th
                             class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
-                            alt="Produktionsjahr"
-                            title="Produktionsjahr"
+                            :alt="$t('productionyear')"
+                            :title="$t('productionyear')"
                           >
-                            Produktionsjahr
+                            {{ $t('productionyear').toUpperCase() }}
                           </th>
                           <th
                             class="border border-slate-300"
-                            alt="Regie"
-                            title="Regie"
+                            :alt="$t('directors')"
+                            :title="$t('directors')"
                           >
-                            Regie
+                            {{ $t('directors').toUpperCase() }}
                           </th>
                           <th
                             class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
-                            alt="Produktionsfirma"
-                            title="Produktionsfirma"
+                            :alt="$t('productioncompany')"
+                            :title="$t('productioncompany')"
                           >
-                            Produktionsfirma
+                            {{ $t('productioncompany').toUpperCase() }}
                           </th>
                           <th class="border border-slate-300" />
                           <th class="border border-slate-300" />
@@ -221,7 +220,8 @@
                 <ais-pagination
                   :class-names="{
                     'ais-Pagination-list': 'join',
-                    'ais-Pagination-item': 'join-item',
+                    'ais-Pagination-item': 'join-item max-w-8 md:max-w-24',
+                    'ais-Pagination-link': 'p-1 md:p-4'
                   }"
                 />
               </div>
@@ -303,4 +303,10 @@ html.dark .ais-Pagination-item--disabled .ais-Pagination-link {
   border: 0;
   box-shadow:none;
 }
+
+.ais-ClearRefinements-button {
+  background-color: transparent;;
+  background-image: none!important;;
+}
+
 </style>

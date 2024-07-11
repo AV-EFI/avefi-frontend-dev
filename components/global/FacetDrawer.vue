@@ -12,7 +12,7 @@
         class="drawer-overlay z-99"
         @click="toggleDrawer"
       />
-      <div class="menu p-4 w-[100vw] md:w-64 lg:w-80 min-h-full bg-neutral text-base-content">
+      <div class="menu p-4 w-[100vw] md:w-80 min-h-full bg-neutral text-base-content">
         <div class="flex flex-row justify-end">
           <button 
             class="btn btn-outline btn-ghost w-16 md:hidden"
@@ -27,7 +27,7 @@
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
-                  Type
+                  {{ $t('facettype') }}
                 </p>
               </template>
               <ais-refinement-list
@@ -42,7 +42,7 @@
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
-                  Year
+                  {{ $t('facetyear') }}
                 </p>
               </template>
               <ais-range-input
@@ -53,14 +53,14 @@
                 :class-names="{
                   'ais-RefinementList-label': 'p-0',
                   'ais-RefinementList-labelText': 'dark:text-primary-50',
-                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2',
-                  'ais-RangeInput-input':'max-w-20',
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent !text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2',
+                  'ais-RangeInput-input':'max-w-20 dark:bg-transparent',
                   'ais-RangeInput-form': 'flex justify-between',
                   'ais-RangeInput-submit': 'btn btn-sm btn-primary'
                 }"
               >
                 <template #submitLabel>
-                  Filtern
+                  {{ $t('filter') }}
                 </template>
               </ais-range-input>
             </ais-panel>
@@ -69,39 +69,42 @@
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
-                  Directors
+                  {{ $t('directors') }}
                 </p>
               </template>
               <ais-refinement-list
                 searchable
+                :searchable-placeholder="$t('searchheredirectors')"
                 attribute="directors"
                 :class-names="{
                   'ais-RefinementList-label': 'p-0',
                   'ais-RefinementList-labelText': 'dark:text-primary-50',
-                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent !text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
                 }"
               />
             </ais-panel>
-
-
 
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
-                  Actors
+                  {{ $t('actors') }}
                 </p>
               </template>
               <ais-refinement-list
                 searchable
+                :searchable-placeholder="$t('searchhereactors')"
                 attribute="actors"
                 :class-names="{
                   'ais-RefinementList-label': 'p-0',
                   'ais-RefinementList-labelText': 'dark:text-primary-50',
-                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
+                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent !text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
                 }"
               />
             </ais-panel>
             <div class="pb-4">
+              <p class="text-base text-primary-400">
+                TBD:
+              </p>
               <p class="text-base text-primary-400">
                 Produktionsland
               </p>
@@ -250,7 +253,7 @@ const navigateToComparison = () => {
     }
 };
 </script>
-<style>
+<style scoped>
 .ais-RangeInput-submit {
   background-color: none;
 }

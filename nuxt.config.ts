@@ -16,7 +16,7 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@formkit/nuxt',
         'nuxt-icon',
-        '@vueuse/nuxt',
+        '@vueuse/nuxt'
     ],
     extends: './pages',
     imports: {
@@ -104,6 +104,7 @@ export default defineNuxtConfig({
     colorMode: {
         preference: 'avefi_light',
         classSuffix: '',
+        dataValue: 'theme',
         storageKey: 'avefi-color-mode'
     },
     image: {
@@ -127,7 +128,7 @@ export default defineNuxtConfig({
         storesDirs: ['stores']
     },
     tailwindcss: {
-        exposeConfig: false,
-        viewer: false,
+        exposeConfig: true,
+        viewer: true,
     }
 });

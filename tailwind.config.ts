@@ -1,10 +1,10 @@
 import daisyui from "daisyui";
 import type { Config } from 'tailwindcss';
-import night from 'daisyui/src/theming/themes';
+import {night, nord} from 'daisyui/src/theming/themes';
 const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
     content: [
         './app.vue',
         'formkit.theme.ts'
@@ -53,41 +53,31 @@ export default {
                 'accent': {
                     DEFAULT: '#ff1d25'
                 },
-                "accenttwo": "var(--accenttwo)",
-                /*
-                'accenttwo': {
-                    '50': '#fbf9f1',
-                    '100': '#f5f0df',
-                    '200': '#eadfbe',
-                    '300': '#d7bf83',
-                    '400': '#ceab69',
-                    DEFAULT: '#d7bf83',
-                    '500': '#c3954c',
-                    '600': '#b68140',
-                    '700': '#976737',
-                    '800': '#7a5332',
-                    '900': '#63442b',
-                    '950': '#352315',
-                },
-                */
-                "custom-yellow": {
-                    "500": "#edae0a",
-                },
             }
         }
     },
-    darkMode: 'class',
+    //darkMode: 'class',
+    darkMode: ['variant', [
+        '@media (prefers-color-scheme: dark) { &:not(.light *) }',
+        '&:is(.dark *)',
+        '&:where(.dark *)'
+    ]],
     plugins: [
         require('@tailwindcss/typography'),
         require('daisyui')
     ],
     daisyui: {
-        base: false,
+        base: true,
         styled: true,
+        utils: true,
+        darkTheme: "dark",
+        logs: true,
+        viewer: true,
         themes: [
             {
-                avefi_light: {
-                    ...require("daisyui/src/theming/themes")["nord"],
+                'avefi_light': {
+                    nord,
+                    //...require("daisyui/src/theming/themes")["nord"],
                     'primary': '#80a3b5',
                     'primary-50': '#f3f7f8',
                     'primary-100': '#dfe9ee',
@@ -103,17 +93,17 @@ export default {
                     "primary-content": "#f3f7f8",
                     "secondary": "#D7BF83",
                     "accent": "#ff1d25",
-                    "neutral": "#fcfdfd",
-                    "neutral-50": "#eef4f6",
                     "info": "#17a2b8",
                     "success": "#78DBAA",
                     "warning": "#F8A948",
+                    "neutral": "#ffffff",
                     "error": "#FF9DA0",
                     "bali-hai": "#80a3b5",
                 },
             },
             {
-                dark: {
+                'dark': {
+                    //night,
                     ...require("daisyui/src/theming/themes")["night"],
                     'primary': '#80a3b5',
                     'primary-50': '#f3f7f8',
@@ -127,19 +117,14 @@ export default {
                     'primary-800': '#364754',
                     'primary-900': '#313d48',
                     'primary-950': '#1d262f',
-                    "neutral": "#0f172a",
                     "info": "#17a2b8",
-                    "secondary": "#D7BF83",
-                    "accent": "#ff1d25",
                     "success": "#78DBAA",
                     "warning": "#F8A948",
+                    "neutral": '#1d262f',
                     "error": "#FF9DA0",
-                    '--primary-cool': '38 83% 66%',
+                    "bali-hai": "#80a3b5",
                 }
             }
         ],
-        darkTheme: "dark"
     },
 };
-
-

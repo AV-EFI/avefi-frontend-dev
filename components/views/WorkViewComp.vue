@@ -23,7 +23,7 @@
                   title="Referenz bei Filmportal"
                   target="_blank"
                 >
-                  Referenz bei filmportal.de&nbsp;
+                  {{ $t('filmportalref') }}&nbsp;
                   <Icon
                     v-if="has_record_same_as_item.category === 'avefi:FilmportalResource'"
                     name="fa-regular:hand-peace"

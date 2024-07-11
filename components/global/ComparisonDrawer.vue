@@ -1,5 +1,5 @@
 <template>
-  <div class="drawer drawer-end">
+  <div class="drawer w-0 md:w-[20em] drawer-end">
     <client-only>
       <input
         id="comparison_drawer"
@@ -7,23 +7,23 @@
         class="drawer-toggle"
         :checked="objectListStore.comparisonDrawerOpen"
       >
-      <div class="drawer-side z-20">
+      <div class="drawer-side z-50">
         <label
-          aria-label="close sidebar"
+          :aria-label="$t('close')"
           class="drawer-overlay z-99"
           @click="toggleDrawer"
         />
-        <div class="menu p-4 w-96 min-h-full bg-base-50 dark:bg-neutral dark:border-left-white dark:border-l-2 border-neutral-400 text-base-content">
+        <div class="menu p-4 w-[100vw] md:w-80 min-h-full bg-base-50 dark:bg-neutral dark:border-left-white dark:border-l-2 border-neutral-400 text-base-content">
           <div class="w-100 flex flex-row justify-between p-2">
             <button 
               class="btn btn-outline btn-primary w-1/3"
-              title="Close drawer"
+              :title="$t('close')"
               @click="$toggleComparisonDrawerState"
             >
               <Icon name="formkit:caretright" />
             </button>
             <button
-              title="Go to comp"
+              :title="$t('gotocomp')"
               class="btn btn-secondary w-1/3"
               :class="objectListStore.objects.length !== 2 && 'btn-disabled'"
               @click="navigateToComparison"
@@ -39,21 +39,21 @@
             >
               {{ object.filmTitle }}
               <button
-                :title="`Remove '${object.filmTitle}' from comparison`"
+                :title="$t('remove')"
                 class="btn btn-error btn-outline"
                 @click="removeObject(index)"
               >
-                Remove
+                {{ $t('remove').toUpperCase() }}
               </button>
             </li>
           </ul>
           <div class="mt-2 p-2">
             <button
               class="btn btn-error btn-block"
-              title="Clear comparison"
+              :title="$t('clearalllist')"
               @click="removeAllObjects"
             >
-              Clear All
+              {{ $t('clearalllist') }}
             </button>
           </div>
           <div class="hidden">

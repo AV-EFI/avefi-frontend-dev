@@ -2,14 +2,14 @@
   <button
     class="btn btn-secondary"
     :class="[btnSize]"
-    :alt="`Add ${filmTitle} to comp`"
+    :alt="$t('addtocomparisonparam', { name: filmTitle })"
+    :title="$t('addtocomparisonparam', { name: filmTitle })"
     :data-id="filmId"
     :data-title="filmTitle"
-    :title="`Add '${filmTitle}' to comparison`"
     @click="$addToComparison(props.filmId, props.filmTitle)"
   >
     <CompareIcon
-      :alt="`Add ${filmTitle} to comp`"
+      :alt="$t('addtocomparisonparam', { name: filmTitle })"
     />
   </button>
 </template>

@@ -1,21 +1,23 @@
 import { toast } from "vue3-toastify";
 
-export default defineNuxtPlugin(() => {
-
+export default defineNuxtPlugin((nuxtApp) => {
     const useObjectStore = useObjectListStore();
+
+    const { $i18n } = nuxtApp;
+    const t = $i18n.t;
 
     const $addToComparison = ((filmId: string, filmTitle?: string): void => {
         if (filmId) {
             useObjectStore.addObject({ filmId, filmTitle })
                 .then((added) => {
                     if (added == "listfull") {
-                        toast.warn('Comparison must not contains more than two items. Please remove at least one item from the list before adding another one.', { autoClose: 4000 });
+                        toast.warn(t('comparisonfull'), { autoClose: 4000 });
                     }
                     else if (added == "already") {
-                        toast.warn('Item already in comparison', { autoClose: 3000 });
+                        toast.warn(t('comparisonalready'), { autoClose: 3000 });
                     }
                     else if (added == "succ") {
-                        toast.success(`${filmTitle} added to comparison`);
+                        toast.success(t('addedtocomparisonparam', {'name': filmTitle}));
                     } else {
                         toast('Something happened');
                     }
