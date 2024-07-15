@@ -14,8 +14,8 @@ useHead({
 useSeoMeta({
     title: "AVefi",
     ogTitle: "AVefi",
-    description: "This is AV-efi, let me tell you all about it.",
-    ogDescription: "This is AV-efi, let me tell you all about it.",
+    description: "This is AV-efi, let me tell you all about it!",
+    ogDescription: "This is AV-efi, let me tell you all about it!",
     ogImage: "https://example.com/image.png",
     twitterCard: "summary_large_image",
 });
