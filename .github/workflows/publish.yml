@@ -21,7 +21,7 @@ jobs:
           # Cloudflare Account ID
           accountId: 01449409f96e8c443d71e51923e1ac51
           # The name of the Pages project to upload to
-          projectName: avefi.dev
+          projectName: avefi
           # The directory of static assets to upload
           directory: public
           # GitHub Token
