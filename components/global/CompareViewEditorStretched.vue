@@ -55,7 +55,7 @@ const objectListStore = useObjectListStore();
 
 async function getCollectionType (routeParamsId:string):Promise<string> {  
     const { data } = await useApiFetchLocal<IAVefiListResponse>(
-        `${useRuntimeConfig().private.ELASTIC_IMDB_HOST}/imdb_movies/_doc/${routeParamsId}`,
+        `${useRuntimeConfig().public.ELASTIC_IMDB_HOST}/imdb_movies/_doc/${routeParamsId}`,
         {method: 'GET',
             headers: {
                 'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
