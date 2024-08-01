@@ -17,6 +17,9 @@ pages_build_output_dir = "./dist"
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
 # [vars]
 # MY_VARIABLE = "production_value"
+ELASTIC_IMDB_HOST='https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243'
+ELASTIC_IMDB_APIKEY='a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
+
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
@@ -79,6 +82,7 @@ pages_build_output_dir = "./dist"
 
 # [env.production.vars]
 # API_KEY = "abc123"
+
 
 # [[env.production.kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
