@@ -58,7 +58,7 @@ async function getCollectionType (routeParamsId:string):Promise<string> {
         `${useRuntimeConfig().private.ELASTIC_IMDB_HOST}/imdb_movies/_doc/${routeParamsId}`,
         {method: 'GET',
             headers: {
-                'Authorization': `ApiKey ${useRuntimeConfig().private.ELASTIC_IMDB_APIKEY}`
+                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
             }
         }
     );
