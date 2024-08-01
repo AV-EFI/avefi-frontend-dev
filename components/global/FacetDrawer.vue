@@ -231,27 +231,13 @@
   </div>
 </template>
 <script setup lang="ts">
+import {useObjectListStore} from '../../stores/compareList';
+const {$toggleFacetDrawerState}:any = useNuxtApp();
 const objectListStore = useObjectListStore();
 const toggleDrawer = (() => {
     objectListStore.facetDrawerOpen = !objectListStore.facetDrawerOpen;
 });
 
-const removeObject = (index) => {
-    objectListStore.removeObject(index);
-};
-
-const removeAllObjects = () => {
-    console.log("removeAll");
-    objectListStore.removeAllObjects();
-    console.log('Objects after removal:', objectListStore.objects);
-};
-
-const navigateToComparison = () => {
-    const objectIds: number[] = objectListStore.getObjectIds;
-    if(objectIds.length == 2) {
-        navigateTo(`/protected/compare?compare=[${objectIds[0]},${objectIds[1]}]`);
-    }
-};
 </script>
 <style scoped>
 .ais-RangeInput-submit {

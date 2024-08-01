@@ -4,7 +4,9 @@
       <label
         for="language"
         class="mr-2"
-      >Type:</label>
+      >
+        Type:
+      </label>
       <select
         id="language"
         v-model="selected"
@@ -23,7 +25,9 @@
       <label
         for="mode"
         class="mr-2"
-      >Mode:</label>
+      >
+        Mode:
+      </label>
       <select
         id="mode"
         v-model="mode"
@@ -41,7 +45,9 @@
       <label
         for="theme"
         class="mr-2"
-      >Theme:</label>
+      >
+        Theme:
+      </label>
       <select
         id="theme"
         v-model="theme"
@@ -59,7 +65,9 @@
       <label
         for="folding"
         class="mr-2"
-      >Folding:</label>
+      >
+        Folding:
+      </label>
       <input
         id="folding"
         v-model="folding"
@@ -106,8 +114,8 @@
         :mode="mode"
         :theme="theme"
         :language="selected?.language"
-        :prev="prev"
-        :current="current"
+        :prev="prev || undefined"
+        :current="current || undefined"
         :folding="folding"
         :input-delay="selected?.inputDelay"
         :virtual-scroll="selected?.virtualScroll"
@@ -117,20 +125,20 @@
 </template>
 
 <script setup lang="ts">
-
+/*
 const route = useRoute();
 const items = new Array();
 items[0] = route.query.prev;
 items[1] = route.query.next;
-/*
+*/
 const props = defineProps({
     'items': {
-        type: Array,
+        type: Array<string>,
         required:true,
         default: () => []
     }
 });
-*/
+
 import type { Mode, Theme } from 'types/VueDiffTypes.ts';
 import { ref } from 'vue';
 import type {IAVefiListResponse} from '../../models/interfaces/IAVefiWork';
@@ -194,17 +202,15 @@ const list = ref<ListItem[]>([
     }
 ]);
 
-async function getCollectionType (routeParamsId:number):Promise<string> {  
+async function getCollectionType (routeParamsId:string):Promise<string> {  
     const { data } = await useApiFetchLocal<IAVefiListResponse>(
-        `https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243/imdb_movies/_doc/${routeParamsId}`,
+        `${useRuntimeConfig().public.ELASTIC_IMDB_HOST}/imdb_movies/_doc/${routeParamsId}`,
         {method: 'GET',
             headers: {
-                'Authorization': 'ApiKey a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
+                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
             }
         }
     );
-    
-    console.log(data);
     
     if(data) {
         return JSON.stringify(data.value, null, 2);
@@ -213,11 +219,11 @@ async function getCollectionType (routeParamsId:number):Promise<string> {
 }
 
 const { data: prev } = await useAsyncData<string>('prev', () =>
-    getCollectionType(items[0])
+    getCollectionType(props.items[0])
 );
 
 const { data: current } = await useAsyncData<string|undefined>('current', () =>
-    getCollectionType(items[1])
+    getCollectionType(props.items[1])
 );
 
 onMounted(() => {
@@ -229,7 +235,7 @@ onMounted(() => {
 selected.value = list.value[0];
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .editor {
   section {
     display: flex;

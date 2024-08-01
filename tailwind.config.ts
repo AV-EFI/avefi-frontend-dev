@@ -1,7 +1,4 @@
-import daisyui from "daisyui";
-import type { Config } from 'tailwindcss';
-import {night, nord} from 'daisyui/src/theming/themes';
-const colors = require('tailwindcss/colors');
+import {nord} from 'daisyui/src/theming/themes';
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,14 +11,8 @@ module.exports = {
             spacing: {
                 '128': '32rem',
             },
-            /**make colors available in btn-accent etc.*/
+            /**colors here will override theme-specific colors*/
             colors: {
-                'primary-cool': "hsl(var(--primary-cool) / <alpha-value>)",
-                'base': {
-                    '50': '#efefef',
-                    '400': '#666667',
-                    '600': '#444445'
-                },
                 'bali-hai': {
                     '50': '#f3f7f8',
                     '100': '#dfe9ee',
@@ -52,16 +43,27 @@ module.exports = {
                 },
                 'accent': {
                     DEFAULT: '#ff1d25'
-                },
+                }
             }
         }
     },
-    //darkMode: 'class',
+    darkMode: [
+        'selector', 
+        '[data-theme="avefi_dark"]', 
+        'variant', [
+            '@media (prefers-color-scheme: dark) { &:not(.light *) }',
+            '&:is([data-theme="avefi_dark"] *)',
+            '&:where([data-theme="avefi_dark"] *)'
+        ]
+    ],
+    //darkMode: 'selector',
+    /*
     darkMode: ['variant', [
         '@media (prefers-color-scheme: dark) { &:not(.light *) }',
         '&:is(.dark *)',
         '&:where(.dark *)'
     ]],
+    */
     plugins: [
         require('@tailwindcss/typography'),
         require('daisyui')
@@ -70,9 +72,10 @@ module.exports = {
         base: true,
         styled: true,
         utils: true,
-        darkTheme: "dark",
-        logs: true,
-        viewer: true,
+        darkTheme: "avefi_dark",
+        logs: false,
+        //themeRoot: '*',
+        viewer: false,
         themes: [
             {
                 'avefi_light': {
@@ -99,10 +102,25 @@ module.exports = {
                     "neutral": "#ffffff",
                     "error": "#FF9DA0",
                     "bali-hai": "#80a3b5",
+                    'base-100': "#fefefe",
+                    'base-200': "#fdfdfd",
+                    'base-content': '#222222'
+                    /* below syntax not valid in theme */
+                    /*
+                    'base': {
+                        '50': '#efefef',
+                        '100': '#ff0000',
+                        '200': '#cecece',
+                        '300': '#aeaeae',
+                        '400': '#666667',
+                        '600': '#444445',
+                        'content': '#999999'
+                    },
+                    */
                 },
             },
             {
-                'dark': {
+                'avefi_dark': {
                     //night,
                     ...require("daisyui/src/theming/themes")["night"],
                     'primary': '#80a3b5',

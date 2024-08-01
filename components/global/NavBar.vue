@@ -11,6 +11,7 @@ const data = null;
 const triggerSignout = () => {
     signOut({callbackUrl: '/', external:true});
 };
+import {useObjectListStore} from '../../stores/compareList';
 
 const objectListStore = useObjectListStore();
 
@@ -18,7 +19,7 @@ const objectListStore = useObjectListStore();
 </script>
 
 <template>
-  <nav class="h-24 md:h-full navbar border-b-2 bg-neutral-50 dark:dark:bg-gray-800 dark:text-white dark:border-gray-700">
+  <nav class="h-24 md:h-full navbar border-b-2 bg-neutral-50 dark:bg-gray-800 dark:text-white dark:border-gray-700">
     <client-only>
       <div class="container flex justify-between mx-auto">
         <div class="navbar-start w-full flex justify-between lg:justify-start">
@@ -103,7 +104,7 @@ const objectListStore = useObjectListStore();
             </ul>
           </div>
           <a
-            class="btn btn-ghost text-xl dark:bg-neutral-100"
+            class="btn btn-ghost text-xl dark:bg-gray-700 "
             href="/"
           >
             <img

@@ -1,9 +1,10 @@
 import { toast } from "vue3-toastify";
+import {useObjectListStore} from '../stores/compareList';
 
 export default defineNuxtPlugin((nuxtApp) => {
     const useObjectStore = useObjectListStore();
 
-    const { $i18n } = nuxtApp;
+    const $i18n:any = nuxtApp.$i18n;
     const t = $i18n.t;
 
     const $addToComparison = ((filmId: string, filmTitle?: string): void => {

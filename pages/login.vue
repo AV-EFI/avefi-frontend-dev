@@ -2,7 +2,7 @@
   <div>
     <div
       role="alert"
-      class="alert"
+      class="alert bg-neutral-100"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +36,6 @@
           submit-label="Login"
           :submit-attrs="{
             inputClass: 'btn btn-primary',
-            'data-theme': `avefi_light`,
             'prefix-icon': 'submit',
             ignore: false,
             disabled: true,

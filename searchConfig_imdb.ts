@@ -1,4 +1,5 @@
 /* eslint-disable camelcase */
+//move creds to server-side for runtime.private access
 export const config = {
     connection: {
         //host: 'https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243',
@@ -6,13 +7,6 @@ export const config = {
         // if you are authenticating with api key
         // https://www.searchkit.co/docs/guides/setup-elasticsearch#connecting-with-api-key
         apiKey: 'a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
-
-    // if you are authenticating with username/password
-    // https://www.searchkit.co/docs/guides/setup-elasticsearch#connecting-with-usernamepassword
-    //auth: {
-    //  username: "elastic",
-    //  password: "changeme"
-    //},
     },
     future: {
         preserveSharedStateOnUnmount: true,

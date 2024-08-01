@@ -45,7 +45,7 @@ const headers: Header[] = [
 </script>
 
 <style>
-html.dark .customize_table {
+html[data-theme="avefi_dark"] .customize_table {
   --easy-table-border: 1px solid #445269;
   --easy-table-row-border: 1px solid #445269;
 

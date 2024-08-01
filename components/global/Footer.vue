@@ -8,7 +8,9 @@
               <h6 class="footer-title">
                 {{ $t("language") }}
               </h6>
-              <GlobalLanguageSwitch />
+              <Suspense>
+                <GlobalLanguageSwitch />
+              </Suspense>
             </div>
           </nav>
           <nav class="flex-1 flex flex-row justify-start md:justify-center w-full min-w-80 md:min-w-48 mb-2">
@@ -18,7 +20,7 @@
               </h6>
               <div
                 role="alert"
-                class="alert md:w-48"
+                class="alert bg-neutral md:w-48"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

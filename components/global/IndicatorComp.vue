@@ -33,6 +33,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import {useObjectListStore} from '../../stores/compareList';
+
 const objectListStore = useObjectListStore();
 </script>
 <style scoped>

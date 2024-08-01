@@ -13,7 +13,7 @@
           class="drawer-overlay z-99"
           @click="toggleDrawer"
         />
-        <div class="menu p-4 w-[100vw] md:w-80 min-h-full bg-base-50 dark:bg-neutral dark:border-left-white dark:border-l-2 border-neutral-400 text-base-content">
+        <div class="menu p-4 w-[100vw] md:w-80 min-h-full bg-base-50 bg-neutral dark:border-left-white dark:border-l-2 border-neutral-400 text-base-content">
           <div class="w-100 flex flex-row justify-between p-2">
             <button 
               class="btn btn-outline btn-primary w-1/3"
@@ -65,6 +65,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import {useObjectListStore} from '../../stores/compareList';
+const {$toggleComparisonDrawerState}:any = useNuxtApp();
 
 const objectListStore = useObjectListStore();
 const toggleDrawer = (() => {
@@ -84,7 +86,7 @@ const removeAllObjects = () => {
 const navigateToComparison = () => {
     const objectIds: string[] = objectListStore.getObjectIds;
     if(objectIds.length == 2) {
-        navigateTo(`/protected/compare?prev=${objectIds[0]}&next=${objectIds[1]}`);
+        navigateTo(`/protected/compare_altern?prev=${objectIds[0]}&next=${objectIds[1]}`);
     }
 };
 </script>

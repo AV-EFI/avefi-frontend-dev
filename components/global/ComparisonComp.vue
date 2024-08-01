@@ -40,8 +40,7 @@
 </template>
 
 <script setup lang="ts">
-//import { useObjectListStore } from '@/store';
-
+import {useObjectListStore} from '../../stores/compareList';
 const objectListStore = useObjectListStore();
 //const objects = objectListStore.objects;
 let newObjectName = '';

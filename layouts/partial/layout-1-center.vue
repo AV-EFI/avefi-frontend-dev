@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="w-full lg:w-3/4 mx-auto card card-side bg-neutral-50 dark:dark:bg-gray-800 shadow-xl">
+    <div class="w-full lg:w-3/4 mx-auto card card-side bg-neutral-50 dark:bg-gray-800 shadow-xl">
       <div class="card-body max-w-full">
         <div class="w-full flex flex-row items-center">
           <slot name="actions">

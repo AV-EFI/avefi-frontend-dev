@@ -16,7 +16,8 @@ export default defineNuxtConfig({
         '@nuxt/content',
         '@formkit/nuxt',
         'nuxt-icon',
-        '@vueuse/nuxt'
+        '@vueuse/nuxt',
+        '@nuxt/test-utils/module'
     ],
     extends: './pages',
     imports: {
@@ -41,10 +42,14 @@ export default defineNuxtConfig({
             cmsUrl: process.env.CMS_URL,
             analyticsUrl: process.env.ANALYTICS_URL,
             origin: process.env.ORIGIN,
-            frontendUrl: process.env.ORIGIN
+            frontendUrl: process.env.ORIGIN,
+            ELASTIC_IMDB_HOST: process.env.ELASTIC_IMDB_HOST,
+            ELASTIC_IMDB_APIKEY: process.env.ELASTIC_IMDB_APIKEY,
         },
         private: {
-            NUXT_SECRET: process.env.NUXT_SECRET
+            NUXT_SECRET: process.env.NUXT_SECRET,
+            ELASTIC_IMDB_HOST: process.env.ELASTIC_IMDB_HOST,
+            ELASTIC_IMDB_APIKEY: process.env.ELASTIC_IMDB_APIKEY,
         }
     },
     //https://nuxt.com/docs/guide/concepts/rendering
@@ -62,7 +67,7 @@ export default defineNuxtConfig({
         },
     },
     css: ["~/assets/scss/main.scss"],
-    vite: {
+    vite: {        
         build: {
             /*
             rollupOptions: {
@@ -79,13 +84,6 @@ export default defineNuxtConfig({
             }
                 */
         },
-        /*
-        resolve: {
-            dedupe: [
-                'vue'
-            ]
-        },
-        */
         css: {
             preprocessorOptions: {
                 scss: {
@@ -95,7 +93,7 @@ export default defineNuxtConfig({
         }
     },
     typescript: {
-        includeWorkspace: true
+        includeWorkspace: true,
     },
     i18n: {
     /* module options */
@@ -105,6 +103,7 @@ export default defineNuxtConfig({
         preference: 'avefi_light',
         classSuffix: '',
         dataValue: 'theme',
+        disableTransition: false,
         storageKey: 'avefi-color-mode'
     },
     image: {

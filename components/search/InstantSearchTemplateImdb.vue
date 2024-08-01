@@ -204,7 +204,7 @@
                           <td class="border border-slate-200">
                             <button
                               type="button"
-                              @click="contextHandler('click', item, 'Item Clicked')"
+                              @click="contextHandler('click', item)"
                             >
                               <Icon name="formkit:reorder" />
                             </button>
@@ -237,9 +237,9 @@
 <script setup lang="ts">
 import {toast } from 'vue3-toastify';
 import { history } from 'instantsearch.js/es/lib/routers';
+const {$toggleFacetDrawerState}:any = useNuxtApp();
 
-
-const contextHandler = function (type:String, item, text:String) {
+const contextHandler = function (type:String, item) {
     toast.success(item.title + " clicked");
 };
 
@@ -287,13 +287,13 @@ const props = defineProps({
 </script>
 <style>
 
-html.dark .ais-Pagination-link {
+html[data-theme="avefi_dark"] .ais-Pagination-link {
   background-color: var(--primary-800)!important;
   background-image: none!important;
   color:#fefefe;
 }
 
-html.dark .ais-Pagination-item--disabled .ais-Pagination-link {
+html[data-theme="avefi_dark"] .ais-Pagination-item--disabled .ais-Pagination-link {
   background-image: none!important;
 }
 

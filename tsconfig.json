@@ -3,7 +3,11 @@
 "extends": "./.nuxt/tsconfig.json",
 "compilerOptions": {
     "types": [
-        "@cloudflare/workers-types/2023-07-01"
+        "node",
+        "@cloudflare/workers-types/2023-07-01",
+        "cypress",
+        "@nuxtjs/i18n"
+        //"vitest/globals"
     ],
     "rootDir": ".",
     "baseUrl": ".",
@@ -12,6 +16,7 @@
     "allowJs": true,
     "checkJs": false,
     "allowImportingTsExtensions": true,
+    "noEmit": true,
     "noImplicitAny": false,
     "esModuleInterop": true,
   },
