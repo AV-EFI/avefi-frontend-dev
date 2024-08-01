@@ -1,4 +1,5 @@
 export const config = {
+
     //Currently not used
     connection: {
         host: process.env.ELASTIC_BONSAI_HOST,
