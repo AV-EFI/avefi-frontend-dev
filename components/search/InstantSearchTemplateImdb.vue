@@ -117,6 +117,7 @@
                           >
                             {{ $t('title').toUpperCase() }}
                           </th>
+                          <!--
                           <th
                             class="border border-slate-300"
                             :alt="$t('description')"
@@ -124,6 +125,7 @@
                           >
                             {{ $t('description').toUpperCase() }}
                           </th>
+                          -->
                           <th
                             class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
                             :alt="$t('productionyear')"
@@ -169,24 +171,6 @@
                               attribute="title"
                               :hit="item"
                             />
-                          </td>
-                          <td
-                            class="border border-slate-200 text-clip"
-                            :title="item.plot"
-                          >
-                            <span
-                              style="
-                              width: 200px;
-                              display: -webkit-box;
-                              -webkit-line-clamp: 3;
-                              -webkit-box-orient: vertical;  
-                              overflow: hidden;
-                              text-overflow: clip;
-                              vertical-align: top;
-                            }"
-                            >
-                              {{ item.plot }}
-                            </span>
                           </td>
                           <td class="border border-slate-200 max-w-32">
                             {{ new Date(item.released).getFullYear() }}

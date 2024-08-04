@@ -2,7 +2,7 @@
   <div class="mt-4 snap-y">
     <section>
       <div class="flex min-h-[80vh]">
-        <div class="w-1/2 overflow-auto min-h-screen grid grid-cols-4 grid-rows-[48px_minmax(48px,max-content)_48px_minmax(48px,max-content)_minmax(48px,max-content)_minmax(48px,max-content)_48px_48px_minmax(48px,max-content)_minmax(48px,max-content)_auto_auto_auto_auto] auto-rows-fr">
+        <div class="w-1/2 overflow-auto min-h-screen grid grid-cols-4 grid-rows-[64px_minmax(64px,max-content)_64px_minmax(64px,max-content)_minmax(64px,max-content)_minmax(64px,max-content)_64px_64px_minmax(64px,max-content)_minmax(64px,max-content)_auto_auto_auto_auto] auto-rows-fr">
           <ViewsWorkViewEditor
             v-model="prev"
             @update-target-model-g-p="onUpdateTargetModelGP"
@@ -12,12 +12,11 @@
             @update-target-model-g-p="onUpdateTargetModelGP"
           />
         </div>
-        <div class="w-1/2 h-screen overflow-scroll">
+        <div class="w-1/2 overflow-scroll">
           <ViewsWorkViewEditorResult v-model="mergedDataset" />
         </div>
       </div>
     </section>
-    <pre>{{ mergedDataset }}</pre>
   </div>
 </template>
 

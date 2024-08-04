@@ -38,21 +38,25 @@
             inputClass: 'btn btn-primary',
             'prefix-icon': 'submit',
             ignore: false,
-            disabled: true,
+            disabled: false,
             alt:'Will be implemented by GWDG',
             'title':'Will be implemented by GWDG'
           }"
-          @submit="submit"
+          @submit="submitTemp"
         >
           <FormKit
             name="identifier"            
             label="Email"
+            value="123@academic.id"
+            placeholder="123@academic.id"
             validation="required|email"
           />
           <FormKit
             type="password"
             label="Password"
             name="password"
+            value="AVefiSecretPassword"
+            placeholder="AVefiSecretPassword"
             prefix-icon="password"
             suffix-icon="eyeClosed"
             suffix-icon-class="hover:text-blue-500"
@@ -60,10 +64,6 @@
           />
         </FormKit>
       </template>
-      <pre>
-        "identifier": "regular@tib.eu",
-        "password": "regular.user123" 
-      </pre>
     </NuxtLayout>
   </div>
 </template>
@@ -114,6 +114,11 @@ const handleIconClick = (node:FormKitNode, e:Event) => {
     console.log(e);
 };
 
+async function submitTemp (data:any) {
+    const t = setTimeout(() => {
+        return navigateTo('/protected/filmedit');
+    }, 1000);
+}
 
 async function submit(data:any){
     /*
