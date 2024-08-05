@@ -1,17 +1,21 @@
 <template>
   <div>
-    <SearchInstantSearchTemplateImdb
-      :search-client="searchClient"
-      index-name="imdb_movies"
-      :routing="true"
-    />
+    <ClientOnly>
+      <SearchInstantSearchTemplate
+        :search-client="searchClient"
+        :index-name="'21.11155'"
+        :routing="true"
+      />
+    </ClientOnly>
   </div>
 </template>
 
 <script>
+const index = process.env.ELASTIC_INDEX;
+console.log(index);
 import Client from '@searchkit/instantsearch-client';
 import Searchkit from "searchkit";
-import {config} from '@/searchConfig_imdb.ts';
+import {config} from '@/searchConfig_avefi.ts';
 
 const searchkitClient = new Searchkit(config);
 const searchClient = Client(searchkitClient);

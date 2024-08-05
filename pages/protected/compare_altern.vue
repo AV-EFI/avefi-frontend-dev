@@ -32,6 +32,24 @@ items[1] = route.query.next;
           name="compare_tabs"
           role="tab"
           class="tab min-w-24"
+          aria-label="Regular"
+        >
+        <div
+          role="tabpanel"
+          class="tab-content bg-base-100 border-base-300 rounded-box p-6 snap-always snap-start"
+        >
+          <ClientOnly
+            fallback-tag="span"
+            fallback="Loading datasets ..."
+          >
+            <LazyGlobalCompareViewProps :items="items" />
+          </ClientOnly>
+        </div>
+        <input
+          type="radio"
+          name="compare_tabs"
+          role="tab"
+          class="tab min-w-24"
           aria-label="Raw"
           checked="true"
         >
@@ -47,62 +65,6 @@ items[1] = route.query.next;
               <GlobalCompareViewRaw :items="items" />
             </ClientOnly>
           </div>  
-        </div>
-        <input
-          type="radio"
-          name="compare_tabs"
-          role="tab"
-          class="tab min-w-24"
-          aria-label="Regular"
-        >
-        <div
-          role="tabpanel"
-          class="tab-content bg-base-100 border-base-300 rounded-box p-6 snap-always snap-start"
-        >
-          <ClientOnly
-            fallback-tag="span"
-            fallback="Loading datasets ..."
-          >
-            <LazyGlobalCompareViewProps :items="items" />
-          </ClientOnly>
-        </div>
-
-        <input
-          type="radio"
-          name="compare_tabs"
-          role="tab"
-          class="tab min-w-24"
-          aria-label="Editor I"
-        >
-        <div
-          role="tabpanel"
-          class="tab-content bg-base-100 border-base-300 rounded-box p-6 snap-always snap-start"
-        >
-          <ClientOnly
-            fallback-tag="span"
-            fallback="Loading datasets ..."
-          >
-            <LazyGlobalCompareViewEditor :items="items" />
-          </ClientOnly>
-        </div>
-
-        <input
-          type="radio"
-          name="compare_tabs"
-          role="tab"
-          class="tab min-w-24"
-          aria-label="Editor II"
-        >
-        <div
-          role="tabpanel"
-          class="tab-content bg-base-100 border-base-300 rounded-box p-6 snap-always snap-start"
-        >
-          <ClientOnly
-            fallback-tag="span"
-            fallback="Loading datasets ..."
-          >
-            <LazyGlobalCompareViewEditorStretched :items="items" />
-          </ClientOnly>
         </div>
       </div>
     </div>

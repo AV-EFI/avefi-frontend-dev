@@ -363,9 +363,8 @@ const text2 = JSON.stringify({
     "meta": {}
 },null,2);
 */
-//https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243/imdb_movies/_doc/tt0094737
 async function getCollectionType (routeParamsId:number):Promise<string> {  
-    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243/imdb_movies/_doc/${routeParamsId}`, {method: 'GET'});
+    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`, {method: 'GET'});
     if(data) {
         return JSON.stringify(data.value, null, 2);
     }

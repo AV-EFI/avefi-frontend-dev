@@ -2,6 +2,6 @@
 // by running `wrangler types`
 
 interface Env {
-	ELASTIC_IMDB_HOST: "https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243";
-	ELASTIC_IMDB_APIKEY: "a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw==";
+	ELASTIC_HOST: 'http://141.5.105.237:9200';
+	ELASTIC_APIKEY: "";
 }

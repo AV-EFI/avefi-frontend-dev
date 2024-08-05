@@ -20,7 +20,7 @@
 </template>
 
 <script setup lang="ts">
-import type { IAVefiListResponse } from '../../models/interfaces/IAVefiWork';
+import type { IAVefiListResponse, IAVefiSingleResponse } from '../../models/interfaces/IAVefiWork';
 
 /*
 const route = useRoute();
@@ -39,15 +39,7 @@ const props = defineProps({
 const objectListStore = useObjectListStore();
 
 async function getCollectionType (routeParamsId:string):Promise<string> {  
-    const { data } = await useApiFetchLocal<IAVefiListResponse>(
-        `${useRuntimeConfig().public.ELASTIC_IMDB_HOST}/imdb_movies/_doc/${routeParamsId}`,
-        {method: 'GET',
-            headers: {
-                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
-            }
-        }
-    );
-    
+    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`, {method: 'GET'});
     if(data) {
         return JSON.stringify(data.value, null, 2);
     }

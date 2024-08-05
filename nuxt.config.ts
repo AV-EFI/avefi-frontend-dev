@@ -44,13 +44,13 @@ export default defineNuxtConfig({
             analyticsUrl: process.env.ANALYTICS_URL,
             origin: process.env.ORIGIN,
             frontendUrl: process.env.ORIGIN,
-            ELASTIC_IMDB_HOST: process.env.ELASTIC_IMDB_HOST,
-            ELASTIC_IMDB_APIKEY: process.env.ELASTIC_IMDB_APIKEY,
+            ELASTIC_HOST: process.env.ELASTIC_HOST,
+            ELASTIC_APIKEY: process.env.ELASTIC_APIKEY,
+            ELASTIC_INDEX: process.env.ELASTIC_INDEX
         },
         private: {
             NUXT_SECRET: process.env.NUXT_SECRET,
-            ELASTIC_IMDB_HOST: process.env.ELASTIC_IMDB_HOST,
-            ELASTIC_IMDB_APIKEY: process.env.ELASTIC_IMDB_APIKEY,
+            ELASTIC_HOST: process.env.ELASTIC_HOST,
         }
     },
     //https://nuxt.com/docs/guide/concepts/rendering
