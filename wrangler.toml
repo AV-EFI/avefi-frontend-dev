@@ -20,6 +20,7 @@ pages_build_output_dir = "./dist"
 [vars]
 ELASTIC_HOST='https://141.5.105.237:9200'
 ELASTIC_APIKEY=''
+ELASTIC_INDEX='21.11155'
 
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
