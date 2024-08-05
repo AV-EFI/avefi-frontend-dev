@@ -2,6 +2,6 @@
 // by running `wrangler types`
 
 interface Env {
-	ELASTIC_HOST: 'http://141.5.105.237:9200';
+	ELASTIC_HOST: 'https://141.5.105.237:9200';
 	ELASTIC_APIKEY: "";
 }

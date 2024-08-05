@@ -18,7 +18,7 @@ pages_build_output_dir = "./dist"
 # [vars]
 # MY_VARIABLE = "production_value"
 [vars]
-ELASTIC_HOST='http://141.5.105.237:9200'
+ELASTIC_HOST='https://141.5.105.237:9200'
 ELASTIC_APIKEY=''
 
 
