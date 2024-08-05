@@ -16,8 +16,8 @@ export const config = {
     },
     search_settings: {
         highlight_attributes: ['title', 'actors', 'directors'],
-        search_attributes: [{ field: 'title', weight: 3 }, 'actors', 'directors', 'plot'],
-        result_attributes: ['title', 'actors', 'directors', 'plot', 'released'],
+        search_attributes: [{ field: 'title', weight: 3 }, 'actors', 'directors'],
+        result_attributes: ['title', 'actors', 'directors', 'released'],
         facet_attributes: [
             'type',
             { attribute: 'released', field: 'released', type: 'date' },
@@ -46,7 +46,7 @@ export const config = {
             }
                 */
         },
-        snippet_attributes: ['plot'],
+        //snippet_attributes: ['plot'],
         query_rules: []
     }
 };
