@@ -1,6 +1,5 @@
 <template>
   <div>
-    <pre>{{ indexName }}</pre>
     <div class="container">
       <ais-instant-search
         :search-client="searchClient"

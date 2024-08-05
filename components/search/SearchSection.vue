@@ -3,7 +3,7 @@
     <ClientOnly>
       <SearchInstantSearchTemplate
         :search-client="searchClient"
-        :index-name="'21.11155'"
+        :index-name="imdb_movies"
         :routing="true"
       />
     </ClientOnly>
