@@ -11,6 +11,7 @@
 </template>
 
 <script>
+
 const index = process.env.ELASTIC_INDEX;
 console.log(index);
 import Client from '@searchkit/instantsearch-client';
