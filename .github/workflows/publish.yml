@@ -1,5 +1,7 @@
-on: [push]
-
+on: 
+  push:
+    branches:
+      - 'imdb'
 jobs:
   publish:
     runs-on: ubuntu-latest
