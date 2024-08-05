@@ -38,7 +38,6 @@
             inputClass: 'btn btn-primary',
             'prefix-icon': 'submit',
             ignore: false,
-            disabled: false,
           }"
           @submit="submitTemp"
         >
