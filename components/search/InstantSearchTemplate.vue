@@ -266,7 +266,7 @@ const props = defineProps({
     indexName: {
         type: String,
         required: true,
-        default: '21.11155'
+        default: 'imdb_movies'
     },
 });
 </script>
