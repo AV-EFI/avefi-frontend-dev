@@ -15,7 +15,7 @@ const index = process.env.ELASTIC_INDEX;
 console.log(index);
 import Client from '@searchkit/instantsearch-client';
 import Searchkit from "searchkit";
-import {config} from '@/searchConfig_avefi.ts';
+import {config} from '@/searchConfig_imdb.ts';
 
 const searchkitClient = new Searchkit(config);
 const searchClient = Client(searchkitClient);

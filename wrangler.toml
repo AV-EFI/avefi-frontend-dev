@@ -18,9 +18,9 @@ pages_build_output_dir = "./dist"
 # [vars]
 # MY_VARIABLE = "production_value"
 [vars]
-ELASTIC_HOST='https://141.5.105.237:9200'
-ELASTIC_APIKEY=''
-ELASTIC_INDEX='21.11155'
+ELASTIC_HOST='https://commerce-demo.es.us-east4.gcp.elastic-cloud.com:9243'
+ELASTIC_APIKEY='a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
+ELASTIC_INDEX='imdb_movies'
 
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
