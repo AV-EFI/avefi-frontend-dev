@@ -63,7 +63,7 @@ async function getCollectionType (routeParamsId:string):Promise<string> {
         `${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
         {method: 'GET',
             headers: {
-                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
+                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_APIKEY}`
             }
         }
     );

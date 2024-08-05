@@ -364,7 +364,13 @@ const text2 = JSON.stringify({
 },null,2);
 */
 async function getCollectionType (routeParamsId:number):Promise<string> {  
-    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`, {method: 'GET'});
+    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_APIKEY}`
+        }
+    }
+    );
     if(data) {
         return JSON.stringify(data.value, null, 2);
     }

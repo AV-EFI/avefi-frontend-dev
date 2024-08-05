@@ -203,8 +203,15 @@ const list = ref<ListItem[]>([
 ]);
 
 async function getCollectionType (routeParamsId:string):Promise<string> {  
-    const { data } = await useApiFetchLocal<IAVefiSingleResponse>(`${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`, {method: 'GET'});
-    
+    const { data } = await useApiFetchLocal<IAVefiListResponse>(
+        `${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
+        {
+            method: 'GET',
+            headers: {
+                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_APIKEY}`
+            }
+        }
+    );    
     if(data) {
         return JSON.stringify(data.value, null, 2);
     }
