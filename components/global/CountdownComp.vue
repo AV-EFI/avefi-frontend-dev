@@ -2,7 +2,7 @@
   <div class="mt-4 w-full">
     <h2>{{ $t('countdownworkshop') }}</h2>
     <div class="grid auto-cols-max grid-flow-col justify-center gap-3 md:gap-5 text-center">
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+      <div class="bg-neutral dark:bg-primary-900 dark:text-white rounded-box text-neutral-content flex flex-col p-2">
         <span class="countdown font-mono text-3xl">
           <span :style="`--value:${days};`" />
         </span>
@@ -10,7 +10,7 @@
           {{ $t('days') }}
         </span>
       </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+      <div class="bg-neutral dark:bg-primary-900 dark:text-white rounded-box text-neutral-content flex flex-col p-2">
         <span class="countdown font-mono text-3xl">
           <span :style="`--value:${hours};`" />
         </span>
@@ -18,7 +18,7 @@
           {{ $t('hours') }}
         </span>
       </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+      <div class="bg-neutral dark:bg-primary-900 dark:text-white rounded-box text-neutral-content flex flex-col p-2">
         <span class="countdown font-mono text-3xl">
           <span :style="`--value:${minutes};`" />
         </span>
@@ -26,7 +26,7 @@
           {{ $t('minutes') }}
         </span>
       </div>
-      <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
+      <div class="bg-neutral dark:bg-primary-900 dark:text-white rounded-box text-neutral-content flex flex-col p-2">
         <span class="countdown font-mono text-3xl">
           <span :style="`--value:${seconds};`" />
         </span>

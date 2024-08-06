@@ -22,7 +22,7 @@ export default defineFormKitConfig({
                 inner:
                     '$reset w-full relative flex items-center bg-white border-2 border-opacity-0 dark:border-opacity-100 dark:border-zinc-300 dark:bg-transparent rounded-xl group-data-[is-multiline]:!rounded-xl formkit-inner max-w-xl selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:text-zinc-300 p-0 pl-2 focus:ring-0 formkit-input',
                 dropdown:
-                    'absolute top-full left-[1em] min-w-[32em] bg-neutral-50 shadow-md m-0 p-0 list-none overflow-hidden rounded-sm z-20',
+                    'absolute top-full left-[1em] min-w-[32em] bg-neutral-50  dark:bg-primary-900 shadow-md m-0 p-0 list-none overflow-hidden rounded-sm z-20',
                 dropdownItem:
                     'p-2 border-b border-gray-200 data-[selected=true]:bg-blue-100',
             },
