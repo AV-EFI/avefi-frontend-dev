@@ -139,6 +139,7 @@ module.exports = {
                     "success": "#78DBAA",
                     "warning": "#F8A948",
                     "neutral": '#1d262f',
+                    "bg-neutral": '#1d262f',
                     "error": "#FF9DA0",
                     "bali-hai": "#80a3b5",
                 }
