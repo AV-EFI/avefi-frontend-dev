@@ -1,7 +1,7 @@
 <template>
   <FormKit
     v-model="dataJson"
-    :classes="{form: 'bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl'}"
+    :classes="{form: 'bg-neutral-100 p-2 rounded-xl'}"
     type="form"
     :actions="false"
     @submit="customSubmitHandler"

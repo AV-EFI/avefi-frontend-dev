@@ -33,7 +33,7 @@
 
   <div class="viewer">
     <div class="flex flex-row flex-wrap">
-      <section class="mt-8 min-h-96 bg-neutral-100 dark:bg-neutral-900 p-4 w-1/2">
+      <section class="mt-8 min-h-96 bg-neutral-100 p-4 w-1/2">
         <label>Diff:</label>
         <pre
           v-if="ds"
@@ -41,7 +41,7 @@
           v-html="ds"
         />
       </section>
-      <section class="mt-8 min-h-96 bg-neutral-100 dark:bg-neutral-900 p-4 w-1/2">
+      <section class="mt-8 min-h-96 bg-neutral-100 p-4 w-1/2">
         <label>HighlightJS:</label>
         <pre
           v-if="highlightedCode"

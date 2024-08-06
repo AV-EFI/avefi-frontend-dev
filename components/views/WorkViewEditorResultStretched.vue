@@ -1,7 +1,7 @@
 <template>
   <FormKit
     v-model="dataJson"
-    :classes="{form: 'grid gap-1 bg-neutral-100 dark:bg-neutral-900 p-2 rounded-xl grid-cols-2 col-span-3 xl:col-span-4 grid-rows-subgrid row-span-full auto-rows-auto'}"
+    :classes="{form: 'grid gap-1 bg-neutral-100 p-2 rounded-xl grid-cols-2 col-span-3 xl:col-span-4 grid-rows-subgrid row-span-full auto-rows-auto'}"
     type="form"
     :actions="false"
     @submit="customSubmitHandler"
