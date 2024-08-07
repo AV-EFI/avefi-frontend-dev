@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@elastic/elasticsearch": "7.10.0",
-    "@faker-js/faker": "^8.4.1",
     "@formkit/addons": "^1.6.0",
     "@formkit/core": "^1.6.5",
     "@formkit/i18n": "^1.6.0",

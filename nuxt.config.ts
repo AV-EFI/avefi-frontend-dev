@@ -129,6 +129,6 @@ export default defineNuxtConfig({
     },
     tailwindcss: {
         exposeConfig: true,
-        viewer: true,
+        viewer: false,
     }
 });

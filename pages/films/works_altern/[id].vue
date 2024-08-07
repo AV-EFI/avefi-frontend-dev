@@ -3,28 +3,22 @@
     <NuxtLayout name="partial-layout-1-center">
       <template #actions>
         <div class="hidden">
-          <div v-if="dataJsonModel.has_record.id">
+          <div v-if="dataJson">
+            <!--
             <AddToComparisonComp
-              :film-id="dataJsonModel.has_record.id"
-              :film-title="dataJsonModel.has_record.has_primary_title.has_name"
+              :film-id="dataJson.has_record.id"
+              :film-title="dataJson.has_record.has_primary_title.has_name"
             />
-          </div>
-          <div class="ml-2">
-            <GlobalSwitchGenericComp v-model="editMode" />
+            
+            -->
           </div>
         </div>
       </template>
       <template #cardBody>
-        <div
-          v-if="editMode === 'edit'"
-          class="max-w-xl"
-        >
-          <Suspense>
-            <FormsWorkFormComp v-model="dataJsonModel" />
-          </Suspense>
-        </div>
-        <div v-else>
-          <ViewsWorkViewComp v-model="dataJsonModel" />
+        <div>
+          <ClientOnly>
+            <ViewsWorkViewCompAVefi v-model="dataJson" />
+          </ClientOnly>
         </div>
       </template>
     </NuxtLayout>
@@ -34,17 +28,39 @@
         Raw data
       </div>
       <div class="collapse-content"> 
-        <pre>{{ dataJsonModel }}</pre>
+        <pre>{{ dataJson }}</pre>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import type { IAVefiListResponse } from '../../../models/interfaces/IAVefiWork';
 
-import dataJson from '../../../models/sampleData/github/monographic_work_pid.json';
-const editMode = ref('readonly');
-const dataJsonModel = reactive(dataJson);
+const route = useRoute();
+const params = ref(route.params);
+
+async function getCollectionType (routeParamsId:string):Promise<string> {  
+    const { data } = await useApiFetchLocal<IAVefiListResponse>(
+        `${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
+        {
+            method: 'GET',
+            headers: {
+                'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
+            }
+        }
+    );
+    
+    if(data) {
+        return JSON.stringify(data.value, null, 2);
+    }
+    return "";
+}
+
+const { data: dataJson } = await useAsyncData<string>('dataJson', () =>
+    getCollectionType(params.value.id)
+);
+
 
 definePageMeta({
     //middleware: ["auth"]

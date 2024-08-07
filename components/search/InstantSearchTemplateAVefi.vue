@@ -1,6 +1,5 @@
 <template>
   <div>
-    <pre>{{ indexName }}</pre>
     <div class="container">
       <ais-instant-search
         :search-client="searchClient"
@@ -116,6 +115,13 @@
                             :alt="$t('title')"
                             :title="$t('title')"
                           >
+                            RAW
+                          </th>
+                          <th
+                            class="border border-slate-300"
+                            :alt="$t('title')"
+                            :title="$t('title')"
+                          >
                             {{ $t('title').toUpperCase() }}
                           </th>
                           <!--
@@ -149,7 +155,6 @@
                             {{ $t('productioncompany').toUpperCase() }}
                           </th>
                           <th class="border border-slate-300" />
-                          <th class="border border-slate-300" />
                         </tr>
                       </thead>
                       <tbody>
@@ -158,6 +163,9 @@
                           :key="item._id"
                           class=""
                         >
+                          <td>
+                            {{ item }}
+                          </td>
                           <td
                             class="border border-slate-200"
                             style="
@@ -166,26 +174,40 @@
                               text-overflow: ellipsis;
                               white-space: nowrap;
                             }"
-                            :title="item.title"
+                            :title="item.has_record?.has_primary_title?.has_name"
                           >
                             <ais-highlight
-                              attribute="title"
+                              attribute="has_record.has_primary_title.has_name"
                               :hit="item"
                             />
                           </td>
-                          <td class="border border-slate-200 max-w-32">
-                            {{ new Date(item.released).getFullYear() }}
-                          </td>
-                          <td class="border border-slate-200">
-                            {{ item.directors.join(', ') }}
-                          </td>
-                          <td class="border border-slate-200" />
-                          <td class="border border-slate-200">
-                            <AddToComparisonComp
-                              :film-id="item.objectID"
-                              :film-title="item.title"
-                            />
-                          </td>
+                          <td
+                            class="border border-slate-200"
+                            style="
+                              max-width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                            }"
+                          />
+                          <td
+                            class="border border-slate-200"
+                            style="
+                              max-width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                            }"
+                          />
+                          <td
+                            class="border border-slate-200"
+                            style="
+                              max-width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;
+                            }"
+                          />
                           <td class="border border-slate-200">
                             <button
                               type="button"
@@ -225,7 +247,7 @@ import { history } from 'instantsearch.js/es/lib/routers';
 const {$toggleFacetDrawerState}:any = useNuxtApp();
 
 const contextHandler = function (type:String, item) {
-    toast.success(item.title + " clicked");
+    toast.success(item.has_record?.has_primary_title?.has_name + " clicked");
 };
 
 const routing = {

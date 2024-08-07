@@ -15,14 +15,21 @@ export const config = {
         routing: true,
     },
     search_settings: {
-        highlight_attributes: ['title', 'actors', 'directors'],
-        search_attributes: [{ field: 'title', weight: 3 }, 'actors', 'directors'],
-        result_attributes: ['title', 'actors', 'directors', 'released'],
+        highlight_attributes: ['has_record.has_primary_title.has_name'],
+        search_attributes: [
+            { field: 'has_record.has_primary_title.has_name', weight: 3 }, 
+            'has_record.has_primary_title.has_ordering_name',
+            'has_record.has_event.has_activity.has_agent.has_name',
+            'has_record.has_event.has_activity.has_agent.has_alternate_name'
+        ],
+        result_attributes: [
+            'has_record.has_primary_title.has_name',             
+            'has_record.has_primary_title.has_ordering_name',
+            'has_record.has_event.has_activity.has_agent.has_name',
+            'has_record.has_event.has_activity.has_agent.has_alternate_name'
+        ],
         facet_attributes: [
-            'type',
-            { attribute: 'released', field: 'released', type: 'date' },
-            { attribute: 'actors', field: 'actors.keyword', type: 'string' },
-            { attribute: 'directors', field: 'directors.keyword', type: 'string' }
+            'type'
         ],
         sorting: {
             default: {

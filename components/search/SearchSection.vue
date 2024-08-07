@@ -1,7 +1,7 @@
 <template>
   <div>
     <ClientOnly>
-      <SearchInstantSearchTemplate
+      <SearchInstantSearchTemplateAVefi
         :search-client="searchClient"
         :index-name="'21.11155'"
         :routing="true"
