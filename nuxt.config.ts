@@ -17,7 +17,6 @@ export default defineNuxtConfig({
         '@formkit/nuxt',
         'nuxt-icon',
         '@vueuse/nuxt',
-        '@nuxt/test-utils/module',
         "@nuxtjs/robots"
     ],
     extends: './pages',

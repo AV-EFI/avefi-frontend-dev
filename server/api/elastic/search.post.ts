@@ -1,6 +1,5 @@
 import {Client} from '@elastic/elasticsearch';
 
-
 export default defineEventHandler(async (event) => {
     const client = new Client({ node: useRuntimeConfig().public.ELASTIC_HOST });
     console.log(useRuntimeConfig().public.ELASTIC_INDEX);

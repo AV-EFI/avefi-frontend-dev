@@ -1,4 +1,3 @@
-//import {Client} from '@elastic/elasticsearch';
 import Client, { SearchkitConfig } from '@searchkit/api';
 import {config} from '@/searchConfig_avefi';
 
