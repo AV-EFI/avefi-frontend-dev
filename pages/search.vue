@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import jsondata from '../models/sampleData/random_iavefiwork_10.json';
 </script>
 
 <template>
