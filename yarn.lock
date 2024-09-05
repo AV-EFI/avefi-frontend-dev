@@ -678,6 +678,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@elastic/elasticsearch@npm:^8.15.0":
+  version: 8.15.0
+  resolution: "@elastic/elasticsearch@npm:8.15.0"
+  dependencies:
+    "@elastic/transport": "npm:^8.7.0"
+    tslib: "npm:^2.4.0"
+  checksum: 10c0/159ee77761e2d4fbe01547e0d2742ccaa88727406694c622895698fd6c5ab8d8289fbc66e144fe960dcf0b332d31133062ce119cc401451842aa0c2e833ea889
+  languageName: node
+  linkType: hard
+
+"@elastic/transport@npm:^8.7.0":
+  version: 8.7.1
+  resolution: "@elastic/transport@npm:8.7.1"
+  dependencies:
+    "@opentelemetry/api": "npm:1.x"
+    debug: "npm:^4.3.4"
+    hpagent: "npm:^1.0.0"
+    ms: "npm:^2.1.3"
+    secure-json-parse: "npm:^2.4.0"
+    tslib: "npm:^2.4.0"
+    undici: "npm:^6.12.0"
+  checksum: 10c0/caf4dd55ed1a8914000122b7c223180028a53f2220d1667b1481a2f9ff4a776ab04bb93758cc79ada415ddfc2451297ac0f8d09a720b08dfb95c39cfe13af2bf
+  languageName: node
+  linkType: hard
+
 "@esbuild-plugins/node-globals-polyfill@npm:^0.2.3":
   version: 0.2.3
   resolution: "@esbuild-plugins/node-globals-polyfill@npm:0.2.3"
@@ -2851,7 +2876,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@opentelemetry/api@npm:^1.0.0":
+"@opentelemetry/api@npm:1.x, @opentelemetry/api@npm:^1.0.0":
   version: 1.9.0
   resolution: "@opentelemetry/api@npm:1.9.0"
   checksum: 10c0/9aae2fe6e8a3a3eeb6c1fdef78e1939cf05a0f37f8a4fae4d6bf2e09eb1e06f966ece85805626e01ba5fab48072b94f19b835449e58b6d26720ee19a58298add
@@ -9261,6 +9286,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"hpagent@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "hpagent@npm:1.2.0"
+  checksum: 10c0/505ef42e5e067dba701ea21e7df9fa73f6f5080e59d53680829827d34cd7040f1ecf7c3c8391abe9df4eb4682ef4a4321608836b5b70a61b88c1b3a03d77510b
+  languageName: node
+  linkType: hard
+
 "htm@npm:^3.0.0":
   version: 3.1.1
   resolution: "htm@npm:3.1.1"
@@ -11630,7 +11662,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ms@npm:2.1.3, ms@npm:^2.0.0, ms@npm:^2.1.1":
+"ms@npm:2.1.3, ms@npm:^2.0.0, ms@npm:^2.1.1, ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
   checksum: 10c0/d924b57e7312b3b63ad21fc5b3dc0af5e78d61a1fc7cfb5457edaf26326bf62be5307cc87ffb6862ef1c2b33b0233cdb5d4f01c4c958cc0d660948b65a287a48
@@ -12096,6 +12128,7 @@ __metadata:
   resolution: "nuxt-app@workspace:."
   dependencies:
     "@cloudflare/workers-types": "npm:^4.20240620.0"
+    "@elastic/elasticsearch": "npm:^8.15.0"
     "@formkit/addons": "npm:^1.6.0"
     "@formkit/core": "npm:^1.6.5"
     "@formkit/i18n": "npm:^1.6.0"
@@ -14194,6 +14227,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"secure-json-parse@npm:^2.4.0":
+  version: 2.7.0
+  resolution: "secure-json-parse@npm:2.7.0"
+  checksum: 10c0/f57eb6a44a38a3eeaf3548228585d769d788f59007454214fab9ed7f01fbf2e0f1929111da6db28cf0bcc1a2e89db5219a59e83eeaec3a54e413a0197ce879e4
+  languageName: node
+  linkType: hard
+
 "selfsigned@npm:^2.0.1":
   version: 2.4.1
   resolution: "selfsigned@npm:2.4.1"
@@ -15405,6 +15445,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tslib@npm:^2.4.0":
+  version: 2.7.0
+  resolution: "tslib@npm:2.7.0"
+  checksum: 10c0/469e1d5bf1af585742128827000711efa61010b699cb040ab1800bcd3ccdd37f63ec30642c9e07c4439c1db6e46345582614275daca3e0f4abae29b0083f04a6
+  languageName: node
+  linkType: hard
+
 "tsscmp@npm:1.0.6":
   version: 1.0.6
   resolution: "tsscmp@npm:1.0.6"
@@ -15588,6 +15635,13 @@ __metadata:
   dependencies:
     "@fastify/busboy": "npm:^2.0.0"
   checksum: 10c0/08d0f2596553aa0a54ca6e8e9c7f45aef7d042c60918564e3a142d449eda165a80196f6ef19ea2ef2e6446959e293095d8e40af1236f0d67223b06afac5ecad7
+  languageName: node
+  linkType: hard
+
+"undici@npm:^6.12.0":
+  version: 6.19.8
+  resolution: "undici@npm:6.19.8"
+  checksum: 10c0/07fd8520bce7e34ea29c07ef0de27b734183042cdb4e2f1262cd1fb9b755a6b04ff2471040395dfb1770fb7786069a97c5178bcf706b80a34075994f46feb37c
   languageName: node
   linkType: hard
 

@@ -12,6 +12,7 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@elastic/elasticsearch": "^8.15.0",
     "@formkit/addons": "^1.6.0",
     "@formkit/core": "^1.6.5",
     "@formkit/i18n": "^1.6.0",

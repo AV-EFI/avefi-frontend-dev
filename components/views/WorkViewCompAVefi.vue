@@ -285,6 +285,5 @@ const { status, data: manifestations } = useFetch('/api/elastic/search',
             id: "21.11155/"+data._id
         }
     });
-console.log(manifestations);
 
 </script>
