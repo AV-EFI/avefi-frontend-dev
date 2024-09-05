@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div>    
     <div class="container">
       <ais-instant-search
         :search-client="searchClient"
@@ -110,19 +110,28 @@
                     <table class="table border-collapse border border-slate-400 table-sm">
                       <thead class="bg-primary text-white">
                         <tr>
+                          <!--
                           <th
                             class="border border-slate-300"
                             :alt="$t('title')"
                             :title="$t('title')"
                           >
                             RAW
-                          </th>
+                          </th>                          
+                          -->
                           <th
                             class="border border-slate-300"
                             :alt="$t('title')"
                             :title="$t('title')"
                           >
                             {{ $t('title').toUpperCase() }}
+                          </th>
+                          <th
+                            class="border border-slate-300"
+                            :alt="$t('title')"
+                            :title="$t('title')"
+                          >
+                            {{ $t('category').toUpperCase() }}
                           </th>
                           <!--
                           <th
@@ -161,15 +170,17 @@
                         <tr
                           v-for="item in items"
                           :key="item._id"
-                          class=""
+                          :class="[item.has_record.category == 'avefi:Manifestation'? 'dark:bg-neutral-900 bg-slate-50': item.has_record.category == 'avefi:Item' ? 'dark:bg-neutral-800 bg-slate-100':'', 'hover:bg-blend-darken']"
                         >
-                          <td>
-                            {{ item }}
+                          <!--
+                          <td class="border border-slate-200">
+                            <pre>{{ item }}</pre>
                           </td>
+                        
+                        -->
                           <td
-                            class="border border-slate-200"
+                            class="border border-slate-200 max-w-80 md:max-w-96 xxl:max-w-128"
                             style="
-                              max-width: 200px;
                               overflow: hidden;
                               text-overflow: ellipsis;
                               white-space: nowrap;
@@ -180,6 +191,7 @@
                               attribute="has_record.has_primary_title.has_name"
                               :hit="item"
                             />
+                            <span>{{ item.has_record?.has_primary_title?.has_name?? '' }}</span>
                           </td>
                           <td
                             class="border border-slate-200"
@@ -187,8 +199,29 @@
                               max-width: 200px;
                               overflow: hidden;
                               text-overflow: ellipsis;
-                              white-space: nowrap;
-                            }"
+                              white-space: nowrap;"
+                          >
+                            <span>{{ $t(item?.has_record?.category?? '' ) }}</span>
+                          </td>
+                          <td
+                            class="border border-slate-200"
+                            style="
+                              max-width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;"
+                          >
+                            <span v-if="item?.has_record?.has_event[0]?.has_date">
+                              {{ item?.has_record?.has_event[0]?.has_date }}
+                            </span>
+                          </td>
+                          <td
+                            class="border border-slate-200"
+                            style="
+                              max-width: 200px;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              white-space: nowrap;"
                           />
                           <td
                             class="border border-slate-200"
@@ -196,24 +229,37 @@
                               max-width: 200px;
                               overflow: hidden;
                               text-overflow: ellipsis;
-                              white-space: nowrap;
-                            }"
-                          />
-                          <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 200px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;
-                            }"
-                          />
+                              white-space: nowrap;"
+                          >
+                            {{ item?.has_record?.has_event[0]?.has_activity[0]?.has_agent[0].has_name }}
+                          </td>
+                          <!--
+                          <td class="border border-slate-200">
+                            <button
+                              type="button"
+                              :title="$t('showchildren')"
+                            >
+                              <Icon
+                                class="text-xl"
+                                name="formkit:caretdown"
+                              />
+                            </button>
+                          </td>
+                            -->
                           <td class="border border-slate-200">
                             <button
                               type="button"
                               @click="contextHandler('click', item)"
                             >
-                              <Icon name="formkit:reorder" />
+                              <a
+                                :href="`/film/${item.objectID}`"
+                                :title="$t('detailviewlink')"
+                              >
+                                <Icon
+                                  class="text-xl"
+                                  name="bx:detail"
+                                />
+                              </a>
                             </button>
                           </td>
                         </tr>

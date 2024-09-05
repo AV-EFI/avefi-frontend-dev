@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         'nuxt-icon',
         '@vueuse/nuxt',
         '@nuxt/test-utils/module',
-        "@nuxtjs/robots",
+        "@nuxtjs/robots"
     ],
     extends: './pages',
     imports: {
@@ -60,6 +60,7 @@ export default defineNuxtConfig({
         "/search": { ssr: false },
         "/contact": { isr: true },
         "/login": { ssr: false },
+        "/film/**": {ssr:false},
         // Cached for 1 hour
         //"/api/*": { cache: { maxAge: 60 * 60 } },
         // Redirection to avoid 404

@@ -27,19 +27,86 @@
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
+                  {{ $t('Colour') }}
+                </p>
+              </template>
+
+              <ais-refinement-list
+                attribute="has_record.has_colour_type"
+              >
+                <template
+                  #default="{
+                    items,
+                    isFromSearch,
+                    refine,
+                    createURL,
+                  }"
+                >
+                  <ul>
+                    <li v-if="isFromSearch && !items.length">
+                      No results.
+                    </li>
+                    <li
+                      v-for="item in items"
+                      :key="item.value"
+                    >
+                      <a
+                        :href="createURL(item)"
+                        :style="{ fontWeight: item.isRefined ? 'bold' : '' }"
+                        @click.prevent="refine(item.value)"
+                      >
+                        <span>{{ $t(item.label) }}</span>
+                        <div class="badge badge-secondary">{{ item.count.toLocaleString() }}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </template>
+              </ais-refinement-list>
+            </ais-panel>
+
+            <!--
+            <ais-panel>
+              <template #header>
+                <p class="text-base text-primary-400">
                   {{ $t('facettype') }}
                 </p>
               </template>
-              <!--
+              
               <ais-refinement-list
-                attribute="type"
-                :class-names="{
-                  'ais-RefinementList-label': 'p-0',
-                  'ais-RefinementList-labelText': 'dark:text-primary-50'
-                }"
-              />
-              -->
+                attribute="has_record.category"
+              >
+                <template
+                  #default="{
+                    items,
+                    isFromSearch,
+                    refine,
+                    createURL,
+                  }"
+                >
+                  <ul>
+                    <li v-if="isFromSearch && !items.length">
+                      No results.
+                    </li>
+                    <li
+                      v-for="item in items"
+                      :key="item.value"
+                    >                    
+                      <a
+                        disabled="disabled"
+                        :style="{ fontWeight: item.isRefined ? 'bold' : '' }"
+                        class="disabled"
+                        @click.prevent="refine(`${item.value}`)"
+                      >
+                        <span>{{ $t(item.label) }}</span>
+                        <div class="badge badge-secondary">{{ item.count.toLocaleString() }}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </template>
+              </ais-refinement-list>
             </ais-panel>
+            
+            -->
 
             <ais-panel>
               <template #header>
@@ -47,12 +114,12 @@
                   {{ $t('facetyear') }}
                 </p>
               </template>
-              <!--
+              
               <ais-range-input
-                attribute="released"
-                :min="1900"
-                :max="2025"
+                attribute="has_record.has_event.has_date"
                 :precision="0"
+                :min="1850"
+                :max="2024"
                 :class-names="{
                   'ais-RefinementList-label': 'p-0',
                   'ais-RefinementList-labelText': 'dark:text-primary-50',
@@ -65,30 +132,57 @@
                 <template #submitLabel>
                   {{ $t('filter') }}
                 </template>
-              </ais-range-input>
-              
-              -->
+              </ais-range-input>              
             </ais-panel>
-
-
 
             <ais-panel>
               <template #header>
                 <p class="text-base text-primary-400">
-                  {{ $t('primarytitle') }}
+                  {{ $t('avefi:Subject') }}
                 </p>
               </template>
+              
               <ais-refinement-list
-                searchable
-                :searchable-placeholder="$t('has_name')"
-                attribute="has_name"
-                :class-names="{
-                  'ais-RefinementList-label': 'p-0',
-                  'ais-RefinementList-labelText': 'dark:text-primary-50',
-                  'ais-SearchBox-input': 'appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent !text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:text-zinc-400 group-data-[disabled]:!cursor-not-allowed dark:placeholder-zinc-400/50 dark:!text-zinc-300 border-none p-0 focus:ring-0 formkit-input !text-lg p-2'
-                }"
-              />
+                attribute="has_record.has_subject.has_name"
+                :searchable="true"
+              >
+                <template
+                  #default="{
+                    items,
+                    isFromSearch,
+                    refine,
+                    createURL,
+                    searchForItems
+                  }"
+                >
+                  <input
+                    class="ais-SearchBox-input appearance-none [color-scheme:light] dark:[color-scheme:dark] selection:text-zinc-700 group-data-[has-overlay]:selection:!text-transparent text-sm text-zinc-700 min-w-0 min-h-[1.5em] grow outline-none bg-transparent selection:bg-bali-hai-100 placeholder:!text-zinc-300 group-data-[disabled]:!cursor-not-allowed dark:placeholder:!text-zinc-200/50 dark:!text-zinc-300 border-none focus:ring-0 formkit-input !p-3 !rounded-3xl"
+                    :placeholder="$t('search')"
+                    @input="searchForItems($event.currentTarget.value)"
+                  >
+                  <ul>
+                    <li v-if="isFromSearch && !items.length">
+                      No results.
+                    </li>
+                    <li
+                      v-for="item in items"
+                      :key="item.value"
+                    >
+                      <a
+                        :href="createURL(item)"
+                        :style="{ fontWeight: item.isRefined ? 'bold' : '' }"
+                        @click.prevent="refine(`${item.value.replace('avefi:','*')}`)"
+                      >
+                        <span>{{ $t(item.label) }}</span>
+                        <div class="badge badge-secondary">{{ item.count.toLocaleString() }}</div>
+                      </a>
+                    </li>
+                  </ul>
+                </template>
+              </ais-refinement-list>
             </ais-panel>
+
+            
             <div class="pb-4">
               <p class="text-base text-primary-400">
                 TBD:
@@ -113,9 +207,6 @@
               </p>
               <p class="text-base text-primary-400">
                 Sprachangaben
-              </p>
-              <p class="text-base text-primary-400">
-                Farbigkeit
               </p>
               <p class="text-base text-primary-400">
                 Ton
@@ -228,6 +319,14 @@ const objectListStore = useObjectListStore();
 const toggleDrawer = (() => {
     objectListStore.facetDrawerOpen = !objectListStore.facetDrawerOpen;
 });
+
+const transformItems = ((items, {results}) => {
+    return items.map(item => ({
+        ...item,
+        value: item.value,
+        label: useNuxtApp()?.$i18n.t(item.label)
+    }));
+}); 
 
 </script>
 <style scoped>

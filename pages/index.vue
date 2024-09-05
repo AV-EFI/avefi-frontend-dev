@@ -37,16 +37,6 @@ const sessionData = null;
           <h2 class="text-xl">
             {{ $t('welcomeheading') }}
           </h2>
-          <p>{{ $t('temporarytestdata') }}:</p>
-          <a
-            class="link link-primary"
-            href="/films/works_altern/6926658770567168"
-          >
-            Beispiel für Detailansicht Werk
-          </a>
-          <p class="py-6">
-            <GlobalCountdownComp />
-          </p>
         </article>
       </div>
     </div>

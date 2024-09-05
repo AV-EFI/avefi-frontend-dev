@@ -3,7 +3,7 @@
     <ClientOnly>
       <SearchInstantSearchTemplateAVefi
         :search-client="searchClient"
-        :index-name="'21.11155'"
+        :index-name="useRuntimeConfig().public.ELASTIC_INDEX"
         :routing="true"
       />
     </ClientOnly>
@@ -13,15 +13,16 @@
 <script>
 const index = process.env.ELASTIC_INDEX;
 console.log(index);
-import Client from '@searchkit/instantsearch-client';
+import SearchkitInstantSearchClient from '@searchkit/instantsearch-client';
 import Searchkit from "searchkit";
 import {config} from '@/searchConfig_avefi.ts';
 
 const searchkitClient = new Searchkit(config);
-const searchClient = Client(searchkitClient);
-searchClient.config;
-searchClient.routing = true;
 
+//const searchClient = Client(searchkitClient);
+const searchClient = SearchkitInstantSearchClient({
+    url: "/api/elastic/msearch"
+});
 
 export default {
     data() {

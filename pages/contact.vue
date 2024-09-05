@@ -60,13 +60,13 @@ const response = null;
               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          <span>TODO: replace lorem ipsum with real help texts</span>
+          <span>TODO: english version</span>
         </div>
       </div>
-      <article class="container">
+      <article class="container flex justify-center">
         <div
           id="c7273"
-          class="frame frame-default frame-type-text frame-layout-0"
+          class="frame frame-default frame-type-text frame-layout-0 w-2/3 text-balance text-justify"
         >
           <p>Im Projekt <em>AV-EFI Automatisiertes Verbundsystem für audiovisuelle Bestände über einheitliche Filmidentifikatoren</em> – Eigenschreibweise mit Projektstart <strong>AVefi</strong> – wird ein institutionsübergreifendes, webbasiertes System entwickelt und erprobt, mit Persistent Identifier (PID) in zentraler Rolle. Dieses soll der Identifikation und Verknüpfung von Filmen, ihren Fassungen und Datenobjekten aus heterogenen Beständen dienen.</p>
           <h3>Projektgegenstand</h3>

@@ -1,7 +1,8 @@
 //import { getToken, getServerSession } from "#auth";
 
 export default defineEventHandler(async (event) => {
-
+// Get data form body
+    const body = await readBody(event);
     /*
     const token = await getToken({ event });
     console.log("###token###");

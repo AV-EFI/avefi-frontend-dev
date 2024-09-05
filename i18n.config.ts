@@ -6,13 +6,14 @@ export default defineI18nConfig(() => ({
     locale: 'de',
     messages: {
         en: {
-            activefiltering: 'current filters:',
+            activefiltering: 'Active Filters:',
             actors: 'actors',
+            items: 'items',
             addtocomparison: 'add to comparison',
             comparisonfull: 'Comparison must not contains more than two elements. Please remove at least one element from the list before adding another one.',
             addtocomparisonparam: ({ named }) => `Add ${named('name')} to comparison`,
             addedtocomparisonparam: ({ named }) => `Added ${named('name')} to comparison`,
-            gotodisamiguationparam: ({ named }) => `Go to disambiguation`,
+            gotodisamiguationparam: `Go to disambiguation`,
             disambiguation: 'Disambiguation',
             clearallfilters: 'Clear all filters',
             close: 'close',
@@ -56,11 +57,19 @@ export default defineI18nConfig(() => ({
             todolinks: 'TODO: Add links etc.',
             welcomeheading: 'Welcome to the AVefi homepage',
             countdownworkshop: 'Countdown till Workshop Anforderungsdokumentation:',
+            manifestations: 'Manifestations',
+            detailviewlink: 'Show Detailed View',
+            category: 'Category',
+            showchildren: 'Show child nodes',
+            year: 'year',
+            place: 'place',
+            backtosearch: 'back to search',
             ...avefiLocales.en
         },
         de: {
             activefiltering: 'Aktive Filter:',
             actors: 'Schauspieler',
+            items: 'Exemplare',
             addtocomparison: 'Zu Vergleich hinzufügen',
             gotodisamiguationparam: ({ named }) => `Zu Disambiguierung`,
             addedtocomparisonparam: ({ named }) => `«${named('name')}» zu Vergleich hinzugefügt`,
@@ -108,6 +117,13 @@ export default defineI18nConfig(() => ({
             welcomeheading: 'Willkomen bei AVefi',
             '$vuetify.open': 'hä?',
             countdownworkshop: 'Countdown bis zum Workshop Anforderungsdokumentation:',
+            manifestations: 'Manifestationen',
+            detailviewlink: 'Zur Detailansicht',
+            category: 'Kategorie',
+            showchildren: 'Kind-Elemente anzeigen',
+            year: 'jahr',
+            place: 'ort',
+            backtosearch: 'Zurück zur Suche',
             ...avefiLocales.de
         }
     }
