@@ -12,7 +12,6 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
-    "@elastic/elasticsearch": "^8.15.0",
     "@formkit/addons": "^1.6.0",
     "@formkit/core": "^1.6.5",
     "@formkit/i18n": "^1.6.0",
@@ -31,7 +30,6 @@
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
     "@searchkit/api": "^4.13.0",
     "@searchkit/instantsearch-client": "^4.13.0",
-    "@testing-library/vue": "^8.1.0",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/mime": "^4.0.0",
     "@types/pg": "^8.10.9",
@@ -43,10 +41,8 @@
     "@vueuse/core": "^10.11.0",
     "@vueuse/nuxt": "^10.7.2",
     "algoliasearch": "^5.1.1",
-    "caniuse-lite": "^1.0.30001632",
     "cypress": "^13.13.1",
     "daisyui": "^4.7.2",
-    "diff-match-patch-ts": "^0.5.0",
     "elasticsearch": "^16.7.3",
     "esbuild": "^0.23.0",
     "eslint-plugin-cypress": "^3.3.0",
