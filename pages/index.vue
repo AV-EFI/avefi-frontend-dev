@@ -44,9 +44,6 @@ const sessionData = null;
           >
             Beispiel für Detailansicht Werk
           </a>
-          <p class="py-6">
-            <GlobalCountdownComp />
-          </p>
         </article>
       </div>
     </div>
