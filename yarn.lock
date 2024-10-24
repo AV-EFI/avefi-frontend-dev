@@ -12,7 +12,7 @@ __metadata:
     "@algolia/client-common": "npm:5.1.1"
     "@algolia/requester-browser-xhr": "npm:5.1.1"
     "@algolia/requester-node-http": "npm:5.1.1"
-  checksum: 10c0/342ffe383966e4813e0a3a3d0d663e4e9fa7f342876ed548d9f52977c3119f5e1d2b63e0bc526453eef7884ed6bcc44e79928b911b891ca40296b4d7314e478b
+  checksum: 10c0/342ffe3Fdiff83966e4813e0a3a3d0d663e4e9fa7f342876ed548d9f52977c3119f5e1d2b63e0bc526453eef7884ed6bcc44e79928b911b891ca40296b4d7314e478b
   languageName: node
   linkType: hard
 
