@@ -11,7 +11,7 @@ export const config:SearchkitConfig = {
         // https://www.searchkit.co/docs/guides/setup-elasticsearch#connecting-with-api-key
         //apiKey: 'a2Rha1VJTUJMcGU4ajA3Tm9fZ0Y6MjAzX2pLbURTXy1hNm9SUGZGRlhJdw=='
     },
-    search_settings: {
+    search_settings: {        
         highlight_attributes: [
             'has_record.has_primary_title.has_name'
         ],
@@ -47,12 +47,22 @@ export const config:SearchkitConfig = {
                 field: 'has_record.has_subject.has_name.keyword',  // field must be a keyword type field
                 type: 'string',
             }
-        ],
+        ],        
         sorting: {
-            default: {
-                field: '_score',
-                order: 'desc'
-            }
+            default: [
+                {
+                    field: '_score',
+                    order: 'desc'
+                },
+                {
+                    field: 'has_record.has_primary_title.has_name.keyword',
+                    order: 'asc'
+                },
+                {
+                    field: 'has_record.category.keyword',
+                    order: 'desc'
+                },
+            ]
             //activate only when replica indices are available
             /*
             ,

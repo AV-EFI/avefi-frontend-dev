@@ -24,7 +24,7 @@
             <div>
               <a
                 :href="`/film/${mir.is_item_of.id.replace(/^\d{2,3}\.\d{1,5}\//g,'')}`"
-                class="link link-primary link-hover"
+                class="link link-primary dark:link-accent link-hover"
                 alt="Referenz bei AVefi"
                 title="Referenz bei AVefi"
               >
@@ -46,7 +46,10 @@
               <h2 class=" dark:text-primary-100">
                 EFI:
               </h2>
-              <GlobalClipboardComp :display-text="data?._source?.handle" />
+              <GlobalClipboardComp
+                class="text-sm"
+                :display-text="data?._source?.handle"
+              />
               <!-- has_alternative_title -->
               <div
                 v-if="mir.has_alternative_title"
@@ -184,16 +187,14 @@
                 <p>{{ mir.described_by?.has_issuer_name }}</p>
                 <a 
                   :href="mir.described_by?.has_issuer_id"
-                  class="link link-primary link-hover"
+                  class="link link-primary dark:link-accent link-hover"
                   alt="Referenz bei ISIL"
                   title="Referenz bei ISIL"
                   target="_blank"
                 >
                   {{ mir.described_by?.has_issuer_id }}
                 </a>
-                <p v-if="mir.described_by?.last_modified">
-                  {{ new Date(mir.described_by?.last_modified??'').toLocaleString('de-DE') }}
-                </p>
+                <p>{{ new Date(data?._source['@timestamp']??'').toLocaleString('de-DE') }}</p>
               </div>
             </div>
           </div>
@@ -213,7 +214,5 @@ import type {Item} from '../../models/interfaces/av_efi_schema.ts';
 const dataJson = defineModel({type: String, required: true});
 const data = JSON.parse(dataJson.value);
 const mir:Item = data?._source?.has_record; 
-
-
 
 </script>

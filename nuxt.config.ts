@@ -1,8 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: { enabled: false },
+    devtools: { 
+        enabled: false 
+    },
     nitro: {
-        preset: "cloudflare-pages"
+        preset: 'node-server'
     },
     modules: [
         "nitro-cloudflare-dev",
@@ -15,9 +17,10 @@ export default defineNuxtConfig({
         '@pinia-plugin-persistedstate/nuxt',
         '@nuxt/content',
         '@formkit/nuxt',
-        'nuxt-icon',
+        '@nuxt/icon',
         '@vueuse/nuxt',
-        "@nuxtjs/robots"
+        "@nuxtjs/robots",
+        "nuxt3-winston-log"
     ],
     extends: './pages',
     imports: {
@@ -43,13 +46,17 @@ export default defineNuxtConfig({
             analyticsUrl: process.env.ANALYTICS_URL,
             origin: process.env.ORIGIN,
             frontendUrl: process.env.ORIGIN,
-            ELASTIC_HOST: process.env.ELASTIC_HOST,
+            ELASTIC_HOST_PUBLIC: process.env.ELASTIC_HOST_PUBLIC,
+            ELASTIC_HOST_INTERNAL: process.env.ELASTIC_HOST_INTERNAL,
             ELASTIC_APIKEY: process.env.ELASTIC_APIKEY,
-            ELASTIC_INDEX: process.env.ELASTIC_INDEX
+            ELASTIC_INDEX: process.env.ELASTIC_INDEX,
+            AVEFI_ELASTIC_API: process.env.AVEFI_ELASTIC_API,
+            AVEFI_DATA_API: process.env.AVEFI_DATA_API
         },
         private: {
             NUXT_SECRET: process.env.NUXT_SECRET,
-            ELASTIC_HOST: process.env.ELASTIC_HOST,
+            ELASTIC_HOST_PUBLIC: process.env.ELASTIC_HOST_PUBLIC,
+            ELASTIC_HOST_INTERNAL: process.env.ELASTIC_HOST_INTERNAL,
         }
     },
     //https://nuxt.com/docs/guide/concepts/rendering
@@ -68,6 +75,10 @@ export default defineNuxtConfig({
         },
     },
     css: ["~/assets/scss/main.scss"],
+    nuxt3WinstonLog: {
+        maxSize: "2048m",
+        maxFiles: "14d",
+    },
     vite: {        
         build: {
             /*

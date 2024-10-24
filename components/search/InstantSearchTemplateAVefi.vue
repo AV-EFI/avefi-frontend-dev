@@ -28,6 +28,7 @@
                   }"
                 />
               </div>
+              
               <div
                 class="w-full flex flex-col md:flex-row justify-between md:justify-between"
                 mb-2
@@ -87,10 +88,38 @@
                 </h2>
                 <ais-current-refinements 
                   :class-names="{
-                    'ais-CurrentRefinements-item': '!bg-primary !text-white !rounded-2xl !p-2',
+                    'ais-CurrentRefinements-item': '!bg-primary-500 !text-white !rounded-2xl !p-2',
                     'ais-CurrentRefinements-delete': '!text-white'
                   }"
-                />
+                >
+                  <template #item="{ item, refine, createURL }">
+                    <strong>{{ $t(item.label.split(".").at(-1)) }}:</strong>
+                    <ul>
+                      <li
+                        v-for="refinement in item.refinements"
+                        :key="[
+                          refinement.attribute,
+                          refinement.type,
+                          refinement.value,
+                          refinement.operator
+                        ].join(':')"
+                        class="flex-start"
+                      >
+                        <a
+                          :href="createURL(refinement)"
+                          @click.prevent="refine(refinement)"
+                        >
+                          &nbsp;{{ refinement.label }}&nbsp;
+                          |&nbsp;
+                          <Icon
+                            class="!align-middle text-lg"
+                            name="formkit:trash"
+                          />
+                        </a>
+                      </li>
+                    </ul>
+                  </template>
+                </ais-current-refinements>
               </div>
               <div class="mb-4">
                 <ais-clear-refinements 
@@ -104,167 +133,29 @@
                   </template>
                 </ais-clear-refinements>
               </div>
-              <div class="overflow-x-auto">
+              <div class="w-full">
+                <div class="form-control float-right w-36">
+                  <label class="label cursor-pointer">
+                    <span class="label-text">Tabelle / Liste</span>
+                    <input
+                      v-model="checked"
+                      type="checkbox"
+                      class="toggle"
+                    >
+                  </label>
+                </div>
+              </div>
+              <div class="overflow-x-auto  w-full">
                 <ais-hits>
-                  <template #default="{ items }">
-                    <table class="table border-collapse border border-slate-400 table-sm">
-                      <thead class="bg-primary text-white">
-                        <tr>
-                          <!--
-                          <th
-                            class="border border-slate-300"
-                            :alt="$t('title')"
-                            :title="$t('title')"
-                          >
-                            RAW
-                          </th>                          
-                          -->
-                          <th
-                            class="border border-slate-300"
-                            :alt="$t('title')"
-                            :title="$t('title')"
-                          >
-                            {{ $t('title').toUpperCase() }}
-                          </th>
-                          <th
-                            class="border border-slate-300"
-                            :alt="$t('title')"
-                            :title="$t('title')"
-                          >
-                            {{ $t('category').toUpperCase() }}
-                          </th>
-                          <!--
-                          <th
-                            class="border border-slate-300"
-                            :alt="$t('description')"
-                            :title="$t('description')"
-                          >
-                            {{ $t('description').toUpperCase() }}
-                          </th>
-                          -->
-                          <th
-                            class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
-                            :alt="$t('productionyear')"
-                            :title="$t('productionyear')"
-                          >
-                            {{ $t('productionyear').toUpperCase() }}
-                          </th>
-                          <th
-                            class="border border-slate-300"
-                            :alt="$t('directors')"
-                            :title="$t('directors')"
-                          >
-                            {{ $t('directors').toUpperCase() }}
-                          </th>
-                          <th
-                            class="border border-slate-300 max-w-16 text-ellipsis overflow-hidden"
-                            :alt="$t('productioncompany')"
-                            :title="$t('productioncompany')"
-                          >
-                            {{ $t('productioncompany').toUpperCase() }}
-                          </th>
-                          <th class="border border-slate-300" />
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr
-                          v-for="item in items"
-                          :key="item._id"
-                          :class="[item.has_record.category == 'avefi:Manifestation'? 'dark:bg-neutral-900 bg-slate-50': item.has_record.category == 'avefi:Item' ? 'dark:bg-neutral-800 bg-slate-100':'', 'hover:bg-blend-darken']"
-                        >
-                          <!--
-                          <td class="border border-slate-200">
-                            <pre>{{ item }}</pre>
-                          </td>
-                        
-                        -->
-                          <td
-                            class="border border-slate-200 max-w-80 md:max-w-96 xxl:max-w-128"
-                            style="
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;
-                            }"
-                            :title="item.has_record?.has_primary_title?.has_name"
-                          >
-                            <ais-highlight
-                              attribute="has_record.has_primary_title.has_name"
-                              :hit="item"
-                            />
-                            <span>{{ item.has_record?.has_primary_title?.has_name?? '' }}</span>
-                          </td>
-                          <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 200px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;"
-                          >
-                            <span>{{ $t(item?.has_record?.category?? '' ) }}</span>
-                          </td>
-                          <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 200px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;"
-                          >
-                            <span v-if="item?.has_record?.has_event[0]?.has_date">
-                              {{ item?.has_record?.has_event[0]?.has_date }}
-                            </span>
-                          </td>
-                          <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 200px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;"
-                          />
-                          <td
-                            class="border border-slate-200"
-                            style="
-                              max-width: 200px;
-                              overflow: hidden;
-                              text-overflow: ellipsis;
-                              white-space: nowrap;"
-                          >
-                            {{ item?.has_record?.has_event[0]?.has_activity[0]?.has_agent[0].has_name }}
-                          </td>
-                          <!--
-                          <td class="border border-slate-200">
-                            <button
-                              type="button"
-                              :title="$t('showchildren')"
-                            >
-                              <Icon
-                                class="text-xl"
-                                name="formkit:caretdown"
-                              />
-                            </button>
-                          </td>
-                            -->
-                          <td class="border border-slate-200">
-                            <button
-                              type="button"
-                              @click="contextHandler('click', item)"
-                            >
-                              <a
-                                :href="`/film/${item.objectID}`"
-                                :title="$t('detailviewlink')"
-                              >
-                                <Icon
-                                  class="text-xl"
-                                  name="bx:detail"
-                                />
-                              </a>
-                            </button>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                  <template #default="{ items }">          
+                    <SearchTableViewComp
+                      v-if="!checked"
+                      :items="items"
+                    />
+                    <SearchListViewComp
+                      v-else
+                      :items="items"
+                    />
                   </template>
                 </ais-hits>
               </div>
@@ -288,13 +179,9 @@
 
 
 <script setup lang="ts">
-import {toast } from 'vue3-toastify';
 import { history } from 'instantsearch.js/es/lib/routers';
 const {$toggleFacetDrawerState}:any = useNuxtApp();
-
-const contextHandler = function (type:String, item) {
-    toast.success(item.has_record?.has_primary_title?.has_name + " clicked");
-};
+const checked = ref(false);
 
 const routing = {
     stateMapping: {

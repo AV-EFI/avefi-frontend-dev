@@ -10,20 +10,16 @@
   </div>
 </template>
 
-<script>
-const index = process.env.ELASTIC_INDEX;
-console.log(index);
+<script setup>
 import SearchkitInstantSearchClient from '@searchkit/instantsearch-client';
-import Searchkit from "searchkit";
 import {config} from '@/searchConfig_avefi.ts';
+</script>
 
-const searchkitClient = new Searchkit(config);
-
-//const searchClient = Client(searchkitClient);
+<script>
 const searchClient = SearchkitInstantSearchClient({
-    url: "/api/elastic/msearch"
-});
+    url: "/api/elastic/msearch",
 
+});
 export default {
     data() {
         return {
@@ -52,15 +48,16 @@ body {
 
 em {
   background: var(--accent);
-  color: var(--primary-50);
+  color: var(--white);
   padding: .125rem;
   font-style: normal;
 }
 
 .ais-Highlight-highlighted, .ais-Snippet-highlighted {
-  background: var(--accent);
-  color: var(--primary-50);
-  padding: .125rem;
+  background: var(--accenttwo-200);
+  color: var(--primary-900);
+  padding: .1rem;
+  font-weight: 700;
 }
 
 .container {

@@ -153,6 +153,8 @@ export enum EditingActivityTypeEnum {
     
     /** FIAF Glossary of Filmographic Terms B.10.2 */
     AssistantFilmEditor = "AssistantFilmEditor",
+    /** Person responsible content-wise in a non-fiction film production, e.g. a documentary. Unlike a film editor, this activity includes duties like writing a concept, drafting the story, and preparing interviews in preproduction as well as supervising and supporting the camera team */
+    Editor = "Editor",
     /** FIAF Glossary of Filmographic Terms B.10.1 */
     FilmEditor = "FilmEditor",
 }
@@ -1421,6 +1423,8 @@ export interface MovingImageRecord extends CategorizedThing {
     has_event?: Event[],
     /** Record PID in this slot when exporting data from the PID system. Use local identifiers instead when PIDs have not been registered yet. The latter is suitable for transferring data to the agent responsible for registering PIDs */
     has_identifier?: MovingImageResource[],
+    /** Indicate a dataset this record has been generated or derived from. For example, a converter generating AVefi moving image records from data in some other schema may record the original identifier here. */
+    has_source_key?: string[],
     /** FIAF Moving Image Cataloguing Manual 1.3.5, 2.3.3 */
     in_language?: Language[],
     /** Additional title(s) associated with the work / variant, manifestation, or item. */
@@ -1441,7 +1445,7 @@ export interface DescriptionResource {
     /** Name of the responsible party */
     has_issuer_name: string,
     /** Timestamp (in UTC) for the latest modification to any field in the PID metadata record */
-    last_modified: string,
+    last_modified?: string,
 }
 
 
@@ -1497,7 +1501,7 @@ export interface Genre {
 /**
  * Subject descriptor terms for the content of a film specifying its period, themes, locations, etc. Not to be confused with Genre. Provide name and if at all possible identifier(s) from supported authorities in the same_as slot. See also: FIAF Moving Image Cataloguing Manual 1.4.3 and FIAF Glossary of Filmographic Terms D.2.3
  */
-export interface Subject {
+export interface Subject extends CategorizedThing {
     /** Alternative human-readable name(s) for a thing. Whereas has_name provides the preferred display name for the described entity, alternatives can be recorded here in order to be indexed in search engines, for instance */
     has_alternate_name?: string[],
     /** Human-readable name for a thing. This is to be treated as the preferred display label in a UI context, whereas has_alternate_name can provide additional terms, e.g. for matching in search operations */
@@ -1727,7 +1731,7 @@ export interface ManifestationOrItem extends MovingImageRecord {
     /** FIAF Moving Image Cataloguing Manual Appendix B */
     has_note?: string[],
     /** Link to data provider's own presentation of manifestation or item on the web */
-    has_webresource?: string,
+    has_webresource?: string[],
 }
 
 
@@ -1828,7 +1832,7 @@ export interface Manifestation extends ManifestationOrItem {
  */
 export interface Language {
     /** [ISO 639-2 code](https://id.loc.gov/vocabulary/iso639-2.html) for the Representation of Names of Languages (Part 2: Alpha-3) */
-    code: string,
+    code?: string,
     /** FIAF Moving Image Cataloguing Manual 2.3.3.2 */
     usage: string,
 }

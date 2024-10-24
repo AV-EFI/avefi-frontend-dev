@@ -1,6 +1,6 @@
 <template>
   <div class="drawer w-0 md:w-[20em] drawer-end">
-    <client-only>
+    <ClientOnly>
       <input
         id="comparison_drawer"
         type="checkbox"
@@ -61,7 +61,7 @@
           </div>
         </div>
       </div>
-    </client-only>
+    </ClientOnly>
   </div>
 </template>
 <script setup lang="ts">

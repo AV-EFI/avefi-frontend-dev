@@ -64,6 +64,11 @@ export default defineI18nConfig(() => ({
             year: 'year',
             place: 'place',
             backtosearch: 'back to search',
+            facetyearonoff: 'Only show data with year',
+            'has_name': 'Keyword',
+            'has_date': 'Production year',
+            noManifestations: 'No Manifestations available',
+            webresource: 'Webresource',
             ...avefiLocales.en
         },
         de: {
@@ -114,7 +119,7 @@ export default defineI18nConfig(() => ({
             temporarytestdata: 'Temporär bis Testdaten vorhanden',
             todolinks: 'TODO: Links und Rechtliches im Footer hinzufügen',
             title: ' Titel',
-            welcomeheading: 'Willkomen bei AVefi',
+            welcomeheading: 'Willkommen bei AVefi',
             '$vuetify.open': 'hä?',
             countdownworkshop: 'Countdown bis zum Workshop Anforderungsdokumentation:',
             manifestations: 'Manifestationen',
@@ -124,6 +129,12 @@ export default defineI18nConfig(() => ({
             year: 'jahr',
             place: 'ort',
             backtosearch: 'Zurück zur Suche',
+            facetyearonoff: 'Nur mit Jahresangabe zeigen',
+            webresource: 'Webressource',
+            //search-ui labels
+            'has_name': 'Schlagwort',
+            'has_date': 'Produktionsjahr',
+            noManifestations: 'Keine Manifestationen verfügbar',
             ...avefiLocales.de
         }
     }

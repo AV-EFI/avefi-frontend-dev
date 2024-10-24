@@ -31,7 +31,7 @@
                 <div>
                   <a
                     :href="`/film/${has_record_is_manifestation_of_item.id.replace(/^\d{2,3}\.\d{1,5}\//g,'')}`"
-                    class="link link-primary link-hover"
+                    class="link link-primary dark:link-accent dark:link-accent link-hover"
                     alt="Referenz bei AVefi"
                     title="Referenz bei AVefi"
                   >
@@ -62,7 +62,7 @@
                 >
                   <a
                     :href="`https://www.filmportal.de/film/${has_record_same_as_item.id}`"
-                    class="link link-primary link-hover"
+                    class="link link-primary dark:link-accent link-hover"
                     alt="Referenz bei  Filmportal"
                     title="Referenz bei Filmportal"
                     target="_blank"
@@ -70,7 +70,7 @@
                     {{ $t('filmportalref') }}&nbsp;
                     <Icon
                       v-if="has_record_same_as_item.category === 'avefi:FilmportalResource'"
-                      name="fa-regular:hand-peace"
+                      name="carbon:notebook-reference"
                       size="1em"
                       class="!align-baseline"
                       alt="Referenz bei Filmportal"
@@ -205,7 +205,7 @@
                           >
                             <a
                               v-if="same_as_item.category === 'avefi:GNDResource'"
-                              class="link link-primary link-hover"
+                              class="link link-primary dark:link-accent link-hover"
                               :href="`https://explore.gnd.network/gnd/${same_as_item.id}`"
                               alt="Referenz bei GND"
                               title="Referenz bei GND"
@@ -213,7 +213,8 @@
                             >
                               <Icon
                                 name="fa-regular:address-card"
-                                size="1em"
+                                size="1.2em"
+                                class="!align-text-bottom"
                                 alt="Referenz bei GND"
                               /> 
                             </a></span>
@@ -304,21 +305,19 @@
               class="col-span-full md:col-span-2"
             >
               <span class="text-md font-bold text-primary-900  dark:text-primary-100 md:float-right">Described by:</span>
-              <div class="col-span-full md:col-span-8">
-                <p>{{ mir.described_by?.has_issuer_name }}</p>
-                <a 
-                  :href="mir.described_by?.has_issuer_id"
-                  class="link link-primary link-hover"
-                  alt="Referenz bei ISIL"
-                  title="Referenz bei ISIL"
-                  target="_blank"
-                >
-                  {{ mir.described_by?.has_issuer_id }}
-                </a>
-                <p v-if="mir.described_by?.last_modified">
-                  {{ new Date(mir.described_by?.last_modified??'').toLocaleString('de-DE') }}
-                </p>
-              </div>
+            </div>
+            <div class="col-span-full md:col-span-8">
+              <p>{{ mir.described_by?.has_issuer_name }}</p>
+              <a 
+                :href="mir.described_by?.has_issuer_id"
+                class="link link-primary dark:link-accent link-hover"
+                alt="Referenz bei ISIL"
+                title="Referenz bei ISIL"
+                target="_blank"
+              >
+                {{ mir.described_by?.has_issuer_id }}
+              </a>
+              <p>{{ new Date(data?._source['@timestamp']??'').toLocaleString('de-DE') }}</p>
             </div>
           </div>
         </div>

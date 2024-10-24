@@ -18,7 +18,7 @@
               >
                 <a
                   :href="`https://www.filmportal.de/film/${has_record_same_as_item.id}`"
-                  class="link link-primary link-hover"
+                  class="link link-primary dark:link-accent link-hover"
                   alt="Referenz bei  Filmportal"
                   title="Referenz bei Filmportal"
                   target="_blank"
@@ -147,7 +147,7 @@
                         >
                           <a
                             v-if="same_as_item.category === 'avefi:GNDResource'"
-                            class="link link-primary link-hover"
+                            class="link link-primary dark:link-accent link-hover"
                             :href="`https://explore.gnd.network/gnd/${same_as_item.id}`"
                             alt="Referenz bei GND"
                             title="Referenz bei GND"
@@ -187,7 +187,7 @@
             <p>{{ dataJson.has_record.described_by.has_issuer_name }}</p>
             <a 
               :href="dataJson.has_record.described_by.has_issuer_id"
-              class="link link-primary link-hover"
+              class="link link-primary dark:link-accent link-hover"
               alt="Referenz bei ISIL"
               title="Referenz bei ISIL"
               target="_blank"

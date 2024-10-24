@@ -3,7 +3,7 @@
     <header>
       <GlobalNavBar />
     </header>
-    <main class="main grow bg-neutral">
+    <main class="main grow bg-neutral dark:bg-slate-950">
       <ClientOnly>
         <GlobalIndicatorComp />
       </ClientOnly>

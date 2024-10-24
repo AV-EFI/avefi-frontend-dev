@@ -20,7 +20,7 @@ const objectListStore = useObjectListStore();
 
 <template>
   <nav class="h-24 md:h-full navbar border-b-2 bg-neutral-50 dark:bg-gray-800 dark:text-white dark:border-gray-700">
-    <client-only>
+    <ClientOnly>
       <div class="container flex justify-between mx-auto">
         <div class="navbar-start w-full flex justify-between lg:justify-start">
           <div class="dropdown">
@@ -83,7 +83,7 @@ const objectListStore = useObjectListStore();
                 </a>
               </li>
               <li v-if="objectListStore.objects?.length > 0">
-                <client-only>
+                <ClientOnly>
                   <button
                     title="Show comparison items"
                     @click="$toggleComparisonDrawerState"
@@ -93,7 +93,7 @@ const objectListStore = useObjectListStore();
                       {{ objectListStore.objects?.length }}
                     </span>
                   </button>
-                </client-only>
+                </ClientOnly>
               </li>
               <li v-if="data?.username">
                 <a href="/protected/filmident">
@@ -206,14 +206,14 @@ const objectListStore = useObjectListStore();
                 />
                 </a>
               </div>
-              <client-only>
+              <ClientOnly>
                 <button 
                   class="btn btn-outline w-1/2"
                   @click="toggleComparisonDrawerState"
                 >
                   <CompareIcon alt="Comparison" />
                 </button>
-              </client-only>
+              </ClientOnly>
             </div>
             <ul
               tabindex="0"
@@ -231,6 +231,6 @@ const objectListStore = useObjectListStore();
           </div>
         </div>
       </div>
-    </client-only>
+    </ClientOnly>
   </nav>
 </template>

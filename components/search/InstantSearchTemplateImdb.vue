@@ -108,7 +108,7 @@
                 <ais-hits>
                   <template #default="{ items }">
                     <table class="table border-collapse border border-slate-400 table-sm">
-                      <thead class="bg-primary text-white">
+                      <thead class="bg-primary-500 text-white">
                         <tr>
                           <th
                             class="border border-slate-300"

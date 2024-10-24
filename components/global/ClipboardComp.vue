@@ -1,7 +1,7 @@
 <template>
   <span v-if="isSupported">{{ displayText }}
     <Icon
-      class="text-primary-600 dark:text-primary-300 !align-baseline cursor-pointer"
+      class="text-primary-400 dark:text-primary-300 !align-text-bottom cursor-pointer"
       name="mdi:clipboard-play-multiple-outline"
       :alt="`Copy ${displayText}`"
       :title="`Copy ${displayText}`"

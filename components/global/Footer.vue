@@ -1,5 +1,5 @@
 <template>
-  <client-only>
+  <ClientOnly>
     <footer class="footer bg-primary-800 text-white dark:bg-gray-800 dark:text-white dark:border-gray-700">
       <div class="container mx-auto flex p-4 !pb-[10em] md:pb-auto md:p-4">
         <div class="flex flex-row flex-wrap w-full justify-start md:justify-start md:justify-between">
@@ -50,5 +50,5 @@
         </div>
       </div>
     </footer>
-  </client-only>
+  </ClientOnly>
 </template>

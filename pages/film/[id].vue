@@ -28,23 +28,25 @@
       <template #cardBody>
         <div>
           <div
-            v-if="category == 'avefi:Manifestation'"
+            v-if="category == 'avefi:WorkVariant'"
+          >
+            <ClientOnly
+              fallback-tag="span"
+              fallback="Loading data..."
+            >
+              <ViewsWorkViewCompAVefi
+                v-model="dataJson"                
+              />
+            </ClientOnly>
+          </div>
+          <div
+            v-else-if="category == 'avefi:Manifestation'"
           >
             <ClientOnly
               fallback-tag="span"
               fallback="Loading data..."
             >
               <ViewsManifestationViewCompAVefi v-model="dataJson" />
-            </ClientOnly>
-          </div>
-          <div
-            v-else-if="category == 'avefi:WorkVariant'"
-          >
-            <ClientOnly
-              fallback-tag="span"
-              fallback="Loading data..."
-            >
-              <ViewsWorkViewCompAVefi v-model="dataJson" />
             </ClientOnly>
           </div>
           <div
@@ -81,23 +83,26 @@ import type { IAVefiListResponse } from '../../models/interfaces/IAVefiWork';
 const route = useRoute();
 const params = ref(route.params);
 const category = ref('');
-
+console.log(useRuntimeConfig().public.AVEFI_DATA_API);
 async function getCollectionType (routeParamsId:string):Promise<string> {  
     const { data } = await useApiFetchLocal<IAVefiListResponse>(
-        `${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
+        `${useRuntimeConfig().public.AVEFI_DATA_API}/getdetailedview`,
         {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Authorization': `ApiKey ${useRuntimeConfig().public.ELASTIC_IMDB_APIKEY}`
+            },
+            body: {
+                documentId: routeParamsId
             }
         }
     );
     
-    if(data) {
+    if(data.value && data.value.length == 1) {
         console.log(data.value);
-        console.log(data?.value?._source?.has_record.category.trim());
-        category.value = data?.value?._source?.has_record.category.trim();
-        return JSON.stringify(data?.value, null, 2);
+        category.value = data?.value[0]?._source?.has_record.category.trim();
+        console.log(category.value);
+        return JSON.stringify(data?.value[0], null, 2);
     }
     return "";
 }

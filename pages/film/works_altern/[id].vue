@@ -17,7 +17,10 @@
       <template #cardBody>
         <div>
           <ClientOnly>
-            <ViewsWorkViewCompAVefi v-model="dataJson" />
+            <ViewsWorkViewCompAVefi
+              v-model="dataJson"
+              class="border-solid border-l-2 border-work-variant pl-2"
+            />
           </ClientOnly>
         </div>
       </template>
@@ -42,7 +45,7 @@ const params = ref(route.params);
 
 async function getCollectionType (routeParamsId:string):Promise<string> {  
     const { data } = await useApiFetchLocal<IAVefiListResponse>(
-        `${useRuntimeConfig().public.ELASTIC_HOST}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
+        `${useRuntimeConfig().public.ELASTIC_HOST_PUBLIC}/${useRuntimeConfig().public.ELASTIC_INDEX}/_doc/${routeParamsId}`,
         {
             method: 'GET',
             headers: {
